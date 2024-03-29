@@ -67,8 +67,18 @@ nav ul li a:hover {
 /* Media Queries */
 @media (max-width: 768px) { /* Adjustments for tablets and below */
   header {
-    flex-direction: column; /* Stack logo and navigation vertically */
-    padding: 2vh 1vw; /* Increase padding for better touch targets */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 1.0);
+    color: #222839;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1vh 1vw; /* Using viewport units for responsive padding */
+    z-index: 1000;
+    border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
   }
 
   .logo img {
@@ -87,7 +97,18 @@ nav ul li a:hover {
 
 @media (max-width: 480px) { /* Adjustments for mobile phones */
   header {
-    padding: 3vh 4vw; /* Increase padding for smaller screens */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 1.0);
+    color: #222839;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1vh 1vw; /* Using viewport units for responsive padding */
+    z-index: 1000;
+    border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
   }
 
   nav ul li {
