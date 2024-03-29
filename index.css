@@ -1,16 +1,20 @@
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
 body, html {
   height: 100%;
   overflow-x: hidden;
   font-family: 'Arial', sans-serif;
   scroll-behavior: smooth;
-  /* font-size: clamp(0.8rem, 2vw, 1.2rem); */
+}
+
+/* Using relative units for font sizes ensures scalability and responsiveness */
+body {
+  font-size: clamp(0.8rem, 2vw, 1.2rem); /* Adjusts size based on the viewport width */
 }
 
 header {
@@ -23,19 +27,22 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1vh 1vw;
+  padding: 1vh 1vw; /* Using viewport units for responsive padding */
   z-index: 1000;
   border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
 }
 
+/* Responsive logo size */
 .logo img {
-  height: 7vh; /* Adjust this value as necessary */
+  height: auto; /* Ensure the height adjusts to maintain aspect ratio */
+  max-height: 7vh; /* Adjusts based on the viewport height */
+  width: auto; /* Adjust width automatically to keep aspect ratio */
   display: flex;
-  padding-right: 0.2vw; ;
+  padding-right: 0.2vw;
   align-items: center;
 }
 
-
+/* Navigation styles */
 nav ul {
   list-style: none;
   display: flex;
@@ -44,7 +51,7 @@ nav ul {
 }
 
 nav ul li {
-  padding: 0 20px; /* Use fixed padding for consistent spacing */
+  padding: 0 20px; /* Consistent spacing */
   display: inline;
 }
 
@@ -55,6 +62,39 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #EAEDEE;
+}
+
+/* Media Queries */
+@media (max-width: 768px) { /* Adjustments for tablets and below */
+  header {
+    flex-direction: column; /* Stack logo and navigation vertically */
+    padding: 2vh 1vw; /* Increase padding for better touch targets */
+  }
+
+  .logo img {
+    max-height: 10vh; /* Larger logo for smaller screens */
+  }
+
+  nav ul {
+    justify-content: center; /* Center navigation items */
+    padding-top: 1vh; /* Add space between logo and navigation */
+  }
+
+  nav ul li {
+    padding: 0 10px; /* Reduce padding on smaller screens */
+  }
+}
+
+@media (max-width: 480px) { /* Adjustments for mobile phones */
+  header {
+    padding: 3vh 4vw; /* Increase padding for smaller screens */
+  }
+
+  nav ul li {
+    padding: 0 5px; /* Further reduce padding for very small screens */
+  }
+
+  /* Optional: Implement a hamburger menu for mobile devices */
 }
 
 
@@ -156,37 +196,6 @@ canvas#wavyBackground {
   z-index: 3;
 }
 
-/* Responsive Design Adjustments */
-/* @media (max-width: 768px) {
-  .content, .content-sub-font, .welcome-font {
-    font-size: 1rem;
-  }
-
-  .glass-container {
-    margin-top: calc(100vh - 100% - -5vh); 
-  }
-
-  .welcome-font {
-    text-align: justify;
-    padding: 0.2vw;
-  }
-  .glass-container, .glass-text {
-    padding: 3vh 3vw; 
-    text-align: justify;
-  }
-}
-
-@media (max-width: 480px) {
-  .content {
-    margin-top: 20vh;
-  }
-
-  .glass-container {
-    width: 95vw;
-    margin-top: calc(100vh -100% - 50vh);
-  }
-
-} */
 
 
 #research {
@@ -365,32 +374,6 @@ canvas#wavyBackground {
   max-height: 250px; /* Limit the height of the image/video */
 }
 
-/* Adjustments for tablets and below */
-/* @media (max-width: 768px) {
-  .left-content, .right-content {
-    text-align: justify;
-    flex: 1 1 100%;
-    text-align: center;
-  }
-  
-  .right-content img, .right-content video {
-    max-height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .modal-content {
-    width: 80%;
-  }
-
-  .left-content, .right-content {
-    text-align: justify;
-  }
-
-  .right-content img, .right-content video {
-    max-height: 150px;
-  }
-} */
 
 /* The Close Button */
 .close {
