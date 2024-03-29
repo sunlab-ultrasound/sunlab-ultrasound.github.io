@@ -55,9 +55,9 @@ nav ul li a:hover {
   color: #EAEDEE;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments
 @media (max-width: 768px) {
-  /* Adjustments for tablets and below */
+  
   header {
     flex-direction: column;
   }
@@ -68,21 +68,21 @@ nav ul li a:hover {
   }
   
   nav ul li {
-    padding: 0 10px; /* Smaller padding for smaller screens */
-    font-size: 3vw; /* Adjust font size based on screen width */
+    padding: 0 10px; 
+    font-size: 3vw; 
   }
 }
 
 @media (max-width: 480px) {
-  /* Further adjustments for mobile phones */
+  
   .short-logo img {
-    height: 10vh; /* Adjust logo size for better visibility */
+    height: 10vh;
   }
   
   nav ul li {
-    font-size: 4vw; /* Slightly larger font size for readability */
+    font-size: 4vw;
   }
-}
+} */
 
 
 /* Wavy Background Canvas */
@@ -186,13 +186,13 @@ canvas#wavyBackground {
 }
 
 /* Responsive Design Adjustments */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .content, .content-sub-font, .welcome-font {
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    font-size: 1rem;
   }
 
   .glass-container {
-    margin-top: calc(100vh - 100% - -5vh); /* Adjusted for medium screens */
+    margin-top: calc(100vh - 100% - -5vh); 
   }
 
   .welcome-font {
@@ -200,22 +200,22 @@ canvas#wavyBackground {
     padding: 0.2vw;
   }
   .glass-container, .glass-text {
-    padding: 3vh 3vw; /* Increase padding for better readability on small screens */
+    padding: 3vh 3vw; 
     text-align: justify;
   }
 }
 
 @media (max-width: 480px) {
   .content {
-    margin-top: 20vh; /* Reduce margin top for very small devices */
+    margin-top: 20vh;
   }
 
   .glass-container {
-    width: 95vw; /* Allow more space for content on very small screens */
+    width: 95vw;
     margin-top: calc(100vh -100% - 50vh);
   }
 
-}
+} */
 
 
 #research {
@@ -395,22 +395,21 @@ canvas#wavyBackground {
 }
 
 /* Adjustments for tablets and below */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .left-content, .right-content {
     text-align: justify;
-    flex: 1 1 100%; /* Each takes the full width on smaller screens */
-    text-align: center; /* Center text for a cleaner look on narrow screens */
+    flex: 1 1 100%;
+    text-align: center;
   }
   
   .right-content img, .right-content video {
-    max-height: 200px; /* Slightly reduce the max height for smaller devices */
+    max-height: 200px;
   }
 }
 
-/* Further adjustments for smartphones */
 @media (max-width: 480px) {
   .modal-content {
-    width: 80%; /* Reduce the width of the modal to provide padding from the viewport edges */
+    width: 80%;
   }
 
   .left-content, .right-content {
@@ -418,9 +417,9 @@ canvas#wavyBackground {
   }
 
   .right-content img, .right-content video {
-    max-height: 150px; /* Further reduce the max height for very small devices */
+    max-height: 150px;
   }
-}
+} */
 
 /* The Close Button */
 .close {
@@ -550,4 +549,97 @@ footer {
   padding-bottom: 10px; /* Adjusts padding at the bottom of the mailing address details */
 }
 
+@media (max-width: 1024px) {
+  header {
+      flex-direction: column; /* Stack logo and navigation vertically */
+      padding: 2vh 2vw; /* Increase padding */
+  }
 
+  .logo img {
+      height: 6vh; /* Adjust logo size */
+  }
+
+  nav ul {
+      justify-content: center; /* Center navigation links */
+      padding-top: 1vh; /* Add some space above navigation links */
+  }
+
+  nav ul li {
+      padding: 0 15px; /* Adjust spacing between navigation links */
+  }
+
+  .content, .glass-container, .glass-container-research, .details-footer {
+      width: 80vw; /* Adjust containers width for better spacing */
+      margin-top: 8vh; /* Adjust margin top to avoid overlap with header */
+  }
+
+  .content {
+      font-size: calc(0.9rem + 1vw); /* Adjust base font size for content */
+  }
+
+  .current_research-font, .welcome-font {
+      font-size: 1.2rem; /* Adjust font size for readability */
+  }
+
+  #research, .research-topics, .research-item {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid layout */
+  }
+
+  .research-item img {
+      height: 180px; /* Adjust image height in research items */
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+      padding: 2vh 4vw; /* Increase padding for smaller screens */
+  }
+
+  .logo img {
+      height: 5vh; /* Reduce logo size for smaller screens */
+  }
+
+  nav ul {
+      flex-direction: column; /* Stack nav items vertically */
+      padding-top: 2vh; /* Add space between logo and nav items */
+  }
+
+  nav ul li {
+      padding: 1vh 0; /* Adjust nav items padding for touch targets */
+  }
+
+  .content, .glass-container, .glass-container-research, .details-footer {
+      width: 90vw; /* Adjust width for smaller screens */
+      margin-top: 10vh; /* Increase margin top */
+  }
+
+  .content {
+      font-size: calc(0.8rem + 2vw); /* Adjust font size for smaller screens */
+  }
+
+  .current_research-font, .welcome-font, .glass-text {
+      font-size: calc(1rem + 2vw); /* Make text larger on small screens */
+  }
+
+  #research, .research-topics {
+      grid-template-columns: 1fr; /* Single column layout for research items */
+  }
+
+  .research-item img {
+      height: auto; /* Make images responsive */
+  }
+
+  footer, .details-footer {
+      padding: 4vh 0; /* Increase padding for readability */
+      flex-direction: column; /* Stack elements vertically in footer */
+  }
+
+  .contact-footer, .affiliations, .contact-info {
+      flex-direction: column; /* Adjust layout for contact info and affiliations */
+      align-items: center; /* Center-align content */
+  }
+
+  .contact-info .contact-details {
+      text-align: center; /* Center-align contact details */
+  }
+}
