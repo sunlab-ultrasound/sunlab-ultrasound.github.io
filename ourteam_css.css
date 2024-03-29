@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 1.0);
+  color: #222839;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1vh 1vw;
+  z-index: 1000;
+  border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
+}
+
+.logo img {
+  height: 7vh; /* Adjust this value as necessary */
+  display: flex;
+  padding-right: 0.2vw; ;
+  align-items: center;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+nav ul li {
+  padding: 0 20px; /* Use fixed padding for consistent spacing */
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222839;
+}
+
+nav ul li a:hover {
+  color: #EAEDEE;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Adjustments for tablets and below */
+  header {
+    flex-direction: column;
+  }
+  
+  .short-logo, nav ul {
+    justify-content: center;
+    padding: 1vh 0;
+  }
+  
+  nav ul li {
+    padding: 0 10px; /* Smaller padding for smaller screens */
+    font-size: 3vw; /* Adjust font size based on screen width */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for mobile phones */
+  .short-logo img {
+    height: 10vh; /* Adjust logo size for better visibility */
+  }
+  
+  nav ul li {
+    font-size: 4vw; /* Slightly larger font size for readability */
+  }
+}
+
+/* Wavy Background Canvas */
+canvas#wavyBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3; /* Behind all content */
+}
+
+/* Blurry Backdrop */
+.blurry-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(40px);
+  z-index: -2; /* Above the wavy background, below everything else */
+}
+
+
+/* Team Section */
+.team-section {
+  padding-top: 150px; /* Above the blurry backdrop */
+}
+
+/* Professor's card with full width */
+.professor-card {
+  grid-column: 1/-1;
+  width: 100%; /* Adjust the width as needed */
+  z-index: 2; /* Above other team members */
+  display: flex; /* Use flexbox for easy centering */
+  flex-direction: column; /* Stack children (image and text) vertically */
+  align-items: center; /* Center children horizontally */
+  text-align: center; /* Ensure text is centered if it wraps */
+  margin-bottom: 30px;
+}
+
+.professor-card img {
+  max-width: 100%; /* Fill container */
+  max-height: 250px; /* Fill container */
+  object-fit: cover; /* Cover the area without stretching */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.glass-text-professor {
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+  padding: 15px;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: large;
+  height: auto;
+}
+
+.glass-text-professor p {
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.student-cards-container {
+  display: flex;
+  flex-direction: row; /* Adjust this to column for smaller screens */
+  flex-wrap: wrap; /* Allow cards to wrap */
+  justify-content: center; /* Center cards in the container */
+  gap: 20px; /* Spacing between cards */
+}
+
+.student-card {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  width: 100%;
+  margin-bottom: 20px; /* Space between cards */
+}
+
+.image-container {
+  flex-basis: 20%; /* Allocate 10% of the container width to the image */
+  text-align: center;
+}
+
+.card-image {
+  width: 100%; /* Ensure the image covers the allocated space */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+}
+
+.card-image {
+  max-width: 70%; /* Fill container */
+  max-height: 250px; /* Fill container */
+  object-fit: cover; /* Cover the area without stretching */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Team members grid */
+.team-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 100px; /* Adjust top padding to push content down below the header */
+}
+
+.card-info {
+ text-align: left;
+}
+
+.glass-text-student {
+  flex-basis: 80%; /* Allocate the remaining 90% width to the text */
+  font-size: large;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  border-radius: 5px;
+  margin-left: 20px; /* Space between image and text */
+  margin-right: 25px;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.glass-text-student p {
+  text-align: justify;
+}
+
+.card-info h3, 
+.card-info p,
+.card-info h4 {
+  margin: 5px 5px; /* Spacing between the title and the role */
+}
+
+/* Ensure the layout adapts well to smaller screens */
+@media (max-width: 768px) {
+  .student-card {
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
+    align-items: center; /* Center align the stacked items */
+  }
+
+  .image-container, .glass-text-student {
+    flex-basis: 100%; /* Allow both the image and text to take full width */
+    text-align: justify;
+  }
+
+  .glass-text-student {
+    margin-left: 0; /* Remove the left margin as it's now vertically stacked */
+    margin-top: 10px; /* Add some space between the image and text */
+  }
+
+  .glass-text-student h3, h4 {
+    text-align: center;
+  }
+}

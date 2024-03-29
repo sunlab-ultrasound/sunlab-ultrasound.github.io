@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUN LAB</title>
+    <link href="contact.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        		<!-- <div class="short-logo">
+            <img src="assets/sun_lab_logo.png" height="50px" alt="sun_logo">
+        </div> -->
+		
+		<div class="logo">
+            <img src="assets/sunlab_name_logo.png" height="50px" alt="sun_logo">
+        </div>
+		
+        <nav>
+            <ul>
+                <strong>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </strong>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <canvas id="wavyBackground"></canvas>
+    <div class="blurry-backdrop"></div>
+
+    <div class="glass-container"; style="margin-top: 200px ;">
+        <div class="left-section">
+            <img src="assets/Group photo.jpeg" alt="Group-image">
+        </div>
+        <section class="right-section">
+            <div class="contact-footer">
+                <div class="affliations">
+                </div>
+        
+                <div class="contact-info">
+                    <div class="contact-details email">
+                        <strong>Email:</strong>
+                        <a href="mailto:t.sun@northeastern.edu" class="mailtoui">
+                            t.sun@northeastern.edu
+                        </a>
+                    </div>
+                    <div class="contact-details location">
+                        <strong>Office:</strong>
+                        366C, Interdisciplinary Science and Engineering Complex <br>
+                        805 Columbus Ave, Boston, MA 02120
+                    </div>
+                    <div class="contact-details mailing">
+                        <strong>Mailing Address:</strong>
+                        366C, Interdisciplinary Science and Engineering Complex <br>
+                        360 Huntington Ave, Boston, MA 02115
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const glassContainer = document.querySelector('.glass-container');
+            const windowHeight = window.innerHeight;
+        
+            window.addEventListener('scroll', function() {
+                const scrollY = window.scrollY;
+                const threshold = 300; // Point at which the glass container starts moving
+        
+                if (scrollY > threshold) {
+                    // Calculate new position and opacity based on scroll
+                    let newPosition = Math.max(0, 200 - (scrollY - threshold) / 5);
+                    let newOpacity = Math.min(1, (scrollY - threshold) / 200);
+        
+                    glassContainer.style.top = `${newPosition}vh`;
+                    glassContainer.style.opacity = newOpacity;
+                } else {
+                    // Reset to initial state if above threshold
+                    glassContainer.style.top = '200vh'; // Start off-screen
+                    glassContainer.style.opacity = 0;
+                }
+            });
+        });
+        
+        window.addEventListener('resize', resizeCanvas);
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = document.body.scrollHeight; // Use scrollHeight to cover the full content height
+            drawWaves(); // Redraw waves after resizing
+        }
+        // Function to keep the welcome message below the header
+        function adjustWelcomeMessage() {
+            const welcome = document.querySelector('.welcome-message');
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const scrollDistance = window.pageYOffset;
+            welcome.style.transform = `translateY(${Math.max(scrollDistance, headerHeight)}px)`;
+        }
+        
+        // Add throttled scroll event listener        
+        const canvas = document.getElementById('wavyBackground');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = document.body.offsetHeight;
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.Height = document.body.offsetHeight;
+        }
+        const waves = [];
+        const waveCount = 5;
+        
+        // Define specific colors for each wave
+        const waveColors = [
+            "rgba(142, 68, 173, 0.7)", // Purple
+            "rgba(41, 128, 185, 0.7)", // Blue
+            "rgba(26, 188, 156, 0.7)", // Teal
+            "rgba(241, 196, 15, 0.7)",  // Yellow
+            "rgba(231, 76, 60, 0.7)",   // Red
+        ];
+        
+        for(let i = 0; i < waveCount; i++) {
+            waves.push({
+                y: canvas.height / 2,
+                length: Math.random() * 500 + 500, // Individual wavelengths
+                amplitude: Math.random() * 100 + 150, // Individual amplitudes
+                phase: Math.random() * Math.PI * 2, // Set an initial phase
+                speed: Math.random() * 0.02, // Each wave will have a different speed
+                color: waveColors[i % waveColors.length] // Assign color from the array
+            });
+        }
+        
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // clear the entire canvas
+            drawWaves();
+            requestAnimationFrame(animate);
+        }
+        
+        function drawWaves() {
+            const time = Date.now() * 0.0001; // Time factor for oscillation
+            waves.forEach(wave => {
+                wave.phase += wave.speed; // Update the phase of the wave based on its speed
+                ctx.beginPath();
+                ctx.lineWidth = 40; // Thickness of the wave
+                ctx.shadowBlur = 40; // Glow effect
+                ctx.shadowColor = wave.color; // Color of the glow
+        
+                for(let x = 0; x < canvas.width; x += 10) {
+                    // Calculate the y position of the wave based on the sine function
+                    const y = wave.y + Math.sin((x / wave.length) + wave.phase + time) * wave.amplitude;
+                    ctx.lineTo(x, y);
+                }
+                
+                // Create gradient for frosted glass effect
+                const gradient = ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
+                gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+                gradient.addColorStop(0.5, wave.color);
+                gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
+        
+                ctx.strokeStyle = gradient;
+                ctx.stroke();
+            });
+        }
+        
+        animate();
+        </script>
+        
+        </body>
+        </html>

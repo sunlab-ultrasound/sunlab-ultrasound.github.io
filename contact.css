@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 1.0);
+  color: #222839;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1vh 1vw;
+  z-index: 1000;
+  border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
+}
+
+.logo img {
+  height: 7vh; /* Adjust this value as necessary */
+  display: flex;
+  padding-right: 0.2vw; ;
+  align-items: center;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+nav ul li {
+  padding: 0 20px; /* Use fixed padding for consistent spacing */
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222839;
+}
+
+nav ul li a:hover {
+  color: #EAEDEE;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Adjustments for tablets and below */
+  header {
+    flex-direction: column;
+  }
+  
+  .short-logo, nav ul {
+    justify-content: center;
+    padding: 1vh 0;
+  }
+  
+  nav ul li {
+    padding: 0 10px; /* Smaller padding for smaller screens */
+    font-size: 3vw; /* Adjust font size based on screen width */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for mobile phones */
+  .short-logo img {
+    height: 10vh; /* Adjust logo size for better visibility */
+  }
+  
+  nav ul li {
+    font-size: 4vw; /* Slightly larger font size for readability */
+  }
+}
+
+
+/* Wavy Background Canvas */
+canvas#wavyBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3; /* Behind all content */
+}
+
+/* Blurry Backdrop */
+.blurry-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(40px);
+  z-index: -2; /* Above the wavy background, below everything else */
+}
+
+
+.glass-container {
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Space inside the container */
+  margin: auto auto 200px; /* Center the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Optional: Light border for enhanced effect */
+  display: flex; /* Enables flexbox layout */
+  flex-direction: row; /* Order of the flex items */
+  justify-content: space-between; /* Aligns children with space between */
+  align-items: center; /* Centers items vertically */
+  width: 100%; /* Full width */
+  max-width: 1000px; /* Max width */
+}
+
+.left-section, .right-section {
+  flex: 1;
+}
+
+.left-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.right-section {
+  border-radius: 5px;
+  padding: 20px; /* Space inside the right section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically if desired */
+  align-items: flex-start; /* Align content to the start (left) */
+}
+
+.glass-container .right-section {
+    width: 100%;
+    padding: 20px;
+}
+
+.glass-container .left-section {
+    width: 100%;
+    padding: 20px;
+}
+
+.contact-info {
+  color: #000; /* Black text color */
+  font-family: Arial, sans-serif; /* Change to your preferred font */
+  max-width: 600px; /* Maximum width of the contact section */
+  margin: auto; /* Centering the section */
+}
+
+.contact-info .contact-details {
+  background: rgba(0, 0, 0, 0); /* Transparent background *
+  padding: 0px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners for the contact detail blocks */
+}
+
+.contact-info .contact-details strong {
+  font-size: 20px; /* Size of the 'Email', 'Office', 'Mailing Address' */
+  display: block; /* Display as block to ensure it starts on a new line */
+}
+
+.contact-info .email a, .contact-info .location, .contact-info .mailing {
+  font-size: 18px; /* Size of the contact detail text */
+  line-height: 1.5; /* Line height of the contact detail text */
+  text-decoration: none; /* No underline for links */
+  color: #000000; /* Black text color for links */
+}
+
+.contact-info .email a:link, .contact-info .email a:visited {
+  color: #0026ff; /* Black text color for links */
+}
+
+.contact-info .email a:hover {
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+
+/* To target individual classes for specific padding, you can do this: */
+.contact-info .contact-details.email {
+  padding-bottom: 10px; /* Adjusts padding at the bottom of the email details */
+}
+
+.contact-info .contact-details.location {
+  padding-bottom: 10px; /* Adjusts padding at the bottom of the location details */
+}
+
+.contact-info .contact-details.mailing {
+  padding-bottom: 10px; /* Adjusts padding at the bottom of the mailing address details */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .glass-container {
+    flex-direction: column; /* Stack elements vertically on medium screens */
+    margin-top: 100px; /* Adjust margin-top for smaller screens */
+  }
+
+  .left-section, .right-section {
+    width: 100%; /* Full width for both sections */
+    padding: 20px 0; /* Add some vertical padding */
+  }
+
+  .contact-info {
+    text-align: left; /* Center-align text for a cohesive look */
+  }
+
+  .contact-info .contact-details {
+    padding-bottom: 10px; /* Ensure consistent spacing between contact details */
+  }
+}
+
+@media (max-width: 480px) {
+  .glass-container {
+    margin-top: 50px; /* Less vertical space on very small screens */
+  }
+
+  .left-section, .right-section {
+    padding: 10px 0; /* Reduced padding for small devices */
+  }
+
+  .contact-info .contact-details strong {
+    font-size: 18px; /* Slightly smaller font for headings */
+  }
+
+  .contact-info .email a, .contact-info .location, .contact-info .mailing {
+    font-size: 16px; /* Smaller font size for content for better readability */
+  }
+}

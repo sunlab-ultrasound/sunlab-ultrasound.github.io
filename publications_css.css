@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 1.0);
+  color: #222839;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1vh 1vw;
+  z-index: 1000;
+  border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
+}
+
+.logo img {
+  height: 7vh; /* Adjust this value as necessary */
+  display: flex;
+  padding-right: 0.2vw; ;
+  align-items: center;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+nav ul li {
+  padding: 0 20px; /* Use fixed padding for consistent spacing */
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222839;
+}
+
+nav ul li a:hover {
+  color: #EAEDEE;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Adjustments for tablets and below */
+  header {
+    flex-direction: column;
+  }
+  
+  .short-logo, nav ul {
+    justify-content: center;
+    padding: 1vh 0;
+  }
+  
+  nav ul li {
+    padding: 0 10px; /* Smaller padding for smaller screens */
+    font-size: 3vw; /* Adjust font size based on screen width */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for mobile phones */
+  .short-logo img {
+    height: 10vh; /* Adjust logo size for better visibility */
+  }
+  
+  nav ul li {
+    font-size: 4vw; /* Slightly larger font size for readability */
+  }
+}
+
+#publications .cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* This will create as many columns as can fit with a minimum width of 300px each */
+  gap: 20px; /* This is the gap between grid items */
+  padding: 20px; /* Padding around the entire grid */
+  justify-content: center; /* This centers the grid horizontally */
+  align-items: start; /* Align grid items to the start of the container */
+}
+
+#publications .card-container { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: start;
+  width: 95%;
+}
+
+#publications .card {
+  background-color: rgba(0,0,0,0.9);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Removed flex-basis since it's not needed for grid layout */
+}
+
+#publications .card:hover {
+  transform: translateY(-5px); /* Raise the card slightly on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
+}
+
+#publications .card-content {
+  padding: 16px;
+}
+
+#publications .card-content h3 {
+  margin-top: 0;
+  margin-bottom: 8px; /* Space between the title and the authors */
+  font-size: 18px; /* Adjust font size as needed */
+}
+
+#publications .card-content p {
+  margin-top: 0;
+  margin-bottom: 16px; /* Space between the authors and the 'Read More' button */
+  font-size: 14px; /* Adjust font size as needed */
+  color: rgba(255,255,255,1.00); /* Grey text for the authors */
+}
+
+#publications .card-content .btn {
+  padding: 8px 16px;
+  background-color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  color: #fff;
+  display: block; /* Make the button take the full width of the card content */
+  text-align: center; /* Center the button text */
+  transition: background-color 0.3s;
+}
+
+#publications .card-content .btn:hover {
+  background-color: #555; /* Darken button on hover */
+}
+
+/* Wavy Background Canvas */
+canvas#wavyBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure it's behind all content but above the page background */
+}
+
+/* Blurry Backdrop */
+.blurry-backdrop {
+  position: fixed; /* or 'fixed' if you want it to stay in place on scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(50px); /* This creates the blur effect */
+  z-index: 0; /* Ensure this is below the content but above the wavy background */
+}
+
+/* Adjusting the z-index for other elements */
+#publications .card-container,
+#publications .card,
+#publications .pub
+#publications .card-content,
+#publications .card-content .btn {
+  position: relative; /* Required for z-index to take effect */
+  z-index: 2; /* Ensures that publication cards are above the backdrop */
+}
+
+.glass-text {
+  display: inline-block; /* or 'block' depending on your layout */
+  background: rgba(255, 255, 255, 0.25); /* Semi-transparent white */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Light border for glass effect */
+  padding: 10px 20px; /* Adjust padding as needed */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  backdrop-filter: blur(10px); /* Blur effect for the frosted glass look */
+  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  font-weight: bold; /* Optional: makes the text bold */
+  color: rgba(255,255,255,0.78); /* Text color */
+  text-align: center;/* Center align text */
+  z-index: 3;
+}
+
+
+.card-row {
+  display: grid;
+  grid-template-columns: auto; /* Creates three columns */
+  gap: 20px; /* Space between cards */
+  margin: 80px auto; /* Vertical margin */
+  width: 90%; /* Adjust based on your preference */
+  max-width: 1200px; /* Maximum width of the container */
+}
+
+.glass-container {
+  background: rgba(0, 0, 0, 0.888); /* White background with opacity */
+  backdrop-filter: blur(10px); /* Blur the background behind the container */
+  border-radius: 15px; /* Rounded corners */
+  padding: 25px; /* Padding inside the container */
+  margin: 20px auto; /* Center the container with automatic horizontal margins */
+  max-width: 95%; /* Maximum width of the container */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.glass-container h2 {
+  font-size: 24px; /* Size of the container title */
+  color: #ffffff; /* Dark grey color for the title */
+  margin-bottom: 15px; /* Space below the title */
+}
+
+.glass-container ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+}
+
+.glass-container li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.glass-container a {
+  color: #ffffff; /* Color for links */
+  text-decoration: none; /* No underline for links */
+  transition: color 0.3s; /* Smooth color transition for hover effect */
+}
+
+.glass-container a:hover {
+  color: #0056b3; /* Darker blue for link hover state */
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+
+@media (max-width: 960px) {
+  #publications .card-container {
+    justify-content: center; /* Center cards on smaller screens */
+  }
+
+  #publications .card {
+    flex-basis: calc(50% - 20px); /* Two cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  #publications .card {
+    flex-basis: 100%; /* Full width for each card on very small screens */
+  }
+}
+
+#publications .card-content {
+  padding: 16px;
+  background-color: rgba(0,0,0,0.4); /* Darker background for card content */
+  color: white; /* White text for better readability */
+}
+
+#publications .card-content h3, #publications .card-content p {
+  color: white; /* Ensure all text inside card content is white */
+}
+
+#publications .card-content .btn {
+  background-color: #555; /* Darker button for contrast */
+  color: white; /* White text on the button */
+}
+
+#publications .card-content .btn:hover {
+  background-color: #777; /* Lighten button on hover for interaction feedback */
+}
+
+#more-publications ul {
+  list-style-type: none; /* Optional: Removes the default list style */
+  padding-left: 0; /* Optional: Aligns content with the rest of the page */
+}
+
+button {
+  background-color: #555; /* Example: Button color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #777; /* Darker shade for hover effect */
+}
+
+
+footer {
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  padding: 20px;
+  position: relative; /* or 'absolute' if you want it to be at the bottom of the content */
+  width: 100%; /* Ensure it spans the full width of the screen */
+  clear: both; /* Clear floats if any */
+  z-index: 99; /* Ensure it is above other content, but the value doesn't need to be high if no other content has z-index set */
+}

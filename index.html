@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUN LAB</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="modal-overlay"></div>
+    <header>
+        		<!-- <div class="short-logo">
+            <img src="assets/sun_lab_logo.png" height="50px" alt="sun_logo">
+        </div> -->
+		
+		<div class="logo">
+            <img src="assets/sunlab_name_logo.png" height="50px" alt="sun_logo">
+        </div>
+		
+        <nav>
+            <ul>
+                <strong>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </strong>
+            </ul>
+        </nav>
+    </header>
+    
+    <canvas id="wavyBackground"></canvas>
+    <div class="blurry-backdrop"></div>
+    
+<div class="content">
+        <h1 class="glass-text">Welcome to SUN LAB</h1>
+
+        <div class="glass-container">
+            <div class="welcome-message">
+                <p class="welcome-font"; style="text-align: justify;"><b>At SUN Lab, we harness the power of focused ultrasound (FUS), neuroimaging, and immunoengineering to revolutionize the treatment of neurological disorders by opening the blood-brain barrier. Our mission is to unveil the mechanisms through which FUS modulates the neuroimmune disease/aging environment, developing innovative ultrasound-based techniques for treating and monitoring conditions like glioblastoma and Alzheimer’s disease, setting a new course for the future of neuro-immune interface research.</b></p>
+            </div>
+        </div>
+        <!-- <p class="content-sub-font">We Leverage the power of Ultrasound for Immunomodulation</p> -->
+    </div>
+    
+    <!-- <div class="glass-container">
+        <div class="welcome-message">
+            <p class="welcome-font"><b>At SUN Lab, we harness the power of focused ultrasound (FUS), neuroimaging, and immunoengineering to revolutionize the treatment of neurological disorders by opening the blood-brain barrier. Our mission is to unveil the mechanisms through which FUS modulates the neuroimmune disease/aging environment, developing innovative ultrasound-based techniques for treating and monitoring conditions like glioblastoma and Alzheimer’s disease, setting a new course for the future of neuro-immune interface research.</b></p>
+        </div>
+    </div> -->
+    
+    <div class="glass-container-research">
+        <div class="current_research-font">
+            <p class="current_research-font" style="font-size: 45px; text-align: center; font-weight: bold; margin-top: 30px;">Ultrasound Research Advances</p>
+        </div> 
+       
+    <section id="research">
+                
+        <div class="research-topics">
+            <div class="research-item">
+                <img src="assets/Fig 1 cropped .jpg" alt="Focused Ultrasound and Neuroimaging">
+                <h3 style="color: white; margin-left: 20px; margin-bottom: 20px; margin-right: 20px;">Ultrasound Drug Delivery</h3>
+                <!-- <p>Description of Research Topic 1</p> -->
+                <button class="try-now-btn" data-modal-id="modalId1">Read more →</button>
+              </div>
+                   
+        </div>
+
+        <div class="research-topics">
+            <div class="research-item">
+                <img src="assets/FUS Brain.png" alt="Research Topic 2">
+                <h3 style="color: white; margin-left: 20px; margin-bottom: 20px; margin-right: 20px;">Ultrasound Immunomodulation</h3>
+                <!-- <p>Description of Research Topic 2</p> -->
+                <button class="try-now-btn" data-modal-id="modalId2">Read more →</button>
+            </div>
+            
+        </div>
+
+        <div class="research-topics">
+            <div class="research-item">
+                <img src="assets/The controller system modified.jpg" alt="Research Topic 3">
+                <h3 style="color: white; margin-left: 20px; margin-bottom: 20px; margin-right: 20px;">Cavitation Imaging and Control</h3>
+                <!-- <p>Description of Research Topic 3</p> -->
+                <button class="try-now-btn" data-modal-id="modalId3">Read more →</button>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+</div>
+
+</div>
+
+        <section class="details-footer">
+            <div class="contact-footer">
+                <!-- Affiliations Section -->
+                <div class="affiliations">
+                    <figure class="affiliation-logo">
+                        <img src="assets/sunlab_name_logo.png" alt="SUN LAB logo" class="sun-logo">
+                    </figure>
+                    <figure class="affiliation-logo">
+                        <img src="assets/cils_logo.png" alt="CILS logo" class="cils-logo">
+                    </figure>
+                    <figure class="affiliation-logo">
+                        <img src="assets/neu_bioengg_logo.png" alt="NEU Bioengineering logo" class="neu-logo">
+                    </figure>
+                </div>
+                
+                <!-- Contact Information Section -->
+                <div class="contact-info">
+                    <div class="contact-details email">
+                        <strong>Email:</strong> <br>
+                        <a href="mailto:t.sun@northeastern.edu" class="mailtoui">
+                            t.sun@northeastern.edu
+                        </a>
+                    </div>
+                    <div class="contact-details location">
+                        <strong>Office:</strong> <br>
+                        366C, Interdisciplinary Science and Engineering Complex <br>
+                        805 Columbus Ave, Boston, MA 02120
+                    </div>
+                    <div class="contact-details mailing">
+                        <strong>Mailing Address:</strong> <br>
+                        366C, Interdisciplinary Science and Engineering Complex <br>
+                        360 Huntington Ave, Boston, MA 02115
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+    <footer>
+        <div>
+            <span style="color: white">&copy; 2024 <a style="color: white; text-decoration: none">SUN Lab all rights reserved </a></span>
+        </div>
+    </footer>
+<!-- The Modal -->
+<div id="modalId1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modalId1')">&times;</span>
+      <img src="assets/BBB opening evaluation. Typical 3D reconstructed T1-weighted MR images.jpg" alt="Research Image">
+      <h2 style="margin-bottom: 10px;">Focused ultrasound mediated drug delivery</h2>
+      <p style="text-align: justify;">Focused ultrasound mediated drug delivery is an emerging technique that combines the use of ultrasound waves with nanoparticle-based drug delivery systems. 
+        This innovative technique will offer several advantages over traditional drug delivery methods, including increased targeting precision, reduced systemic side effects, 
+        and improved therapeutic efficacy. At Sun Lab, our aim is to improve drug delivery by developing a specialized nanoparticle formulation. Our formulation encapsulates 
+        a hydrophobic drug alongside an ultrasound-sensitive contrast agent. Our targeting strategy involves polymer conjugation with DBCO-Azide click chemistry molecules, 
+        ensuring precise delivery to the target site. When exposed to an ultrasonic field, these polymeric nanoparticles demonstrate stable cavitation, enabling controlled 
+        drug release precisely at the intended location. </p>
+      <!-- Additional details here -->
+      <div class="modal-extra-content">
+        <div class="left-content">
+            <p>More detailed information goes here. This part can be used to provide further insights or data related to the main content of the modal.</p>
+            <!-- Add more elements as needed -->
+        </div>
+        <div class="right-content">
+            <img src="assets/BBB opening evaluation. Typical 3D reconstructed T1-weighted MR images.jpg" alt="Descriptive Alt Text">
+            <!-- OR for a video -->
+            <!-- <video controls>
+                <source src="path_to_your_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> -->
+        </div>
+    </div>
+    
+    </div>
+</div>
+    
+<div id="modalId2" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modalId2')">&times;</span>
+          <img src="assets/FUS Brain.png" alt="Research Image 2">
+          <h2 style="margin-bottom: 10px;">Focused ultrasound mediated neuro-immunomodulation</h2>
+          <p style="text-align: justify;">The use of focused ultrasound along with microbubbles is emerging as a popular delivery modality that can efficiently carry immune cells 
+            and therapeutic agents across the blood-brain barrier. The blood-brain barrier is a selectively permeable membrane that controls the inflow and outflow of any molecule 
+            into the brain, posing significant challenges for the delivery of systemic therapeutics into the brain. At Sun Lab we employ focused ultrasound along with microbubbles 
+            to transiently and reversibly open the BBB, thereby enhancing BBB permeability without permanently affecting its morphology. The local and non-invasive administration of 
+            this treatment technique will allow the inflow of immune cells and therapeutics and outflow of potential antigenic markers across the BBB leading to better management of 
+            neurological diseases. </p>
+          <!-- Additional details here -->
+
+        <div class="modal-extra-content">
+            <div class="left-content">
+                <p>More detailed information goes here. This part can be used to provide further insights or data related to the main content of the modal.</p>
+                <!-- Add more elements as needed -->
+            </div>
+            <div class="right-content">
+                <img src="assets/BBB opening evaluation. Typical 3D reconstructed T1-weighted MR images.jpg" alt="Descriptive Alt Text">
+                <!-- OR for a video -->
+                <!-- <video controls>
+                    <source src="path_to_your_video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> -->
+            </div>
+        </div>
+        </div>
+</div>
+
+<div id="modalId3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modalId3')">&times;</span>
+      <img src="assets/The controller system..jpeg" alt="Research Image 3">
+      <h2 style="margin-bottom: 10px;">Cavitation Imaging and Control</h2>
+      <p style="text-align: justify;">The imaging group's cavitation imaging project aims to apply novel methods of computational processing power, including Machine Learning and 
+        Parallelism, to the field of passive cavitation imaging. The goal is to improve in-clinic ability to beamform cavitation maps in real-time, to further improve this therapy.</p>
+      <!-- Additional details here -->
+
+      <div class="modal-extra-content">
+        <div class="left-content">
+            <p>Research in this field also involves closed-loop systems to monitor cavitation dosage without the need for human interpretation. Pictured above is an example 
+                closed-loop feedback system designed to maintain acoustic pressures associated with stable cavitation instead of inertial cavitation, which expends bubbles and 
+                raises tissue temperature. Pictured to the right, we see the focused ultrasound beam-pattern generated by 2 transducers operating at a low frequency difference to 
+                generate a beat pattern that replicates a pulse repetition frequency (PRF) in continuous wave form.</p>
+            <!-- Add more elements as needed -->
+        </div>
+        <div class="right-content">
+            <video controls>
+                <source src="assets/163701_1_supplements/Supplementary-movie-1.mp4" type= "video/mp4">
+            </video>
+            <!-- OR for a video -->
+            <!-- <video controls>
+                <source src="path_to_your_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> -->
+        </div>
+    </div>
+    </div>
+</div>
+
+<script>
+
+window.addEventListener('resize', resizeCanvas);
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.body.scrollHeight; // Use scrollHeight to cover the full content height
+    drawWaves(); // Redraw waves after resizing
+}
+// Function to keep the welcome message below the header
+function adjustWelcomeMessage() {
+    const welcome = document.querySelector('.welcome-message');
+    const headerHeight = document.querySelector('header').offsetHeight;
+    const scrollDistance = window.pageYOffset;
+    welcome.style.transform = `translateY(${Math.max(scrollDistance, headerHeight)}px)`;
+}
+
+// Add throttled scroll event listener        
+const canvas = document.getElementById('wavyBackground');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = document.body.offsetHeight;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.Height = document.body.offsetHeight;
+}
+const waves = [];
+const waveCount = 5;
+
+// Define specific colors for each wave
+const waveColors = [
+    "rgba(142, 68, 173, 0.7)", // Purple
+    "rgba(41, 128, 185, 0.7)", // Blue
+    "rgba(26, 188, 156, 0.7)", // Teal
+    "rgba(241, 196, 15, 0.7)",  // Yellow
+    "rgba(231, 76, 60, 0.7)",   // Red
+];
+
+for(let i = 0; i < waveCount; i++) {
+    waves.push({
+        y: canvas.height / 2,
+        length: Math.random() * 500 + 500, // Individual wavelengths
+        amplitude: Math.random() * 100 + 150, // Individual amplitudes
+        phase: Math.random() * Math.PI * 2, // Set an initial phase
+        speed: Math.random() * 0.02, // Each wave will have a different speed
+        color: waveColors[i % waveColors.length] // Assign color from the array
+    });
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // clear the entire canvas
+    drawWaves();
+    requestAnimationFrame(animate);
+}
+
+function drawWaves() {
+    const time = Date.now() * 0.0001; // Time factor for oscillation
+    waves.forEach(wave => {
+        wave.phase += wave.speed; // Update the phase of the wave based on its speed
+        ctx.beginPath();
+        ctx.lineWidth = 40; // Thickness of the wave
+        ctx.shadowBlur = 40; // Glow effect
+        ctx.shadowColor = wave.color; // Color of the glow
+
+        for(let x = 0; x < canvas.width; x += 10) {
+            // Calculate the y position of the wave based on the sine function
+            const y = wave.y + Math.sin((x / wave.length) + wave.phase + time) * wave.amplitude;
+            ctx.lineTo(x, y);
+        }
+        
+        // Create gradient for frosted glass effect
+        const gradient = ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+        gradient.addColorStop(0.5, wave.color);
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
+
+        ctx.strokeStyle = gradient;
+        ctx.stroke();
+    });
+}
+
+animate();
+
+document.querySelectorAll('.try-now-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const modalId = this.getAttribute('data-modal-id');
+        document.getElementById(modalId).style.display = 'block';
+        document.getElementById('modal-overlay').style.display = 'block';
+    });
+});
+
+document.querySelectorAll('.modal .close').forEach(button => {
+    button.addEventListener('click', function() {
+        this.closest('.modal').style.display = 'none';
+        document.getElementById('modal-overlay').style.display = 'none';
+    });
+});
+
+document.getElementById('modal-overlay').addEventListener('click', function() {
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.style.display = 'none';
+    });
+    this.style.display = 'none';
+});
+
+</script>
+</body>
+</html>

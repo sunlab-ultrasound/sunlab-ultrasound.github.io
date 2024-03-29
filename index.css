@@ -1,0 +1,553 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 1.0);
+  color: #222839;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1vh 1vw;
+  z-index: 1000;
+  border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
+}
+
+.logo img {
+  height: 7vh; /* Adjust this value as necessary */
+  display: flex;
+  padding-right: 0.2vw; ;
+  align-items: center;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+nav ul li {
+  padding: 0 20px; /* Use fixed padding for consistent spacing */
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222839;
+}
+
+nav ul li a:hover {
+  color: #EAEDEE;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Adjustments for tablets and below */
+  header {
+    flex-direction: column;
+  }
+  
+  .short-logo, nav ul {
+    justify-content: center;
+    padding: 1vh 0;
+  }
+  
+  nav ul li {
+    padding: 0 10px; /* Smaller padding for smaller screens */
+    font-size: 3vw; /* Adjust font size based on screen width */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for mobile phones */
+  .short-logo img {
+    height: 10vh; /* Adjust logo size for better visibility */
+  }
+  
+  nav ul li {
+    font-size: 4vw; /* Slightly larger font size for readability */
+  }
+}
+
+
+/* Wavy Background Canvas */
+canvas#wavyBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3; /* Behind all content */
+}
+
+/* Blurry Backdrop */
+.blurry-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  z-index: -2; /* Above the wavy background, below everything else */
+}
+
+.content {
+  position: sticky;
+  margin-top: 45vh; /* Adjusted for large screens; consider reducing for smaller screens */
+  color: rgb(0, 0, 0);
+  font-size: calc(1rem + 1vw); /* Combines fixed and relative sizing for scalability */
+  text-align: center;
+  z-index: 5;
+}
+
+.content-sub-font {
+  max-width: 1000px;
+  font-size: 1.25rem; /* Use rem for scalable text size */
+  font-weight: 200;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.current-research-font {
+  display: flex;
+  justify-content: center; /* Ensure content is centered within flex container */
+  align-items: center; /* Align items vertically for better visual structure */
+  z-index: 5;
+}
+
+.welcome-font {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.25rem; /* Maintain consistency in font sizing */
+}
+
+.glass-text {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 1vh 2vw;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  font-weight: bold;
+  z-index: 3;
+}
+
+.glass-container {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 2vh;
+  margin-top: calc(100vh - 100% - -150vh);
+  width: 95vw; /* Adjusted to provide some margin on smaller screens */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.glass-container-research {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 2vh;
+  margin-top: 1vh;
+  width: 95vw; /* Adjusted to provide some margin on smaller screens */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .content, .content-sub-font, .welcome-font {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .glass-container {
+    margin-top: calc(100vh - 100% - -5vh); /* Adjusted for medium screens */
+  }
+
+  .welcome-font {
+    text-align: justify;
+    padding: 0.2vw;
+  }
+  .glass-container, .glass-text {
+    padding: 3vh 3vw; /* Increase padding for better readability on small screens */
+    text-align: justify;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    margin-top: 20vh; /* Reduce margin top for very small devices */
+  }
+
+  .glass-container {
+    width: 95vw; /* Allow more space for content on very small screens */
+    margin-top: calc(100vh -100% - 50vh);
+  }
+
+}
+
+
+#research {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 2vw; /* Space between grid items based on viewport width */
+  padding: 5vh; /* Padding based on viewport height */
+  margin: 0 auto; /* Center the grid horizontally */
+  max-width: 90vw; /* Max width based on viewport width, you can adjust as necessary */
+}
+
+.research-topics {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 300px; /* Width of the card */
+  height: 350px; /* Height of the card */
+  margin: 20px auto; /* Centers card in the available space with 50px margin */
+  background: transparent; /* Transparent background */
+  backdrop-filter: blur(10px); /* Blurred effect for content beneath the container */
+  border-radius: 25px; /* Rounded corners */
+  overflow: hidden; /* Hides parts of the content that overflows container's box */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow effect for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+  z-index: 3; /* Ensures the card is above the blurry backdrop but under the modal/dialogs if any */
+  gap: 20px; /* Space between the cards if wrapped */
+}
+
+.research-item {
+  width: 300px;
+  height: 350px;
+  background-color: #000000;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative; /* Add position relative so that absolute positioned children are relative to this */
+  z-index: 5;
+}
+
+.research-item img {
+  width: 100%; /* Adjust size as needed */
+  height: 210px; /* Adjust size as needed */
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 20px; /* Space between image and text */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  z-index: 5;
+}
+
+.research-item .card-content {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    margin-left: 20px;
+    width: 100%; /* Stretch across the width of the parent */
+    backdrop-filter: blur(10px);
+    z-index: 6;
+    left: 0vmax;
+}
+
+
+.research-item .card-content h2,
+.research-item .card-content p {
+    color: #ffffff;
+    z-index: 5;
+    margin: 0%;
+  
+}
+ 
+
+.research-item button {
+  margin-top: 0px;
+  margin-left: 20px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 7;
+}
+
+.research-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+/* Style for modal */
+/* Overlay */
+#modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  z-index: 100; /* Ensure it is above other content but below modal */
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.9); /* Black with opacity */
+  transition: opacity 0.3s ease ;
+  opacity: 100;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative; /* For absolute positioning of the close button */
+  background-color: #fefefe;
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 70%; /* Could be more or less, depending on screen size */
+  box-shadow: 0 4px 8px 2px rgba(0,0,0,0.2);
+  border-radius: 10px; /* Optional: if you want rounded corners */
+}
+
+.modal-content {
+  transform: translateY(-50px); /* Start slightly above the final position */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for smooth movement and fade */
+}
+
+.modal-content img {
+  display: flex;
+  justify-content: center;
+  max-width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Space between image and text */
+  transition: transform 0.3s ease; /* Smooth transition for image */
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.model-open { 
+  overflow: hidden;
+}
+
+.modal-extra-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow the contents to wrap on smaller screens */
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.left-content, .right-content {
+  text-align: justify;
+  flex: 1 1 45%; /* Adjust the flex-basis to control when wrapping occurs */
+  padding: 0px;
+  margin: 10px 0; /* Ensure spacing between when wrapped */
+}
+
+.right-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-content img, .right-content video {
+  max-width: 90%; /* Ensure media is fully responsive within its container */
+  height: auto;
+  max-height: 250px; /* Limit the height of the image/video */
+}
+
+/* Adjustments for tablets and below */
+@media (max-width: 768px) {
+  .left-content, .right-content {
+    text-align: justify;
+    flex: 1 1 100%; /* Each takes the full width on smaller screens */
+    text-align: center; /* Center text for a cleaner look on narrow screens */
+  }
+  
+  .right-content img, .right-content video {
+    max-height: 200px; /* Slightly reduce the max height for smaller devices */
+  }
+}
+
+/* Further adjustments for smartphones */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 80%; /* Reduce the width of the modal to provide padding from the viewport edges */
+  }
+
+  .left-content, .right-content {
+    text-align: justify;
+  }
+
+  .right-content img, .right-content video {
+    max-height: 150px; /* Further reduce the max height for very small devices */
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Footer Styles */
+footer {
+  background: #000000;
+  text-align: center;
+  border-radius: 10px;
+  padding: 2vh;
+  margin-top: 0.2vh;
+  width: 95vw; /* Adjusted to provide some margin on smaller screens */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.details-footer {
+  border-radius: 10px;
+  padding: 2vh;
+  margin-top: 0.2vh;
+  width: 95vw; /* Adjusted to provide some margin on smaller screens */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.details-footer {
+  display: flex;
+  justify-content: space-around; /* This will put equal space around each item */
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap as needed */
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+/* For the .affiliations and .contact-info sections, you want them to take up equal space */
+.affiliations, .contact-info {
+  flex-basis: calc(20% - 10px); /* 50% for each, minus 40px for padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Adjust the margin around each logo and contact details to ensure proper centering */
+.affiliation-logo, .contact-info .contact-details {
+  margin: 0 0; /* 20px margin on the left and right */
+}
+
+.affiliations {
+  display: flex;
+  flex-direction: column; /* Stack logos on top of each other */
+  align-items: center; /* Center logos */
+}
+
+.affiliation-logo img {
+  max-width: 250px; /* Adjust the width as needed */
+  max-height: auto; /* Adjust the height as needed */
+  width: auto; /* Ensure the width is auto to maintain aspect ratio */
+  height: auto; /* Ensure the height is auto to maintain aspect ratio */
+  background-color: #ffffff; /* Maintain the background color */
+  padding: 5px; /* Optionally add padding around the logos */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.contact-info {
+  text-align: left; /* Align text to the left */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start of the flex container */
+  max-width: 50%; /* Max width of the contact info box */
+  margin-top: 20px; /* Space above the contact info */
+}
+
+.contact-footer {
+  width: 100%; /* Use full width of the footer */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center;
+  flex-wrap: wrap; /* Wrap items to next line if space runs out */
+  gap: 20px; /* Space between logos and contact information */
+}
+
+.contact-info .contact-details {
+  padding: 10px; /* This adds padding inside each contact-details div */
+  margin-bottom: 10px; /* This adds space below each contact-details div */
+}
+
+/* To target individual classes for specific padding, you can do this: */
+.contact-info .contact-details.email {
+  padding-bottom: 10px; /* Adjusts padding at the bottom of the email details */
+}
+
+.contact-info .contact-details.location {
+  padding-bottom: 10px; /* Adjusts padding at the bottom of the location details */
+}
+
+.contact-info .contact-details.mailing {
+  padding-bottom: 10px; /* Adjusts padding at the bottom of the mailing address details */
+}
+
+

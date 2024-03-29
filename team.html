@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="ourteam_css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <!-- <div class="short-logo">
+            <img src="assets/sun_lab_logo.png" height="50px" alt="sun_logo">
+        </div> -->
+        
+        <div class="logo">
+            <img src="assets/sunlab_name_logo.png" height="50px" alt="sun_logo">
+        </div>
+        
+        <nav>
+            <ul>
+                <strong>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </strong>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Wavy background canvas -->
+<canvas id="wavyBackground"></canvas>
+<div class="blurry-backdrop"></div>
+
+<section class="team-section">
+  <!-- Professor's card on its own row -->
+  <div class="professor-card">
+	<div class="background-container" style="margin: 10px;">
+    <img src="references/Headshots/sun-t.jpg" alt="Professor Tao" class="card-image">
+	</div>
+	<div class="glass-text-professor" style="width: 95%; margin: auto;">
+    <div class="card-info">
+      <h3 style="text-align: center;">Professor Tao Sun. Principal Investigato</h3>
+	</div>
+      <p style="text-align: center;" >Assistant Professor, Bioengineering Northeastern Univiersity</p>
+      <p class="professor-details">Prof. Tao Sun is an Assistant Professor of Bioengineering and a core member of Institute of Chemical Imaging of Living Systems (CILS) 
+        at Northeastern University. He joined Northeastern in January 2023 after postdoctoral trainings from Brigham and Women’s Hospital and Harvard Engineering School 
+        (Bioengineering), and an Instructor role with Harvard Medical School.
+        His group works at the intersection of focused ultrasound (FUS), neuroimaging and immunoengineering with expertise in developing ultrasound devices, imaging methods 
+        and engineered cell systems to modulate the neuro-immune interface and their applications in immunomodulation, drug delivery, and cell-based theranostic systems.</p> 
+        
+		  <p class="professor-details">The goal of his research program is to unveil how FUS modulates the neuroimmune disease/aging environment and to develop ultrasound-based 
+        techniques for treating and monitoring neurological disorders, such as glioblastoma and Alzheimer's disease, and beyond. 
+        Tao has received many recognitions for his scientific contributions to the fields of FUS, drug delivery, cancer immunoengineering, and neuroimaging. He is a recipient of 
+        the Young Investigator Awards from Focused Ultrasound Foundation and Acoustical Society of America. Many of his works were featured in mainstream science and technology 
+        media including WIRED (<a href="https://www.wired.com/story/the-second-coming-of-ultrasound/">https://www.wired.com/story/the-second-coming-of-ultrasound/</a>), Science Daily, 
+        and Medical Xpress.
+       </p>
+       </div>
+    </div>
+
+  <!-- Container for student cards -->
+  <div class="student-cards-container">
+    <!-- Student cards in rows of three -->
+    <div class="student-card">
+        <div class="image-container">
+         <img src="references/Headshots/Poulami Mondal.jpg" alt="Poulami" class="card-image">
+           </div>
+         <div class="glass-text-student">
+         <div class="card-info">
+           <h3>Poulami Mondal</h3>
+           <h4>Ph.D. Student</h4>
+           <p><b>Lab Contribution:</b> Develop and characterize a nanoparticle formulation that is designed to encapsulate a hydrophobic drug and an ultrasound-sensitive contrast 
+            agent to achieve targeted drug delivery. Perform focused ultrasound and microbubble mediated BBB opening, and record confirmatory observation and measurements through MRI, 
+            flow cytometry and histology.</p>
+           <p><b>Beyond the Lab:</b> Avid coffee drinker!! I also love being outdoors and enjoy trying new hobbies every few months.</p>
+         </div>
+         </div>
+       </div>
+    <div class="student-card">
+	      <div class="image-container">
+         <img src="references/Headshots/Nathan Caso.jpg" alt="Nathan" class="card-image">
+		      </div>
+	  <div class="glass-text-student">
+      <div class="card-info">
+        <h3>Nathan Caso</h3>
+        <h4>Ph.D. Student</h4>
+		    <p><b>Lab Contribution:</b> Develop and conduct a comprehensive investigation of various beamforming algorithms with the aim of enhancing image quality, with a particular 
+          emphasis on the performance differences between Robust Minimum Variance Distortion Less Response (MVDR) and Multiple Signal Classification (MUSIC) algorithms.</p>
+        <p><b>Beyond the Lab:</b> I enjoy preparing a variety of dishes, especially something from the Chinese cuisine. I have also been into body building for the last two years, 
+          my favorite move is deadlift. I also love live music.</p>
+	  </div>
+      </div>
+    </div>
+	<div class="student-card">
+		<div class="image-container">
+      <img src="references/Headshots/Krunal Patel.png" alt="Krunal" class="card-image">
+		</div>
+	  <div class="glass-text-student">
+      <div class="card-info">
+        <h3>Krunal Patel</h3>
+        <h4>Ph.D. Student</h4>
+		     <p><b>Lab Contribution:</b> I am investigating the immunomodulatory effects of Focused ultrasound paired up with microbubbles to open the blood-brain barrier. I am 
+          particularly interested in how this method influences the brain's immune cells, like macrophages and microglia, aiming to unlock the answers on the mechanism of how these 
+          cellular machines can defect Glioblastoma. This approach bridges tissue engineering, neurology, and immunology, offering potential breakthroughs in combating brain cancer.</p>
+         <p><b>Beyond the Lab:</b> I am a fan of extreme sports like rock climbing and mountain biking, and sometimes when I want to wind down from the extreme adrenaline rush, 
+          I play flute.</p>
+	  </div>
+      </div>
+    </div>
+    <div class="student-card">
+        <div class="image-container">	
+         <img src="references/Headshots/Bailin Ren.jpg" alt="Bailin" class="card-image">
+           </div>
+         <div class="glass-text-student">
+         <div class="card-info">
+           <h3>Bailin Ren</h3>
+           <h4>M.S. Student, Bioengineering</h4>
+           <p><b>Lab Contribution:</b> Develop and conduct a comprehensive investigation of various beamforming algorithms with the aim of enhancing image quality, with a particular 
+            emphasis on the performance differences between Robust Minimum Variance Distortion Less Response (MVDR) and Multiple Signal Classification (MUSIC) algorithms.</p>
+           <p><b>Beyond the Lab:</b> I enjoy preparing a variety of dishes, especially something from the Chinese cuisine. I have also been into body building for the last two years, 
+            my favorite move is deadlift. I also love live music.</p>
+         </div>
+         </div>
+       </div>
+    <div class="student-card">
+    <div class="image-container">
+       <img src="references/Headshots/Anthony Lin.jpeg" alt="Anthony" class="card-image">
+         </div>
+         <div class="glass-text-student">
+         <div class="card-info">
+           <h3>Anthony Lin</h3>
+           <h4>M.S. Student, Bioengineering</h4>
+           <p><b>Lab Contribution:</b> Currently, I am working on a project centered towards the formation of monodispersed microbubbles for focused ultrasound therapy.</p>
+           <p><b>Beyond the Lab:</b> I am a fan of music, enjoy lifting, and have dabbled in competitive gaming! Recently, I have been getting into EDM concerts in and around Boston.</p>
+         </div>
+         </div>
+    </div>
+	<div class="student-card">
+	<div class="image-container">
+      <img src="references/Headshots/Emma Drumm.jpeg" alt="Student Name" class="card-image">
+		</div>
+	  <div class="glass-text-student">
+      <div class="card-info">
+        <h3>Emma Drum</h3>
+        <h4>Undergraduate Student, Bioengineering & Biochemistry</h4>
+		    <p><b>Lab Contribution:</b> Developing a mathematical model of multiple linear sound-sources to model Ultrasound frequency interaction with an inhomogeneous layer. This is 
+          primarily done using MATLAB k-wave toolbox, to support the study of Ultrasound interactions with the blood-brain barrier.  </p>
+        <p><b>Beyond the Lab:</b> I love to run, and I have been training for longer-distance races since entering college (half-marathon, marathon,etc.)! I also love baking and 
+          hiking, especially with friends! I also love going to museums and art exhibits. </p>
+		  </div>
+      </div>
+    </div>
+    <!-- Add more student cards as needed -->
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const glassContainer = document.querySelector('.glass-container');
+    const windowHeight = window.innerHeight;
+
+    window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        const threshold = 300; // Point at which the glass container starts moving
+
+        if (scrollY > threshold) {
+            // Calculate new position and opacity based on scroll
+            let newPosition = Math.max(0, 200 - (scrollY - threshold) / 5);
+            let newOpacity = Math.min(1, (scrollY - threshold) / 200);
+
+            glassContainer.style.top = `${newPosition}vh`;
+            glassContainer.style.opacity = newOpacity;
+        } else {
+            // Reset to initial state if above threshold
+            glassContainer.style.top = '200vh'; // Start off-screen
+            glassContainer.style.opacity = 0;
+        }
+    });
+});
+
+window.addEventListener('resize', resizeCanvas);
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.body.scrollHeight; // Use scrollHeight to cover the full content height
+    drawWaves(); // Redraw waves after resizing
+}
+// Function to keep the welcome message below the header
+function adjustWelcomeMessage() {
+    const welcome = document.querySelector('.welcome-message');
+    const headerHeight = document.querySelector('header').offsetHeight;
+    const scrollDistance = window.pageYOffset;
+    welcome.style.transform = `translateY(${Math.max(scrollDistance, headerHeight)}px)`;
+}
+
+// Add throttled scroll event listener        
+const canvas = document.getElementById('wavyBackground');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = document.body.offsetHeight;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.Height = document.body.offsetHeight;
+}
+const waves = [];
+const waveCount = 5;
+
+// Define specific colors for each wave
+const waveColors = [
+    "rgba(142, 68, 173, 0.7)", // Purple
+    "rgba(41, 128, 185, 0.7)", // Blue
+    "rgba(26, 188, 156, 0.7)", // Teal
+    "rgba(241, 196, 15, 0.7)",  // Yellow
+    "rgba(231, 76, 60, 0.7)",   // Red
+];
+
+for(let i = 0; i < waveCount; i++) {
+    waves.push({
+        y: canvas.height / 2,
+        length: Math.random() * 500 + 500, // Individual wavelengths
+        amplitude: Math.random() * 100 + 150, // Individual amplitudes
+        phase: Math.random() * Math.PI * 2, // Set an initial phase
+        speed: Math.random() * 0.02, // Each wave will have a different speed
+        color: waveColors[i % waveColors.length] // Assign color from the array
+    });
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // clear the entire canvas
+    drawWaves();
+    requestAnimationFrame(animate);
+}
+
+function drawWaves() {
+    const time = Date.now() * 0.0001; // Time factor for oscillation
+    waves.forEach(wave => {
+        wave.phase += wave.speed; // Update the phase of the wave based on its speed
+        ctx.beginPath();
+        ctx.lineWidth = 40; // Thickness of the wave
+        ctx.shadowBlur = 40; // Glow effect
+        ctx.shadowColor = wave.color; // Color of the glow
+
+        for(let x = 0; x < canvas.width; x += 10) {
+            // Calculate the y position of the wave based on the sine function
+            const y = wave.y + Math.sin((x / wave.length) + wave.phase + time) * wave.amplitude;
+            ctx.lineTo(x, y);
+        }
+        
+        // Create gradient for frosted glass effect
+        const gradient = ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+        gradient.addColorStop(0.5, wave.color);
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
+
+        ctx.strokeStyle = gradient;
+        ctx.stroke();
+    });
+}
+
+animate();
+</script>	
+</body>
+</html>
+	

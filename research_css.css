@@ -1,0 +1,373 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 1.0);
+  color: #222839;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1vh 1vw;
+  z-index: 1000;
+  border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
+}
+
+.logo img {
+  height: 7vh; /* Adjust this value as necessary */
+  display: flex;
+  padding-right: 0.2vw; ;
+  align-items: center;
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+nav ul li {
+  padding: 0 20px; /* Use fixed padding for consistent spacing */
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222839;
+}
+
+nav ul li a:hover {
+  color: #EAEDEE;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Adjustments for tablets and below */
+  header {
+    flex-direction: column;
+  }
+  
+  .short-logo, nav ul {
+    justify-content: center;
+    padding: 1vh 0;
+  }
+  
+  nav ul li {
+    padding: 0 10px; /* Smaller padding for smaller screens */
+    font-size: 3vw; /* Adjust font size based on screen width */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for mobile phones */
+  .short-logo img {
+    height: 10vh; /* Adjust logo size for better visibility */
+  }
+  
+  nav ul li {
+    font-size: 4vw; /* Slightly larger font size for readability */
+  }
+}
+
+
+
+
+#research {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts to fit content */
+  gap: 20px; /* Space between grid items */
+  padding: 40px; /* Optional: Space inside the container */
+  margin: auto auto; /* Center the grid horizontally */
+  max-width: 90%; /* Optional: Max width of the grid */
+  margin-top: 70px;
+}
+
+.card-container {
+  display: flex; /* Ensures a flexible layout */
+  flex-direction: column; /* Stacks children vertically */
+  justify-content: space-between; /* Distributes space between items */
+  width: 300px; /* Width of the card */
+  height: 350px; /* Height of the card */
+  margin: 20px auto; /* Centers card in the available space with 50px margin */
+  background: transparent; /* Transparent background */
+  backdrop-filter: blur(10px); /* Blurred effect for content beneath the container */
+  border-radius: 25px; /* Rounded corners */
+  overflow: hidden; /* Hides parts of the content that overflows container's box */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow effect for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+  z-index: 3; /* Ensures the card is above the blurry backdrop but under the modal/dialogs if any */
+  gap: 20px; /* Space between the cards if wrapped */
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  background-color: #FFF;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 5;
+}
+
+#research .card:hover {
+  transform: translateY(-5px); /* Raise the card slightly on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+.card-content {
+  color: #FFF;
+  padding: 20px;
+  background: rgba(0, 0, 0, 1.0);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+
+.card-content h2, .card-content p {
+  margin: 0;
+  font-size: 20px;
+  z-index: 5;
+}
+
+.card-content button {
+  margin-top: 10px;
+  background-color: #FFF;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 2;
+  
+}
+
+.try-now-btn {
+  background-color: #000000;
+  color: #000000;
+  z-index: 5;
+}
+
+.card-image img {
+    width: 300px; /* Adjust size as needed */
+    height: 210px; /* Adjust size as needed */
+    object-fit: cover;
+    margin-top: auto;
+    margin-bottom: 20px; /* Space between image and text */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+	z-index: 5;
+  
+}
+
+.card-content button:hover {
+  background-color: #000000;
+  color: #FFF;
+  z-index: 5;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Raise the card slightly on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
+  z-index: 5;
+}
+
+canvas#wavyBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Ensure it's behind all content but above the page background */
+}
+
+@media (max-width: 768px) {
+  #research {
+    grid-template-columns: repeat(2, 1fr); /* Use two columns for tablets */
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #research {
+    grid-template-columns: 1fr; /* Single column layout for smartphones */
+    padding: 10px;
+  }
+
+  .card-container, .card {
+    margin: 10px auto; /* Smaller margins for small screens */
+  }
+  
+  .card-content {
+    padding: 15px; /* Slightly reduce padding for small screens */
+  }
+}
+
+
+.blurry-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(40px);
+  z-index: -2; /* Above the wavy background, below everything else */
+}
+
+#modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  z-index: 100; /* Ensure it is above other content but below modal */
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.9); /* Black with opacity */
+  transition: opacity 0.3s ease ;
+  opacity: 100;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative; /* For absolute positioning of the close button */
+  background-color: #fefefe;
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+  box-shadow: 0 4px 8px 2px rgba(0,0,0,0.2);
+  border-radius: 10px; /* Optional: if you want rounded corners */
+}
+
+.modal-content {
+  transform: translateY(-50px); /* Start slightly above the final position */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for smooth movement and fade */
+}
+
+.modal-content img {
+  display: flex;
+  justify-content: center;
+  max-width: 100%; /* Make image responsive */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Space between image and text */
+  transition: transform 0.3s ease; /* Smooth transition for image */
+}
+
+.model-open { 
+  overflow: hidden;
+}
+
+.modal-extra-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow the contents to wrap on smaller screens */
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.left-content, .right-content {
+  text-align: justify;
+  flex: 1 1 45%; /* Adjust the flex-basis to control when wrapping occurs */
+  padding: 0px;
+  margin: 10px 0; /* Ensure spacing between when wrapped */
+}
+
+.right-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-content img, .right-content video {
+  max-width: 90%; /* Ensure media is fully responsive within its container */
+  height: auto;
+  max-height: 250px; /* Limit the height of the image/video */
+}
+
+/* Adjustments for tablets and below */
+@media (max-width: 768px) {
+  .left-content, .right-content {
+    text-align: justify;
+    flex: 1 1 100%; /* Each takes the full width on smaller screens */
+    text-align: center; /* Center text for a cleaner look on narrow screens */
+  }
+  
+  .right-content img, .right-content video {
+    max-height: 200px; /* Slightly reduce the max height for smaller devices */
+  }
+}
+
+/* Further adjustments for smartphones */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 80%; /* Reduce the width of the modal to provide padding from the viewport edges */
+  }
+
+  .left-content, .right-content {
+    text-align: justify;
+  }
+
+  .right-content img, .right-content video {
+    max-height: 150px; /* Further reduce the max height for very small devices */
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer {
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  padding: 20px;
+  position: relative; /* or 'absolute' if you want it to be at the bottom of the content */
+  width: 100%; /* Ensure it spans the full width of the screen */
+  clear: both; /* Clear floats if any */
+  z-index: 99; /* Ensure it is above other content, but the value doesn't need to be high if no other content has z-index set */
+}
