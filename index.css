@@ -642,4 +642,9 @@ footer {
   .contact-info .contact-details {
       text-align: center; /* Center-align contact details */
   }
+
+  .blurry-backdrop {
+    height: 100%;
+    width: 100%;
+  }
 }
