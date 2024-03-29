@@ -35,10 +35,13 @@ header {
 
 
 nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+    height: auto;
+    font-size: large;
+    max-width: 100vw;
 }
 
 nav ul li {
@@ -80,7 +83,7 @@ nav ul li a:hover {
   }
   
   nav ul li {
-    font-size: 4vw; /* Slightly larger font size for readability */
+    font-size: 2vw; /* Slightly larger font size for readability */
   }
 }
 
@@ -488,4 +491,3 @@ footer {
 .contact-info .contact-details.mailing {
   padding-bottom: 10px; /* Adjusts padding at the bottom of the mailing address details */
 }
-
