@@ -14,7 +14,7 @@ body, html {
 
 /* Using relative units for font sizes ensures scalability and responsiveness */
 body {
-  font-size: clamp(0.8rem, 2vw, 1.2rem); /* Adjusts size based on the viewport width */
+  font-size: clamp(0.5rem, 2vw, 1rem); /* Adjusts size based on the viewport width */
 }
 
 header {
