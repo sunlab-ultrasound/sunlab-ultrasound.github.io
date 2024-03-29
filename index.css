@@ -10,7 +10,7 @@ body, html {
   overflow-x: hidden;
   font-family: 'Arial', sans-serif;
   scroll-behavior: smooth;
-  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  /* font-size: clamp(0.8rem, 2vw, 1.2rem); */
 }
 
 header {
