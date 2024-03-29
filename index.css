@@ -64,65 +64,6 @@ nav ul li a:hover {
   color: #EAEDEE;
 }
 
-/* Media query for tablets (typically 768px and above) */
-@media (max-width: 768px) {
-  header {
-    padding: 2vh 2vw; /* Increase padding on smaller screens */
-  }
-
-  .logo img {
-    max-height: 6vh; /* Reduce logo size on smaller screens */
-  }
-
-  nav ul {
-    flex-direction: column; /* Stack the menu items vertically */
-    align-items: flex-start; /* Align items to the start */
-  }
-
-  nav ul li {
-    padding: 1vh 0; /* Adjust spacing for vertical layout */
-  }
-
-  nav ul li a {
-    font-size: 1.2em; /* Slightly larger font size for tablets */
-  }
-}
-
-/* Media query for mobile phones (typically up to 480px) */
-@media (max-width: 480px) {
-  header {
-    flex-direction: column; /* Stack header items vertically */
-    align-items: flex-start; /* Align items to the start */
-  }
-
-  .logo {
-    margin-bottom: 2vh; /* Space between logo and navigation */
-  }
-
-  .logo img {
-    max-height: 5vh; /* Further reduce logo size on mobile */
-  }
-
-  nav ul {
-    width: 100%; /* Let the nav take full width */
-    padding: 0; /* Remove padding */
-  }
-
-  nav ul li {
-    width: 100%; /* Each list item takes full width */
-    text-align: center; /* Align text to the left */
-  }
-
-  nav ul li a {
-    display: block; /* Make anchor tags fill the li for easier touch */
-    /* padding: 2vh 1vw; Add padding to increase area for touch */
-  }
-
-  nav ul li a {
-    font-size: 1.4em; /* Increased font size for better readability on mobile */
-  }
-}
-
 
 /* Wavy Background Canvas */
 canvas#wavyBackground {
