@@ -88,6 +88,8 @@ nav ul li a:hover {
   nav ul {
     justify-content: center; /* Center navigation items */
     padding-top: 1vh; /* Add space between logo and navigation */
+    width: 95vw;
+    font-size: medium;
   }
 
   nav ul li {
@@ -111,8 +113,11 @@ nav ul li a:hover {
     border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
   }
 
-  nav ul li {
-    padding: 0 5px; /* Further reduce padding for very small screens */
+  nav ul {
+    justify-content: center; /* Center navigation items */
+    padding-top: 1vh; /* Add space between logo and navigation */
+    width: 95vw;
+    font-size: medium;
   }
 
   /* Optional: Implement a hamburger menu for mobile devices */
