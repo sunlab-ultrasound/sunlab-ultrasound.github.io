@@ -64,63 +64,55 @@ nav ul li a:hover {
   color: #EAEDEE;
 }
 
-/* Media Queries */
-@media (max-width: 768px) { /* Adjustments for tablets and below */
+/* Media query for tablets (typically 768px and above) */
+@media (max-width: 768px) {
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 1.0);
-    color: #222839;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1vh 1vw; /* Using viewport units for responsive padding */
-    z-index: 1000;
-    border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
+    padding: 2vh 2vw; /* Increase padding on smaller screens */
   }
 
   .logo img {
-    max-height: 10vh; /* Larger logo for smaller screens */
+    max-height: 6vh; /* Reduce logo size on smaller screens */
   }
 
   nav ul {
-    justify-content: center; /* Center navigation items */
-    padding-top: 1vh; /* Add space between logo and navigation */
-    width: 95vw;
-    font-size: medium;
+    flex-direction: column; /* Stack the menu items vertically */
+    align-items: flex-start; /* Align items to the start */
   }
 
   nav ul li {
-    padding: 0 10px; /* Reduce padding on smaller screens */
+    padding: 1vh 0; /* Adjust spacing for vertical layout */
   }
 }
 
-@media (max-width: 480px) { /* Adjustments for mobile phones */
+/* Media query for mobile phones (typically up to 480px) */
+@media (max-width: 480px) {
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 1.0);
-    color: #222839;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1vh 1vw; /* Using viewport units for responsive padding */
-    z-index: 1000;
-    border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
+    flex-direction: column; /* Stack header items vertically */
+    align-items: flex-start; /* Align items to the start */
+  }
+
+  .logo {
+    margin-bottom: 2vh; /* Space between logo and navigation */
+  }
+
+  .logo img {
+    max-height: 5vh; /* Further reduce logo size on mobile */
   }
 
   nav ul {
-    justify-content: center; /* Center navigation items */
-    padding-top: 1vh; /* Add space between logo and navigation */
-    width: 95vw;
-    font-size: medium;
+    width: 100%; /* Let the nav take full width */
+    padding: 0; /* Remove padding */
   }
 
-  /* Optional: Implement a hamburger menu for mobile devices */
+  nav ul li {
+    width: 100%; /* Each list item takes full width */
+    text-align: left; /* Align text to the left */
+  }
+
+  nav ul li a {
+    display: block; /* Make anchor tags fill the li for easier touch */
+    padding: 2vh 1vw; /* Add padding to increase area for touch */
+  }
 }
 
 
