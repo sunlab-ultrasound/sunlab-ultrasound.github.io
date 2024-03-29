@@ -110,12 +110,12 @@ nav ul li a:hover {
 
   nav ul li {
     width: 100%; /* Each list item takes full width */
-    text-align: left; /* Align text to the left */
+    text-align: center; /* Align text to the left */
   }
 
   nav ul li a {
     display: block; /* Make anchor tags fill the li for easier touch */
-    padding: 2vh 1vw; /* Add padding to increase area for touch */
+    /* padding: 2vh 1vw; Add padding to increase area for touch */
   }
 
   nav ul li a {
