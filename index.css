@@ -58,6 +58,39 @@ nav ul li a:hover {
   color: #EAEDEE;
 }
 
+hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 30px; /* Width of the hamburger lines */
+  height: 3px; /* Height of the hamburger lines */
+  background-color: #222839;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Show the hamburger icon only in mobile view */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Initially hide the menu */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%; /* Full width */
+  }
+
+  /* Adjust for when menu is active */
+  nav.active ul {
+    display: flex;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   /* Adjustments for tablets and below */
