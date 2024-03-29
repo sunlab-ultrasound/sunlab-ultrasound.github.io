@@ -82,6 +82,10 @@ nav ul li a:hover {
   nav ul li {
     padding: 1vh 0; /* Adjust spacing for vertical layout */
   }
+
+  nav ul li a {
+    font-size: 1.2em; /* Slightly larger font size for tablets */
+  }
 }
 
 /* Media query for mobile phones (typically up to 480px) */
@@ -112,6 +116,10 @@ nav ul li a:hover {
   nav ul li a {
     display: block; /* Make anchor tags fill the li for easier touch */
     padding: 2vh 1vw; /* Add padding to increase area for touch */
+  }
+
+  nav ul li a {
+    font-size: 1.4em; /* Increased font size for better readability on mobile */
   }
 }
 
