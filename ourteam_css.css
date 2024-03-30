@@ -97,8 +97,8 @@ canvas#wavyBackground {
 
 .professor-card img {
   max-width: 100%;
-  max-height: 250px;
-  object-fit: cover;
+  height: auto; /* Adjust height automatically to maintain aspect ratio */
+  object-fit: contain; /* Ensures the full image is shown, might introduce whitespace */
   border-radius: 10px;
 }
 
@@ -131,10 +131,12 @@ canvas#wavyBackground {
   text-align: center;
 }
 
-.card-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+
+.card-image, .professor-card img {
+  max-height: 250px; /* Fixed height for all images */
+  object-fit: contain; /* Adjust this to 'contain' for no cropping */
+  width: auto; /* Adjust width automatically to maintain aspect ratio */
+  margin: auto; /* Center the image in its container */
 }
 
 .card-info {
@@ -203,7 +205,7 @@ canvas#wavyBackground {
   }
 
   nav ul li {
-    font-size: 6vw; /* Larger font size for readability */
+    font-size: 4vw; /* Larger font size for readability */
   }
 
   .glass-text-professor, .glass-text-student {
