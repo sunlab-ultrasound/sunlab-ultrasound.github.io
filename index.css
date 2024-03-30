@@ -62,9 +62,6 @@ nav ul li a:hover {
 /* Responsive adjustments */
 @media (max-width : 765px ){
   /* Adjustments for tablets and below */
-  header {
-    flex-direction: column;
-  }
   
   .short-logo, nav ul {
     justify-content: center;
@@ -110,7 +107,7 @@ canvas#wavyBackground {
 }
 
 .content {
-  position: sticky;
+  position: relative;
   margin-top: 45vh; /* Adjusted for large screens; consider reducing for smaller screens */
   color: rgb(0, 0, 0);
   font-size: calc(1rem + 1vw); /* Combines fixed and relative sizing for scalability */
