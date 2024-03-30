@@ -198,7 +198,22 @@ canvas#wavyBackground {
     font-size: 0.9rem; /* Smaller font for readability */
     align-items: center;
   }
+
+  .glass-text-student {
+    margin: 10px; /* Adds margin around the text container for smaller screens */
+    text-align: center; /* Centers the text inside the container */
+  }
+  
+  .student-card {
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
+    align-items: center; /* Center align the stacked items */
+  }
+
+  .image-container, .glass-text-student {
+    flex-basis: 100%; /* Allow both the image and text to take full width */
+  }
 }
+
 
 @media (max-width: 480px) {
   /* Adjustments for mobile phones */
@@ -214,4 +229,19 @@ canvas#wavyBackground {
     font-size: 0.8rem; /* Even smaller font for mobile phones */
     align-items: center;
   }
+
+  .glass-text-student {
+    margin: 10px; /* Adds margin around the text container for smaller screens */
+    text-align: center; /* Centers the text inside the container */
+  }
+  
+  .student-card {
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
+    align-items: center; /* Center align the stacked items */
+  }
+
+  .image-container, .glass-text-student {
+    flex-basis: 100%; /* Allow both the image and text to take full width */
+  }
 }
+
