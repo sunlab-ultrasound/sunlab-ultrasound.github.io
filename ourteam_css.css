@@ -253,3 +253,60 @@ canvas#wavyBackground {
   }
 }
 
+/* iPad portrait orientation adjustments */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) {
+
+  /* General adjustments for layout and spacing */
+  header, .logo img, nav ul, .team-section, .professor-card, .student-cards-container, .student-card {
+    /* Example adjustment: Increase padding or margin as needed for visual balance */
+  }
+
+  .logo img {
+    height: 6vh; /* Slightly reduce logo size for iPad screens */
+  }
+
+  nav ul li {
+    padding: 0 15px; /* Adjust spacing around navigation links */
+    font-size: 3vw; /* Adjust font size for better readability */
+  }
+
+  /* Adjust professor and student images for better fit */
+  .card-image, .professor-card img {
+    max-height: 220px; /* Adjust image height for iPad display */
+    margin: auto; /* Ensure images remain centered */
+  }
+
+  /* Enhance readability of text content on iPad */
+  .glass-text-professor, .glass-text-student {
+    font-size: 0.95rem; /* Slightly increase font size */
+    padding: 20px; /* Increase padding for better readability */
+    margin: 15px; /* Adjust margin for visual spacing */
+    text-align: center; /* Center-align text for consistency */
+  }
+
+  .glass-text-student, .glass-text-professor {
+    /* Center content and adjust layout for iPad portrait orientation */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify; /* Justify text for a polished look */
+  }
+
+  /* Adjust layout for student cards to ensure a clean, organized appearance */
+  .student-card {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center-align elements for visual appeal */
+  }
+
+  .image-container, .glass-text-student {
+    flex-basis: 100%; /* Allow elements to take full width */
+  }
+
+  /* Ensure text within the glass text sections is properly aligned */
+  .glass-text-student h3, h4, p {
+    text-align: center;
+  }
+}
