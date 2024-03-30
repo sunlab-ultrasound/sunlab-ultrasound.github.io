@@ -196,6 +196,7 @@ canvas#wavyBackground {
 
   .glass-text-professor, .glass-text-student {
     font-size: 0.9rem; /* Smaller font for readability */
+    align-items: center;
   }
 }
 
@@ -206,10 +207,11 @@ canvas#wavyBackground {
   }
 
   nav ul li {
-    font-size: 4vw; /* Larger font size for readability */
+    font-size: 3.5vw; /* Larger font size for readability */
   }
 
   .glass-text-professor, .glass-text-student {
     font-size: 0.8rem; /* Even smaller font for mobile phones */
+    align-items: center;
   }
 }
