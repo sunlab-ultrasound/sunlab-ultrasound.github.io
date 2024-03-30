@@ -65,7 +65,7 @@ canvas#wavyBackground {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -3;
+  z-index: -2; /* Ensures it's the bottom-most layer */
 }
 
 /* Blurry Backdrop */
@@ -76,7 +76,7 @@ canvas#wavyBackground {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(40px);
-  z-index: -2;
+  z-index: -1; /* Positioned above the wavy background but below other content */
 }
 
 /* Team Section */
