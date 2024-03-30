@@ -75,6 +75,14 @@ nav ul li a:hover {
     padding: 0 10px; /* Smaller padding for smaller screens */
     font-size: 3vw; /* Adjust font size based on screen width */
   }
+
+  .blurry-backdrop {
+    z-index: -2;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+  }
+	
 }
 
 @media (max-width: 480px) {
@@ -85,6 +93,13 @@ nav ul li a:hover {
   
   nav ul li {
     font-size: 3.5vw; /* Slightly larger font size for readability */
+  }
+
+  .blurry-backdrop {
+    z-index: -2;
+    position: fixed;
+    height: 100%;
+    width: 100%;
   }
 }
 
