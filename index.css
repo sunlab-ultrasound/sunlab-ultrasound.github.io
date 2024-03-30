@@ -60,18 +60,20 @@ nav ul li a:hover {
 }
 
 /* Responsive adjustments */
-@media (max-width : 765px ) {
+@media (max-width : 765px ){
   /* Adjustments for tablets and below */
-  .short-logo img {
-    height: 10vh; /* Adjust logo size for better visibility */
+  header {
+    flex-direction: column;
+  }
+  
+  .short-logo, nav ul {
+    justify-content: center;
+    padding: 1vh 0;
   }
   
   nav ul li {
-    font-size: 3vw; /* Slightly larger font size for readability */
-  }
-
-  header {
-    flex-direction: column;
+    padding: 0 10px; /* Smaller padding for smaller screens */
+    font-size: 3vw; /* Adjust font size based on screen width */
   }
 }
 
@@ -83,10 +85,6 @@ nav ul li a:hover {
   
   nav ul li {
     font-size: 3.5vw; /* Slightly larger font size for readability */
-  }
-
-  header {
-    flex-direction: column;
   }
 }
 
