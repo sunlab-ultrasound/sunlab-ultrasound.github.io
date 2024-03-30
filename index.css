@@ -73,7 +73,7 @@ nav ul li a:hover {
   
   nav ul li {
     padding: 0 10px; /* Smaller padding for smaller screens */
-    font-size: 3vw; /* Adjust font size based on screen width */
+    font-size: 2vw; /* Adjust font size based on screen width */
   }
 	
   
