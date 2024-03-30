@@ -35,10 +35,14 @@ header {
 
 
 nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+    height: auto;
+    font-size: large;
+    max-width: 100vw;
+    font-weight: bold;
 }
 
 nav ul li {
@@ -56,7 +60,7 @@ nav ul li a:hover {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width : 765px ){
   /* Adjustments for tablets and below */
   header {
     flex-direction: column;
@@ -80,10 +84,9 @@ nav ul li a:hover {
   }
   
   nav ul li {
-    font-size: 4vw; /* Slightly larger font size for readability */
+    font-size: 3.5vw; /* Slightly larger font size for readability */
   }
 }
-
 
 
 
