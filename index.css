@@ -75,6 +75,8 @@ nav ul li a:hover {
     padding: 0 10px; /* Smaller padding for smaller screens */
     font-size: 3vw; /* Adjust font size based on screen width */
   }
+	
+  
 }
 
 @media (max-width: 480px) {
