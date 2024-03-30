@@ -213,7 +213,7 @@ canvas#wavyBackground {
     flex-basis: 100%; /* Allow both the image and text to take full width */
   }
 
-  .glass-text-student h3 {
+  .glass-text-student h3 h4 {
     text-align: center;
   }
 }
@@ -248,7 +248,7 @@ canvas#wavyBackground {
     flex-basis: 100%; /* Allow both the image and text to take full width */
   }
 
-  .glass-text-student h3 {
+  .glass-text-student h3 h4 {
     text-align: center;
   }
 }
