@@ -310,7 +310,7 @@ canvas#wavyBackground {
   }
 
   /* Ensure text within the glass text sections is properly aligned */
-  .glass-text-student h3, h4, {
+  .glass-text-student h3, h4 {
     text-align: center;
   }
 }
