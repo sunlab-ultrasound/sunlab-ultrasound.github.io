@@ -131,12 +131,18 @@ canvas#wavyBackground {
   text-align: center;
 }
 
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
 
 .card-image, .professor-card img {
   max-height: 250px; /* Fixed height for all images */
   object-fit: contain; /* Adjust this to 'contain' for no cropping */
   width: auto; /* Adjust width automatically to maintain aspect ratio */
   margin: auto; /* Center the image in its container */
+  border-radius: 5px;
 }
 
 .card-info {
