@@ -60,20 +60,18 @@ nav ul li a:hover {
 }
 
 /* Responsive adjustments */
-@media (max-width : 765px ){
+@media (max-width : 765px ) {
   /* Adjustments for tablets and below */
-  header {
-    flex-direction: column;
-  }
-  
-  .short-logo, nav ul {
-    justify-content: center;
-    padding: 1vh 0;
+  .short-logo img {
+    height: 10vh; /* Adjust logo size for better visibility */
   }
   
   nav ul li {
-    padding: 0 10px; /* Smaller padding for smaller screens */
-    font-size: 3vw; /* Adjust font size based on screen width */
+    font-size: 3vw; /* Slightly larger font size for readability */
+  }
+
+  header {
+    flex-direction: column;
   }
 }
 
@@ -189,8 +187,6 @@ canvas#wavyBackground {
   position: relative;
   z-index: 3;
 }
-
-
 
 #research {
   display: grid;
