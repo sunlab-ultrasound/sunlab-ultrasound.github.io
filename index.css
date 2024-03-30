@@ -98,6 +98,21 @@ canvas#wavyBackground {
   z-index: -3; /* Behind all content */
 }
 
+@media (max-width: 480px) {
+	blurry-backdrop {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		z-index: -2;
+		}
+	
+	canvas#wavyBackground {
+		height: 100vh;
+		width: 100vw;
+		z-index: -3;
+	}
+}
+
 /* Blurry Backdrop */
 .blurry-backdrop {
   position: fixed;
