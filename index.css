@@ -82,6 +82,15 @@ nav ul li a:hover {
     height: 100%;
     width: 100%;
   }
+
+  canvas#wavybackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+  }
 	
 }
 
@@ -100,6 +109,15 @@ nav ul li a:hover {
     position: fixed;
     height: 100%;
     width: 100%;
+  }
+
+  canvas#wavybackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
   }
 }
 
