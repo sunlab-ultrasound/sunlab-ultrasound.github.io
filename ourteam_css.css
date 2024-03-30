@@ -165,6 +165,7 @@ canvas#wavyBackground {
 
   .image-container, .glass-text-student {
     flex-basis: 100%;
+    align-items: center;
   }
 
   .glass-text-student {
