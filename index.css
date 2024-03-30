@@ -62,6 +62,9 @@ nav ul li a:hover {
 /* Responsive adjustments */
 @media (max-width : 765px ){
   /* Adjustments for tablets and below */
+  header {
+    flex-direction: column;
+  }
   
   .short-logo, nav ul {
     justify-content: center;
@@ -70,10 +73,8 @@ nav ul li a:hover {
   
   nav ul li {
     padding: 0 10px; /* Smaller padding for smaller screens */
-    font-size: 2vw; /* Adjust font size based on screen width */
+    font-size: 3vw; /* Adjust font size based on screen width */
   }
-	
-  
 }
 
 @media (max-width: 480px) {
