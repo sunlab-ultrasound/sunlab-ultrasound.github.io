@@ -212,6 +212,10 @@ canvas#wavyBackground {
   .image-container, .glass-text-student {
     flex-basis: 100%; /* Allow both the image and text to take full width */
   }
+
+  .glass-text-student h3 {
+    text-align: center;
+  }
 }
 
 
@@ -242,6 +246,10 @@ canvas#wavyBackground {
 
   .image-container, .glass-text-student {
     flex-basis: 100%; /* Allow both the image and text to take full width */
+  }
+
+  .glass-text-student h3 {
+    text-align: center;
   }
 }
 
