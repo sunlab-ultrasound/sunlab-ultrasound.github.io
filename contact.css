@@ -154,6 +154,10 @@ canvas#wavyBackground {
 /* Responsive adjustments */
 @media (max-width: 480px) {
 
+  header {
+    flex-direction: column;
+  }
+
   .short-logo img {
     height: 10vh;
   }
