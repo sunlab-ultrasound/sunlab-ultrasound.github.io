@@ -158,8 +158,8 @@ canvas#wavyBackground {
     flex-direction: column;
   }
 
-  .logo img {
-    height: 6vh;
+  .short-logo img {
+    height: 10vh;
   }
 
   nav ul li {
