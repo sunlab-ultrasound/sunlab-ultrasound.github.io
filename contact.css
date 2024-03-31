@@ -214,7 +214,7 @@ canvas#wavyBackground {
   }
   
   .left-section img, .right-section img {
-    max-height: 200px;
+    max-height: fit-content;
   }
 
   .contact-info {
@@ -243,7 +243,7 @@ canvas#wavyBackground {
   }
 
   .left-section img, .right-section img {
-    max-height: 300px;
+    max-height: fit-content;
   }
 
   .contact-info {
