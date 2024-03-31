@@ -158,9 +158,9 @@ canvas#wavyBackground {
     flex-direction: column;
   }
 
-  /* .logo img {
-    height: 10vh;
-  } */
+  .logo img {
+    height: 6vh;
+  }
 
   nav ul li {
     font-size: 3.5vw;
