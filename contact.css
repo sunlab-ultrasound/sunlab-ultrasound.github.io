@@ -104,8 +104,8 @@ canvas#wavyBackground {
 }
 
 .left-section img, .right-section img {
-  width: auto;
-  max-height: 250px;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   margin: auto;
   border-radius: 10px;
@@ -143,6 +143,7 @@ canvas#wavyBackground {
   line-height: 1.5;
   text-decoration: none;
   color: #000000;
+  padding: 10px;
 }
 
 .contact-info .email a:link, .contact-info .email a:visited {
