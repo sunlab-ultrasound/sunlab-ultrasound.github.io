@@ -186,6 +186,10 @@ canvas#wavyBackground {
   .contact-info .contact-details {
     text-align: center;
   }
+
+  .contact-details {
+    padding-top: 10px;
+  }
 }
 
 
@@ -201,6 +205,7 @@ canvas#wavyBackground {
   
   nav ul li {
     padding: 0 15px;
+    font-size: 3vw;
   }
 
   .glass-container {
