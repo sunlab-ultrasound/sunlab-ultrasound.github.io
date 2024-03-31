@@ -58,6 +58,34 @@ nav ul li a:hover {
   color: #EAEDEE;
 }
 
+@media (max-width : 765px ){
+  /* Adjustments for tablets and below */
+  header {
+    flex-direction: column;
+  }
+  
+  .short-logo, nav ul {
+    justify-content: center;
+    padding: 1vh 0;
+  }
+  
+  nav ul li {
+    padding: 0 10px; /* Smaller padding for smaller screens */
+    font-size: 3vw; /* Adjust font size based on screen width */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for mobile phones */
+  .short-logo img {
+    height: 10vh; /* Adjust logo size for better visibility */
+  }
+  
+  nav ul li {
+    font-size: 3.5vw; /* Slightly larger font size for readability */
+  }
+}
+
 /* Wavy Background Canvas */
 canvas#wavyBackground {
   position: fixed;
@@ -158,14 +186,6 @@ canvas#wavyBackground {
     flex-direction: column;
   }
 
-  .short-logo img {
-    height: 10vh;
-  }
-
-  nav ul li {
-    font-size: 3.5vw;
-  }
-
   .glass-container {
     flex-direction: column;
     padding: 15px;
@@ -186,15 +206,6 @@ canvas#wavyBackground {
 
   header {
     flex-direction: column;
-  }
-  
-  .logo img {
-    height: 6vh;
-  }
-
-  nav ul li {
-    font-size: 3vw;
-    padding: 0 15px;
   }
 
   .glass-container {
