@@ -154,57 +154,126 @@ canvas#wavyBackground {
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
-
-	header {
-		flex-direction: column;
-	}
-	
-	.short-logo, nav ul {
-    justify-content: center;
-    padding: 1vh 0;
+  header {
+    flex-direction: column;
+    padding: 20px 10px;
   }
-	
-	nav ul li {
-		font-size: 3vw;
-	}
-	
-	glass-container {
-		flex-direction: column;
-		
-	}
+  
+  .logo img {
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  nav ul {
+    padding-top: 20px;
+    justify-content: center;
+  }
+
+  nav ul li {
+    padding: 10px;
+  }
+
+  .glass-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-section, .right-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .contact-info .contact-details {
+    text-align: center;
+  }
 }
+
 
 /* Media query for iPad in portrait orientation */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-	
-	header {
-		flex-direction: column;
-	}
-	
-	.short-logo, nav ul {
-    justify-content: center;
-    padding: 1vh 0;
+  header {
+    justify-content: space-between;
   }
-	
-	nav ul li {
-		font-size: 3vw;
-	}
-	
-	glass-container {
-		flex-direction: column;
-		
-	}
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  nav ul li {
+    padding: 0 15px;
+  }
+
+  .glass-container {
+    flex-direction: row;
+    margin-top: 150px;
+  }
+  
+  .left-section img, .right-section img {
+    max-height: 200px;
+  }
+
+  .contact-info {
+    font-size: 16px;
+  }
 }
 
+
  
-/* Media query for iPad in landscape orientation */
 @media only screen and (min-device-width: 1024px) and (max-device-height: 768px) and (orientation: landscape) {
-	
+  header {
+    padding: 0.5vh 2vw;
+  }
+  
+  .logo img {
+    height: 70px;
+  }
+
+  nav ul li {
+    padding: 0 25px;
+  }
+
+  .glass-container {
+    flex-direction: row;
+    padding: 30px;
+  }
+
+  .left-section img, .right-section img {
+    max-height: 300px;
+  }
+
+  .contact-info {
+    font-size: 18px;
+  }
 }
+
   
 
 
-/* Media query for external displays */
 @media (min-width: 1920px) {
-	
+  header {
+    justify-content: space-between;
+    padding: 2vh 4vw;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  nav ul li {
+    padding: 0 40px;
+  }
+
+  .glass-container {
+    flex-direction: row;
+    padding: 40px;
+    max-width: 1200px;
+  }
+
+  .left-section img, .right-section img {
+    max-height: 350px;
+  }
+
+  .contact-info {
+    font-size: 20px;
+  }
 }
