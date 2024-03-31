@@ -235,6 +235,7 @@ canvas#wavyBackground {
 
   nav ul li {
     padding: 0 25px;
+    font-size: 3vw;
   }
 
   .glass-container {
