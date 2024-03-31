@@ -58,34 +58,6 @@ nav ul li a:hover {
   color: #EAEDEE;
 }
 
-@media (max-width : 765px ){
-  /* Adjustments for tablets and below */
-  header {
-    flex-direction: column;
-  }
-  
-  .short-logo, nav ul {
-    justify-content: center;
-    padding: 1vh 0;
-  }
-  
-  nav ul li {
-    padding: 0 10px; /* Smaller padding for smaller screens */
-    font-size: 3vw; /* Adjust font size based on screen width */
-  }
-}
-
-@media (max-width: 480px) {
-  /* Further adjustments for mobile phones */
-  .short-logo img {
-    height: 10vh; /* Adjust logo size for better visibility */
-  }
-  
-  nav ul li {
-    font-size: 3.5vw; /* Slightly larger font size for readability */
-  }
-}
-
 /* Wavy Background Canvas */
 canvas#wavyBackground {
   position: fixed;
@@ -123,6 +95,7 @@ canvas#wavyBackground {
   align-items: center;
   width: 100%;
   max-width: 1000px;
+  z-index: 3;
 }
 
 .left-section, .right-section {
@@ -182,83 +155,35 @@ canvas#wavyBackground {
 /* Responsive adjustments */
 @media (max-width: 480px) {
 
-  header {
-    flex-direction: column;
+	header {
+		flex-direction: column;
+	}
+	
+	.short-logo, nav ul {
+    justify-content: center;
+    padding: 1vh 0;
   }
-
-  .glass-container {
-    flex-direction: column;
-    padding: 15px;
-    margin-top: 20px;
-  }
-
-  .left-section, .right-section {
-    padding: 10px 0;
-  }
-
-  .contact-info, .contact-info .contact-details strong, .contact-info .email a, .contact-info .location, .contact-info .mailing {
-    font-size: 14px;
-  }
+	
+	nav ul li {
+		font-size: 3.5vw;
+	}
+	
 }
 
 /* Media query for iPad in portrait orientation */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-
-  header {
-    flex-direction: column;
-  }
-
-  .glass-container {
-    padding: 20px;
-    margin-top: 50px;
-  }
-
-  .contact-info .contact-details strong, .contact-info .email a, .contact-info .location, .contact-info .mailing {
-    font-size: 16px;
-  }
+	
 }
 
+ 
 /* Media query for iPad in landscape orientation */
 @media only screen and (min-device-width: 1024px) and (max-device-height: 768px) and (orientation: landscape) {
-  
-  .logo img {
-    height: 7vh;
-  }
-
-  nav ul li {
-    font-size: 20px;
-    padding: 0 20px;
-  }
-
-  .glass-container {
-    flex-direction: row;
-    padding: 20px;
-    margin-top: 30px;
-  }
-
-  .contact-info {
-    font-size: 18px;
-  }
+	
 }
+  
+
 
 /* Media query for external displays */
 @media (min-width: 1920px) {
-  .logo img {
-    height: 8vh;
-  }
-
-  nav ul li {
-    font-size: 22px;
-    padding: 0 30px;
-  }
-
-  .glass-container {
-    padding: 30px;
-    margin-top: 50px;
-    max-width: 1200px;
-  }
-
-  .contact-info, .contact-info .contact-details strong, .contact-info .email a, .contact-info .location, .contact-info .mailing {
-    font-size: 20px;
-  }
+	
 }
