@@ -168,11 +168,32 @@ canvas#wavyBackground {
 		font-size: 3.5vw;
 	}
 	
+	glass-container {
+		flex-direction: column;
+		
+	}
 }
 
 /* Media query for iPad in portrait orientation */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
 	
+	header {
+		flex-direction: column;
+	}
+	
+	.short-logo, nav ul {
+    justify-content: center;
+    padding: 1vh 0;
+  }
+	
+	nav ul li {
+		font-size: 3.5vw;
+	}
+	
+	glass-container {
+		flex-direction: column;
+		
+	}
 }
 
  
