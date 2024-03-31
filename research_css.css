@@ -77,19 +77,6 @@ nav ul li a:hover {
   }
 }
 
-@media (max-width: 480px) {
-  /* Further adjustments for mobile phones */
-  .short-logo img {
-    height: 10vh; /* Adjust logo size for better visibility */
-  }
-  
-  nav ul li {
-    font-size: 3.5vw; /* Slightly larger font size for readability */
-  }
-}
-
-
-
 #research {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts to fit content */
@@ -334,6 +321,27 @@ canvas#wavyBackground {
 
 /* Further adjustments for smartphones */
 @media (max-width: 480px) {
+   
+  header {
+    flex-direction: column;
+  }
+  
+  .logo img {
+    margin: auto auto;
+    height: 50px;
+  }
+  
+  nav ul {
+    padding-top: 10px;
+    justify-content: center;
+	  
+  }
+
+  nav ul li {
+    font-size: 3.5vw;
+	padding: 10px;
+  }
+	
   .modal-content {
     width: 80%; /* Reduce the width of the modal to provide padding from the viewport edges */
   }

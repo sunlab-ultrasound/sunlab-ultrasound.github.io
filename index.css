@@ -95,16 +95,27 @@ nav ul li a:hover {
 }
 
 @media (max-width: 480px) {
-  /* Further adjustments for mobile phones */
-  .short-logo img {
-    height: 10vh; /* Adjust logo size for better visibility */
+  header {
+    flex-direction: column;
   }
   
-  nav ul li {
-    font-size: 3.5vw; /* Slightly larger font size for readability */
+  .logo img {
+    margin: auto auto;
+    height: 50px;
+  }
+  
+  nav ul {
+    padding-top: 10px;
+    justify-content: center;
+	  
   }
 
+  nav ul li {
+    font-size: 3.5vw;
+	padding: 10px;
+  }
 }
+
 
 /* Wavy Background Canvas */
 canvas#wavyBackground {

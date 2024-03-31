@@ -58,7 +58,6 @@ nav ul li a {
 nav ul li a:hover {
   color: #EAEDEE;
 }
-
 /* Responsive adjustments */
 @media (max-width : 765px ){
   /* Adjustments for tablets and below */
@@ -77,16 +76,6 @@ nav ul li a:hover {
   }
 }
 
-@media (max-width: 480px) {
-  /* Further adjustments for mobile phones */
-  .short-logo img {
-    height: 10vh; /* Adjust logo size for better visibility */
-  }
-  
-  nav ul li {
-    font-size: 3.5vw; /* Slightly larger font size for readability */
-  }
-}
 
 #publications .cards-wrapper {
   display: grid;
@@ -308,3 +297,26 @@ footer {
   clear: both; /* Clear floats if any */
   z-index: 99; /* Ensure it is above other content, but the value doesn't need to be high if no other content has z-index set */
 }
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+  }
+  
+  .logo img {
+    margin: auto auto;
+    height: 50px;
+  }
+  
+  nav ul {
+    padding-top: 10px;
+    justify-content: center;
+	  
+  }
+
+  nav ul li {
+    font-size: 3.5vw;
+	padding: 10px;
+  }
+}
+
