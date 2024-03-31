@@ -154,17 +154,12 @@ canvas#wavyBackground {
 /* Responsive adjustments */
 @media (max-width: 480px) {
 
-  header {
-    flex-direction: column;
-  }
-
   .short-logo img {
     height: 10vh;
   }
 
   nav ul li {
     font-size: 3.5vw;
-    padding: 0 5px;
   }
 
   .glass-container {
@@ -194,8 +189,8 @@ canvas#wavyBackground {
   }
 
   nav ul li {
-    font-size: 18px;
-    padding: 0 12px;
+    font-size: 3vw;
+    padding: 0 15px;
   }
 
   .glass-container {
@@ -210,6 +205,7 @@ canvas#wavyBackground {
 
 /* Media query for iPad in landscape orientation */
 @media only screen and (min-device-width: 1024px) and (max-device-height: 768px) and (orientation: landscape) {
+  
   .logo img {
     height: 7vh;
   }
