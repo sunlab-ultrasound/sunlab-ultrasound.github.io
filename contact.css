@@ -27,25 +27,26 @@ header {
 }
 
 .logo img {
-  height: 7vh;
+  height: 7vh; /* Adjust this value as necessary */
   display: flex;
-  padding-right: 0.2vw;
+  padding-right: 0.2vw; ;
   align-items: center;
 }
 
+
 nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  width: auto;
-  height: auto;
-  font-size: large;
-  max-width: 100vw;
-  font-weight: bold;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+    height: auto;
+    font-size: large;
+    max-width: 100vw;
+    font-weight: bold;
 }
 
 nav ul li {
-  padding: 0 15px;
+  padding: 0 20px; /* Use fixed padding for consistent spacing */
   display: inline;
 }
 
@@ -170,7 +171,7 @@ canvas#wavyBackground {
   }
 
   nav ul li {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 
   .glass-container {
