@@ -157,16 +157,15 @@ canvas#wavyBackground {
 @media (max-width: 480px) {
   header {
     flex-direction: column;
-    padding: 20px 10px;
   }
   
   .logo img {
-    margin: 0 auto;
+    margin: auto auto;
     height: 50px;
   }
   
   nav ul {
-    padding-top: 20px;
+    padding-top: 15px;
     justify-content: center;
   }
 
