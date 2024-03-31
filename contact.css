@@ -152,6 +152,11 @@ canvas#wavyBackground {
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
+
+  header {
+    flex-direction: column;
+  }
+
   .logo img {
     height: 6vh;
   }
@@ -178,6 +183,11 @@ canvas#wavyBackground {
 
 /* Media query for iPad in portrait orientation */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+
+  header {
+    flex-direction: column;
+  }
+  
   .logo img {
     height: 6vh;
   }
