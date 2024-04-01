@@ -205,6 +205,7 @@ canvas#wavyBackground {
   margin: 20px auto; /* Center the container with automatic horizontal margins */
   max-width: 95%; /* Maximum width of the container */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  z-index: 3;
 }
 
 .glass-container h2 {
