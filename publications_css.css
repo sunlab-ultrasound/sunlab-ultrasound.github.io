@@ -158,6 +158,7 @@ canvas#wavyBackground {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(50px); /* This creates the blur effect */
+  -webkit-backdrop-filter: blur(20px);
   z-index: 0; /* Ensure this is below the content but above the wavy background */
 }
 

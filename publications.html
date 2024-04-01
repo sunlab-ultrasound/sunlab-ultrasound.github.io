@@ -13,11 +13,6 @@
         <div class="logo">
             <img src="assets/sunlab_name_logo.png" alt="sun_logo">
         </div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -151,11 +146,89 @@
       </div>
       </section>
     </div>
-<!-- <footer>    
-    <div>
-        <span style="color: rgb(0, 0, 0)">&copy; 2024 <a style="color: rgb(0, 0, 0); text-decoration: none">SUN Lab all rights reserved </a></span>
-    </div>
-</footer> -->
-<script src="script.js"></script>	
+
+<script>
+
+  // Ensure canvas is defined at the start of the script
+const canvas = document.getElementById('wavyBackground');
+const ctx = canvas.getContext('2d');
+const waves = [];
+const waveCount = 5;
+const waveColors = ["rgba(142, 68, 173, 0.7)", "rgba(41, 128, 185, 0.7)", "rgba(26, 188, 156, 0.7)", "rgba(241, 196, 15, 0.7)", "rgba(231, 76, 60, 0.7)"];
+
+// Initialize canvas size and wave properties
+function initCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.body.scrollHeight; // Initial setup to cover the full content height
+    initWaves();
+}
+
+function initWaves() {
+    for(let i = 0; i < waveCount; i++) {
+        waves.push({
+            y: canvas.height / 2,
+            length: Math.random() * 500 + 500,
+            amplitude: Math.random() * 150 + 150,
+            phase: Math.random() * Math.PI * 2,
+            speed: Math.random() * 0.02,
+            color: waveColors[i % waveColors.length]
+        });
+    }
+}
+
+// Adjust canvas on window resize
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.body.scrollHeight; // Adjusted to use scrollHeight for consistency
+    drawWaves(); // Redraw waves with new dimensions
+}
+window.addEventListener('resize', resizeCanvas);
+
+// Wave animation
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the entire canvas
+    drawWaves();
+    requestAnimationFrame(animate);
+}
+
+function drawWaves() {
+    const time = Date.now() * 0.0001;
+    waves.forEach(wave => {
+        wave.phase += wave.speed;
+        ctx.beginPath();
+        ctx.lineWidth = 50;
+        ctx.shadowBlur = 40;
+        ctx.shadowColor = wave.color;
+
+        for(let x = 0; x < canvas.width; x += 10) {
+            const y = wave.y + Math.sin((x / wave.length) + wave.phase + time) * wave.amplitude;
+            ctx.lineTo(x, y);
+        }
+
+        const gradient = ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+        gradient.addColorStop(0.5, wave.color);
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
+        ctx.strokeStyle = gradient;
+        ctx.stroke();
+    });
+}
+
+function togglePublications() {
+    var morePublications = document.getElementById("more-publications");
+    var toggleButton = document.getElementById("toggleButton");
+    
+    if (morePublications.style.display === "none") {
+      morePublications.style.display = "block"; // Show the rest of the publications
+      toggleButton.textContent = "Read Less"; // Change button text to "Read Less"
+    } else {
+      morePublications.style.display = "none"; // Hide the additional publications
+      toggleButton.textContent = "Read More"; // Change button text back to "Read More"
+    }
+  }
+    
+initCanvas();
+animate();    
+</script>	
 </body>
 </html>
