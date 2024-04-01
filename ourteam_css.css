@@ -58,6 +58,114 @@ nav ul li a {
 nav ul li a:hover {
   color: #EAEDEE;
 }
+
+@media screen and (max-width : 480px ) {
+  header {
+    flex-direction: column;
+  }
+
+  .logo img {
+    height: 7vh; /* Smaller logo for smaller screens */
+    padding: 0; /* Adjust padding as needed */
+	  margin: auto auto;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  nav ul li {
+    padding: 10px; /* More vertical padding, no horizontal */
+	font-size: 3.5vw;
+  }
+}
+
+/* Tablets in Portrait */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  .logo img {
+    height: 8vh; /* Slightly larger logo */
+    padding-right: 0.5vw; /* Adjust padding */
+  }
+
+  nav ul {
+    justify-content: flex-end;
+  }
+
+  nav ul li {
+    padding: 0 12px; /* Adjust padding */
+    font-size: 3.5vw; /* Adjust font size */
+  }
+}
+
+/* Tablets in Landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .logo img {
+    height: 4.5vw; /* Adjust logo size for more space */
+  }
+
+  nav ul li {
+    padding: 0 10px; /* Fine-tune padding */
+    font-size: 2vw; /* Increase font size */
+	margin-right: 5px;
+  }
+}
+
+/* Desktops and screens larger than 1024px */
+@media screen and (min-width: 1025px) {
+  header {
+    flex-direction: row; /* Return to a horizontal layout for more space */
+    justify-content: space-between; /* Space out the logo and navigation */
+    padding: 1vh 2vw; /* Adjust padding for a balanced appearance */
+  }
+
+  .logo img {
+    height: 6vh; /* Adjust logo size for desktop */
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin */
+  }
+
+  nav ul {
+    justify-content: flex-end; /* Align navigation to the end */
+  }
+
+  nav ul li {
+    padding: 0 20px; /* Adjust padding for desktop */
+    font-size: 2vw; /* Adjust font size for desktop readability */
+    margin-right: 0; /* Reset margin-right */
+  }
+}
+
+/* Very large screens, wider than 1440px */
+@media screen and (min-width: 1440px) {
+  header {
+    padding: 1.5vh 3vw; /* More spacious padding for large screens */
+  }
+
+  .logo img {
+    height: 7vh; /* Larger logo size for better visibility */
+  }
+
+  nav ul li {
+    padding: 0 25px; /* Increase padding for a wider layout */
+    font-size: 1.1vw; /* Slightly larger font size for readability */
+  }
+}
+
+/* Sumo-sized screens, wider than 2000px */
+@media screen and (min-width: 2000px) {
+  .logo img {
+    height: 8vh; /* Maximize logo size for sumo-sized screens */
+  }
+
+  nav ul li {
+    padding: 0 30px; /* Maximize padding for large layouts */
+    font-size: 1.2vw; /* Enhance font size for optimal readability */
+  }
+}
 /* Wavy Background Canvas */
 canvas#wavyBackground {
   position: fixed;
