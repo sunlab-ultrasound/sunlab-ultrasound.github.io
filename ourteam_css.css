@@ -157,50 +157,50 @@ canvas#wavyBackground {
   justify-content: center;
 }
 
-@media (max-width: 480px) {
-  /* Adjustments for mobile phones */
-  header {
-    flex-direction: column;
-  }
+@media screen {max-width: 480px;
+
+    header {
+      flex-direction: column;
+    }
+    
+    .logo img {
+      margin: auto auto;
+      height: 50px;
+    }
+    
+    nav ul {
+      padding-top: 10px;
+      justify-content: center;
+      
+    }
   
-  .logo img {
-    margin: auto auto;
-    height: 50px;
-  }
+    nav ul li {
+      font-size: 3.5vw;
+    padding: 10px;
+    }
   
-  nav ul {
-    padding-top: 10px;
-    justify-content: center;
-	  
-  }
-
-  nav ul li {
-    font-size: 3vw;
-	padding: 10px;
-  }
-
-  .glass-text-professor, .glass-text-student {
-    font-size: 0.8rem; /* Even smaller font for mobile phones */
-    align-items: center;
-  }
-
-  .glass-text-student {
-    margin: 10px; /* Adds margin around the text container for smaller screens */
-    text-align: center; /* Centers the text inside the container */
-  }
+    .glass-text-professor, .glass-text-student {
+      font-size: 0.8rem; /* Even smaller font for mobile phones */
+      align-items: center;
+    }
   
-  .student-card {
-    flex-direction: column; /* Stack image and text vertically on smaller screens */
-    align-items: center; /* Center align the stacked items */
-  }
-
-  .image-container, .glass-text-student {
-    flex-basis: 100%; /* Allow both the image and text to take full width */
-  }
-
-  .glass-text-student h3, h4 {
-    text-align: center;
-  }
+    .glass-text-student {
+      margin: 10px; /* Adds margin around the text container for smaller screens */
+      text-align: center; /* Centers the text inside the container */
+    }
+    
+    .student-card {
+      flex-direction: column; /* Stack image and text vertically on smaller screens */
+      align-items: center; /* Center align the stacked items */
+    }
+  
+    .image-container, .glass-text-student {
+      flex-basis: 100%; /* Allow both the image and text to take full width */
+    }
+  
+    .glass-text-student h3, h4 {
+      text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
