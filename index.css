@@ -59,26 +59,24 @@ nav ul li a:hover {
   color: #EAEDEE;
 }
 
-@media only screen and (max-width: 600px) {
-  
-  .header {
+@media screen and (max-width : 480px ){
+  header {
     flex-direction: column;
   }
 
   .logo img {
-    margin: auto auto;
-    height: 50px;
-  } 
-
-  nav ul {
-    padding-top: 10px;
-    justify-content: center;
-
+    height: 10vh; /* Smaller logo for smaller screens */
+    padding: 0; /* Adjust padding as needed */
+	margin: auto auto;
   }
 
-  nav li li {
-    font-size: 3.5vw;
-    padding: 10px;
+  nav ul {
+    justify-content: center;
+  }
+
+  nav ul li {
+    padding: 10px; /* More vertical padding, no horizontal */
+	font-size: 3.5vw;
   }
 }
 
