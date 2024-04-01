@@ -59,31 +59,30 @@ nav ul li a:hover {
   color: #EAEDEE;
 }
 
-
-@media (max-width: 480px) {
+@media only screen and (max-width: 600px) {
   
-	header {
+  .header {
     flex-direction: column;
   }
-  
+
   .logo img {
     margin: auto auto;
     height: 50px;
-  }
-  
+  } 
+
   nav ul {
     padding-top: 10px;
     justify-content: center;
-	  
+
   }
 
-  nav ul li {
+  nav li li {
     font-size: 3.5vw;
-	padding: 10px;
+    padding: 10px;
   }
 }
 
-
+  
 /* Wavy Background Canvas */
 canvas#wavyBackground {
   position: fixed;
