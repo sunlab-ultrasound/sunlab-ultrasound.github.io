@@ -233,7 +233,7 @@ function drawWaves() {
         wave.phase += wave.speed; // Update the phase of the wave based on its speed
         ctx.beginPath();
         ctx.lineWidth = 40; // Thickness of the wave
-        ctx.shadowBlur = 40; // Glow effect
+        ctx.shadowBlur = 60; // Glow effect
         ctx.shadowColor = wave.color; // Color of the glow
 
         for(let x = 0; x < canvas.width; x += 10) {

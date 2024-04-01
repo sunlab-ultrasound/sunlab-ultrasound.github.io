@@ -16,11 +16,6 @@
         <div class="logo">
             <img src="assets/sunlab_name_logo.png" alt="sun_logo">
         </div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -68,110 +63,71 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const glassContainer = document.querySelector('.glass-container');
-            const windowHeight = window.innerHeight;
-        
-            window.addEventListener('scroll', function() {
-                const scrollY = window.scrollY;
-                const threshold = 300; // Point at which the glass container starts moving
-        
-                if (scrollY > threshold) {
-                    // Calculate new position and opacity based on scroll
-                    let newPosition = Math.max(0, 200 - (scrollY - threshold) / 5);
-                    let newOpacity = Math.min(1, (scrollY - threshold) / 200);
-        
-                    glassContainer.style.top = `${newPosition}vh`;
-                    glassContainer.style.opacity = newOpacity;
-                } else {
-                    // Reset to initial state if above threshold
-                    glassContainer.style.top = '200vh'; // Start off-screen
-                    glassContainer.style.opacity = 0;
-                }
-            });
+        document.addEventListener('DOMContentLoaded', () => {
+            initCanvas();
+            animate();
         });
-        
-        window.addEventListener('resize', resizeCanvas);
-        
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = document.body.scrollHeight; // Use scrollHeight to cover the full content height
-            drawWaves(); // Redraw waves after resizing
-        }
-        // Function to keep the welcome message below the header
-        function adjustWelcomeMessage() {
-            const welcome = document.querySelector('.welcome-message');
-            const headerHeight = document.querySelector('header').offsetHeight;
-            const scrollDistance = window.pageYOffset;
-            welcome.style.transform = `translateY(${Math.max(scrollDistance, headerHeight)}px)`;
-        }
-        
-        // Add throttled scroll event listener        
+
         const canvas = document.getElementById('wavyBackground');
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = document.body.offsetHeight;
-        
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.Height = document.body.offsetHeight;
-        }
         const waves = [];
         const waveCount = 5;
-        
-        // Define specific colors for each wave
         const waveColors = [
-            "rgba(142, 68, 173, 0.7)", // Purple
-            "rgba(41, 128, 185, 0.7)", // Blue
-            "rgba(26, 188, 156, 0.7)", // Teal
-            "rgba(241, 196, 15, 0.7)",  // Yellow
-            "rgba(231, 76, 60, 0.7)",   // Red
+            "rgba(142, 68, 173, 0.7)",
+            "rgba(41, 128, 185, 0.7)",
+            "rgba(26, 188, 156, 0.7)",
+            "rgba(241, 196, 15, 0.7)",
+            "rgba(231, 76, 60, 0.7)"
         ];
-        
-        for(let i = 0; i < waveCount; i++) {
-            waves.push({
-                y: canvas.height / 2,
-                length: Math.random() * 500 + 500, // Individual wavelengths
-                amplitude: Math.random() * 100 + 150, // Individual amplitudes
-                phase: Math.random() * Math.PI * 2, // Set an initial phase
-                speed: Math.random() * 0.02, // Each wave will have a different speed
-                color: waveColors[i % waveColors.length] // Assign color from the array
-            });
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = document.body.scrollHeight;
+            for (let i = 0; i < waveCount; i++) {
+                waves.push({
+                    y: canvas.height / 2,
+                    length: Math.random() * 500 + 500,
+                    amplitude: Math.random() * 100 + 150,
+                    phase: Math.random() * Math.PI * 2,
+                    speed: Math.random() * 0.02,
+                    color: waveColors[i % waveColors.length]
+                });
+            }
         }
-        
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = document.body.scrollHeight;
+            drawWaves();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
         function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // clear the entire canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawWaves();
             requestAnimationFrame(animate);
         }
-        
+
         function drawWaves() {
-            const time = Date.now() * 0.0001; // Time factor for oscillation
+            const time = Date.now() * 0.0001;
             waves.forEach(wave => {
-                wave.phase += wave.speed; // Update the phase of the wave based on its speed
+                wave.phase += wave.speed;
                 ctx.beginPath();
-                ctx.lineWidth = 40; // Thickness of the wave
-                ctx.shadowBlur = 40; // Glow effect
-                ctx.shadowColor = wave.color; // Color of the glow
-        
-                for(let x = 0; x < canvas.width; x += 10) {
-                    // Calculate the y position of the wave based on the sine function
+                ctx.lineWidth = 40;
+                ctx.shadowBlur = 60;
+                ctx.shadowColor = wave.color;
+                for (let x = 0; x < canvas.width; x += 10) {
                     const y = wave.y + Math.sin((x / wave.length) + wave.phase + time) * wave.amplitude;
                     ctx.lineTo(x, y);
                 }
-                
-                // Create gradient for frosted glass effect
                 const gradient = ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
                 gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
                 gradient.addColorStop(0.5, wave.color);
                 gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
-        
                 ctx.strokeStyle = gradient;
                 ctx.stroke();
             });
         }
-        
-        animate();
         </script>
         
         </body>
