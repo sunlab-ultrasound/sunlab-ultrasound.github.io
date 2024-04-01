@@ -134,7 +134,7 @@ nav ul li a:hover {
 
   nav ul li {
     padding: 0 20px; /* Adjust padding for desktop */
-    font-size: 1vw; /* Adjust font size for desktop readability */
+    font-size: 2vw; /* Adjust font size for desktop readability */
     margin-right: 0; /* Reset margin-right */
   }
 }
@@ -198,14 +198,6 @@ canvas#wavyBackground {
   z-index: 5;
 }
 
-.content-sub-font {
-  max-width: 1000px;
-  font-size: 1.25rem; /* Use rem for scalable text size */
-  font-weight: 200;
-  margin: 0 auto;
-  text-align: center;
-  padding: 10px;
-}
 
 .current-research-font {
   display: flex;
@@ -267,6 +259,76 @@ canvas#wavyBackground {
   position: relative;
   z-index: 3;
 }
+
+@media screen and (max-width: 480px) {
+  .content {
+    margin-top: 50vh; /* Reduce margin-top for mobile */
+    font-size: calc(1rem + 2vw); /* Increase font size for readability */
+  }
+
+  .glass-container {
+    width: 95vw; /* Slightly reduce width for screen margin */
+    margin-top: 30vh; /* Adjust top margin to avoid overlap with header */
+    padding: 4vh; /* Increase padding for better spacing */
+  }
+	
+	.glass-container-research {
+    width: 95vw; /* Slightly reduce width for screen margin */
+    margin-top: 2vh; /* Adjust top margin to avoid overlap with header */
+    padding: 4vh; /* Increase padding for better spacing */
+  }
+
+  .current-research-font, .welcome-font {
+    font-size: calc(1rem + 1vw); /* Adjust font size for better readability on small screens */
+	text-align: center;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .content {
+    margin-top: 50vh; /* Adjust for tablet screens */
+  }
+
+  .glass-container {
+    width: 95vw; /* Adjust width for optimal spacing */
+    padding: 3vh; /* Adjust padding for content spacing */
+	margin-top: 40vh;
+  }
+	
+  .glass-container-research {
+    width: 95vw; /* Slightly reduce width for screen margin */
+    margin-top: 2vh; /* Adjust top margin to avoid overlap with header */
+    padding: 4vh; /* Increase padding for better spacing */
+  }
+
+  .current-research-font, .welcome-font {
+    font-size: calc(1rem + 2vw); /* Fine-tune font sizes for medium screens */
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .content {
+    margin-top: 45vh; /* As initially set, optimized for large screens */
+    font-size: calc(1rem + 1vw); /* Maintain scalable font sizing */
+  }
+
+  .glass-container {
+    width: 95vw; /* Adjust width for a more centered layout */
+    padding: 2vh; /* Maintain padding for consistency */
+    margin-top: 45vh; /* Adjust for aesthetic spacing from the header */
+  }
+	
+  .glass-container-research {
+    width: 95vw; /* Slightly reduce width for screen margin */
+    margin-top: 2vh; /* Adjust top margin to avoid overlap with header */
+    padding: 4vh; /* Increase padding for better spacing */
+  }
+
+  .current-research-font, .welcome-font {
+    font-size: calc(1rem + 1vw); /* Consistency in font scaling */
+  }
+}
+
 
 #research {
   display: grid;
@@ -357,6 +419,83 @@ canvas#wavyBackground {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 5;
 }
+
+@media screen and (max-width: 480px) {
+  #research {
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 5vh; /* Increase gap for vertical spacing */
+    padding: 5vh 5vw; /* Adjust padding for smaller screens */
+  }
+
+  .research-topics, .research-item {
+    width: 60vw; /* Adjust width to fit small screens */
+    height: auto; /* Make height auto to accommodate content */
+    margin: 0 auto; /* Increase margin top for spacing */
+  }
+
+  .research-item img {
+    height: auto; /* Adjust image height for aspect ratio */
+  }
+
+  .research-item .card-content {
+    padding: 0px; /* Reduce padding */
+  }
+  
+  .research-item button {
+	margin: 10px;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  #research {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid with minimum item width */
+    padding: 5vh; /* Maintain padding */
+    gap: 4vw; /* Adjust gap */
+  }
+
+  .research-topics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    gap: 20px; /* Maintain gap */
+  }
+
+  .research-topics, .research-item {
+    width: 27vw; /* Adjust width to fit small screens */
+    height: auto; /* Make height auto to accommodate content */
+    margin: 0 auto; /* Increase margin top for spacing */
+  }
+  
+  .research-item button {
+	margin: 10px;
+	}
+}
+
+@media screen and (min-width: 1025px) {
+  #research {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapt columns to screen width */
+    max-width: 95vw; /* Adjust max width for centering */
+    padding: 2vh 2vw; /* Adjust padding */
+    gap: 2vw; /* Adjust gap */
+  }
+
+  .research-topics {
+    width: 20vw; /* Adjust width based on content */
+    height: auto; /* Adjust height based on content */
+  }
+
+  .research-topics, .research-item {
+    width: 20vw; /* Adjust width to fit small screens */
+    height: auto; /* Make height auto to accommodate content */
+    margin: 0 auto; /* Increase margin top for spacing */
+  }
+  
+  .research-item button {
+	margin: 10px;
+	}
+}
+
+
+
 
 /* Style for modal */
 /* Overlay */
