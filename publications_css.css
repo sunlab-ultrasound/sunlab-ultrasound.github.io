@@ -325,23 +325,6 @@ canvas#wavyBackground {
   text-decoration: underline; /* Underline on hover for links */
 }
 
-
-@media (max-width: 960px) {
-  #publications .card-container {
-    justify-content: center; /* Center cards on smaller screens */
-  }
-
-  #publications .card {
-    flex-basis: calc(50% - 20px); /* Two cards per row on smaller screens */
-  }
-}
-
-@media (max-width: 600px) {
-  #publications .card {
-    flex-basis: 100%; /* Full width for each card on very small screens */
-  }
-}
-
 #publications .card-content {
   padding: 16px;
   background-color: rgba(0,0,0,0.4); /* Darker background for card content */
@@ -389,27 +372,5 @@ footer {
   width: 100%; /* Ensure it spans the full width of the screen */
   clear: both; /* Clear floats if any */
   z-index: 99; /* Ensure it is above other content, but the value doesn't need to be high if no other content has z-index set */
-}
-
-@media (max-width: 480px) {
-  header {
-    flex-direction: column;
-  }
-  
-  .logo img {
-    margin: auto auto;
-    height: 50px;
-  }
-  
-  nav ul {
-    padding-top: 10px;
-    justify-content: center;
-	  
-  }
-
-  nav ul li {
-    font-size: 3.5vw;
-	padding: 10px;
-  }
 }
 
