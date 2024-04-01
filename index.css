@@ -65,7 +65,7 @@ nav ul li a:hover {
   }
 
   .logo img {
-    height: 10vh; /* Smaller logo for smaller screens */
+    height: 7vh; /* Smaller logo for smaller screens */
     padding: 0; /* Adjust padding as needed */
 	margin: auto auto;
   }
