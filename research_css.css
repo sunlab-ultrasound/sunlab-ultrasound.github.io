@@ -287,35 +287,28 @@ nav ul li a:hover {
 /* Mobile Devices */
 @media screen and (max-width: 480px) {
   #research {
-    grid-template-columns: 1fr; /* Ensure a single column layout */
-    gap: 20px; /* Adjust gap to ensure proper spacing */
-    padding: 5% 5%; /* Provide proportional padding */
-    margin: 0 auto; /* Center the grid */
-    margin-top: 50px; /* Adjust top margin for spacing */
-    max-width: 80%; /* Limit the width to ensure it doesn't touch the screen edges */
-	color: hidden;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 5vh; /* Increase gap for vertical spacing */
+    padding: 5vh 5vw; /* Adjust padding for smaller screens */
+	width: 70vw;
   }
 
   .card-container {
-    width: 100%; /* Utilize the full width of the grid column */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center align the content for a neat look */
+    width: 60vw; /* Adjust width to fit small screens */
+    height: auto; /* Make height auto to accommodate content */
+    margin: 0 auto; /* Increase margin top for spacing */
   }
 
   .card, .card-content {
-    width: 100%; /* Ensure the card and its content utilize the full width of their container */
-    margin-top: 0; /* Reset any top margin to align the content properly */
+    padding: 0;
   }
 
   .card-image img {
-    width: 100%; /* Ensure images stretch to the width of the card */
-    max-height: 200px; /* Limit image height to maintain aspect ratio */
-    object-fit: cover; /* Cover the designated area without stretching */
-    border-radius-top: 10px; /* Maintain consistency with rounded corners */
+    height: auto;
   }
 
   .card-content {
-    background: rgba(0, 0, 0, 0.7); /* Slightly darken the background for text contrast */
+    background: rgba(0, 0, 0, 1.0); /* Slightly darken the background for text contrast */
     padding: 15px; /* Provide enough padding for readability */
     position: absolute; /* Reset any absolute positioning */
     object-fit: fill; /* Ensure content fits without distortion */
@@ -327,7 +320,7 @@ nav ul li a:hover {
   }
 
   .research-item button {
-    padding: 8px 16px; /* Adjust button padding for easier interaction */
+    margin: 10px; /* Adjust button padding for easier interaction */
    /* Ensure button text is legible without taking too much space */
   }
 }
