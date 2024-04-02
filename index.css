@@ -430,6 +430,7 @@ canvas#wavyBackground {
   z-index: 5;
 }
 
+/* Mobile Devices */
 @media screen and (max-width: 480px) {
   #research {
     grid-template-columns: 1fr; /* Single column layout */
@@ -456,21 +457,53 @@ canvas#wavyBackground {
 	}
 }
 
+/* Tablets in Portrait */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   #research {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for portrait tablets */
-	padding: 15px;
+    grid-template-columns: (2, 1fr);
+    gap: 5vh; /* Increase gap for vertical spacing */
+    padding: 5vh 5vw; /* Adjust padding for smaller screens */
   }
 
-  .research-item {
-    width: 95%; /* Adjust width to fit two items per row */
+  .research-topics, .research-item {
+    width: 35vw; /* Adjust width to fit small screens */
+    height: auto; /* Make height auto to accommodate content */
+    margin: 0 auto; /* Increase margin top for spacing */
   }
+
+  .research-item img {
+    height: auto; /* Adjust image height for aspect ratio */
+  }
+
+  .research-item .card-content {
+    padding: 0px; /* Reduce padding */
+  }
+  
+  .research-item button {
+	margin: 10px;
+	}
 }
+
+/* Tablets in Landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #research {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets in landscape */
+    gap: 2vw; /* Maintain gap */
+    padding: 2vh 2vw; /* Adjust padding */
+  }
 
   .research-topics, .research-item {
     width: 30vw; /* Adjust width to fit small screens */
     height: auto; /* Make height auto to accommodate content */
-    margin: 0 auto; /* Increase margin top for spacing */
+    margin: auto auto; /* Increase margin top for spacing */
+  }
+
+  .research-item img {
+    height: auto; /* Adjust image height for aspect ratio */
+  }
+
+  .research-item .card-content {
+    padding: 0px; /* Reduce padding */
   }
   
   .research-item button {
@@ -478,21 +511,26 @@ canvas#wavyBackground {
 	}
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+/* Desktops */
+@media screen and (min-width: 1025px) and (max-width: 1999px) {
   #research {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .research-topics {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two items per row */
-    gap: 20px; /* Maintain gap */
+    grid-template-columns: repeat(3, 1fr); /* Two columns for tablets in landscape */
+    gap: 2vw; /* Maintain gap */
+    padding: 2vh 2vw; /* Adjust padding */
   }
 
   .research-topics, .research-item {
-    width: 27vw; /* Adjust width to fit small screens */
-    height: 50vh; /* Make height auto to accommodate content */
-    margin: 0 auto; /* Increase margin top for spacing */
+    width: 18vw; /* Adjust width to fit small screens */
+    height: auto; /* Make height auto to accommodate content */
+    margin: auto auto; /* Increase margin top for spacing */
+  }
+
+  .research-item img {
+    height: auto; /* Adjust image height for aspect ratio */
+  }
+
+  .research-item .card-content {
+    padding: 0px; /* Reduce padding */
   }
   
   .research-item button {
@@ -500,23 +538,26 @@ canvas#wavyBackground {
 	}
 }
 
-@media screen and (min-width: 1025px) {
+/* Very Large Screens */
+@media screen and (min-width: 2000px) {
   #research {
-    grid-template-columns: repeat(auto-fit, minmax(3, 1fr)); /* Adapt columns to screen width */
-    max-width: 95vw; /* Adjust max width for centering */
+    grid-template-columns: repeat(3, 1fr); /* Two columns for tablets in landscape */
+    gap: 2vw; /* Maintain gap */
     padding: 2vh 2vw; /* Adjust padding */
-    gap: 2vw; /* Adjust gap */
-  }
-
-  .research-topics {
-    width: 20vw; /* Adjust width based on content */
-    height: auto; /* Adjust height based on content */
   }
 
   .research-topics, .research-item {
     width: 20vw; /* Adjust width to fit small screens */
     height: auto; /* Make height auto to accommodate content */
-    margin: 0 auto; /* Increase margin top for spacing */
+    margin: auto auto; /* Increase margin top for spacing */
+  }
+
+  .research-item img {
+    height: auto; /* Adjust image height for aspect ratio */
+  }
+
+  .research-item .card-content {
+    padding: 0px; /* Reduce padding */
   }
   
   .research-item button {
@@ -524,28 +565,6 @@ canvas#wavyBackground {
 	}
 }
 
-@media screen and (min-width: 2000px) {
-  #research {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increase min column width */
-    max-width: 95vw; /* Keep max width to maintain content centering */
-    padding: 3vh 3vw; /* Slightly more padding for visual comfort */
-    gap: 3vw; /* Increase gap for better separation of elements */
-  }
-
-  .research-topics,
-  .research-item {
-    width: 15vw; /* Increase width for better layout */
-    height: auto; /* Maintain auto height for flexible content accommodation */
-    margin: 0 auto; /* Keep centering the items */
-  }
-
-  .research-item button {
-    margin: 20px; /* Increase margin for better spacing around buttons */
-  }
-}
-
-/* Style for modal */
-/* Overlay */
 #modal-overlay {
   display: none;
   position: fixed;
