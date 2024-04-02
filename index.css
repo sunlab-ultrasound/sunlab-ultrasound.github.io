@@ -446,7 +446,31 @@ canvas#wavyBackground {
 	}
 }
 
-@media screen and (min-width: 481px) and (max-width: 1024px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #research {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid with minimum item width */
+    padding: 5vh; /* Maintain padding */
+    gap: 4vw; /* Adjust gap */
+  }
+
+  .research-topics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    gap: 20px; /* Maintain gap */
+  }
+
+  .research-topics, .research-item {
+    width: 35vw; /* Adjust width to fit small screens */
+    height: auto; /* Make height auto to accommodate content */
+    margin: 0 auto; /* Increase margin top for spacing */
+  }
+  
+  .research-item button {
+	margin: 10px;
+	}
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   #research {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid with minimum item width */
     padding: 5vh; /* Maintain padding */
@@ -494,8 +518,25 @@ canvas#wavyBackground {
 	}
 }
 
+@media screen and (min-width: 2000px) {
+  #research {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increase min column width */
+    max-width: 95vw; /* Keep max width to maintain content centering */
+    padding: 3vh 3vw; /* Slightly more padding for visual comfort */
+    gap: 3vw; /* Increase gap for better separation of elements */
+  }
 
+  .research-topics,
+  .research-item {
+    width: 15vw; /* Increase width for better layout */
+    height: auto; /* Maintain auto height for flexible content accommodation */
+    margin: 0 auto; /* Keep centering the items */
+  }
 
+  .research-item button {
+    margin: 20px; /* Increase margin for better spacing around buttons */
+  }
+}
 
 /* Style for modal */
 /* Overlay */
@@ -602,6 +643,80 @@ canvas#wavyBackground {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 480px) {
+  .modal-content {
+    width: 90%; /* Adjust width to fit small screens */
+    margin: 20% auto; /* Increase margin top for better visibility */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .modal-content img, .modal-content video {
+    max-width: 100%; /* Ensure media is fully responsive within its container */
+    height: auto;
+    margin-bottom: 10px; /* Adjust spacing */
+    padding: 10px; /* Adjust padding for small screens */
+  }
+
+  .modal-extra-content {
+    flex-direction: column; /* Stack content vertically on small screens */
+  }
+
+  .left-content, .right-content {
+    flex: 1 1 100%; /* Allow each content block to take full width */
+  }
+
+  .right-content img, .right-content video {
+    max-height: 200px; /* Adjust max height for small screens */
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .modal-content {
+    width: 90%; /* Adjust for optimal readability */
+    margin: 15% auto; /* Adjust margin for centered display */
+    padding: 15px; /* Slightly more padding for better spacing */
+  }
+
+  .modal-content img, .modal-content video {
+    max-width: 100%; /* Full width within container */
+    margin-bottom: 15px; /* Adjust spacing */
+  }
+
+  .modal-extra-content {
+    justify-content: space-around; /* Space out content for better layout */
+  }
+
+  .left-content, .right-content {
+    flex-basis: 48%; /* Adjust basis for side-by-side layout with some gap */
+  }
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .modal-content {
+    width: 80%; /* Wider screens can accommodate wider content */
+    margin: 10% auto; /* Adjust margin top due to increased width */
+    padding: 20px; /* More padding for aesthetic spacing */
+  }
+
+  /* Keeping the same configuration for .modal-content img, .modal-content video, .modal-extra-content, and .left-content, .right-content as in Portrait */
+}
+
+@media only screen and (min-width: 1025px) {
+  .modal-content {
+    width: 80%; /* Narrower width for desktops to maintain content focus */
+    margin: 5% auto; /* Reduced top margin as screen height increases */
+    padding: 20px; /* Consistent padding with landscape tablets */
+  }
+  /* Keeping configurations for .modal-content img, .modal-content video consistent, assuming adjustments fit for desktop usage */
+}
+
+@media only screen and (min-width: 2000px) {
+  .modal-content {
+    width: 80%; /* Further limit width to maintain a cohesive layout */
+    margin: 5% auto; /* Maintain top margin for vertical centering */
+    padding: 30px; /* Increased padding for a luxurious feel */
+  }
+}
 
 /* Footer Styles */
 footer {
@@ -712,3 +827,87 @@ footer {
 .contact-info .contact-details.mailing {
   padding-bottom: 10px; /* Adjusts padding at the bottom of the mailing address details */
 }
+	
+@media only screen and (max-width: 480px) {
+  footer,
+  .details-footer {
+    width: 95vw; /* Use the full viewport width */
+    padding: 4vh; /* Increase padding for better touch targets */
+    margin-top: 2vh; /* Adjust margin-top for spacing */
+    border-radius: 10px; /* Optional: remove border radius for full-width fit */
+  }
+
+  .details-footer,
+  .contact-footer {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align the content */
+  }
+
+  .affiliations, .contact-info {
+    flex-basis: 90%; /* Allow each section to take up more space */
+  }
+
+  .affiliation-logo img {
+    max-width: 200px; /* Adjust logo sizes for smaller screens */
+  }
+
+  .contact-info {
+    text-align: center; /* Center-align contact information */
+    align-items: center; /* Adjust alignment */
+    max-width: 100%; /* Use full available width */
+  }
+
+  .contact-info .contact-details {
+    margin-bottom: 20px; /* Increase spacing for touch accessibility */
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  footer,
+  .details-footer {
+    width: 98vw; /* Slightly less than full width for visual padding */
+    padding: 3vh; /* Adjust padding */
+    margin-top: 1vh; /* Adjust top margin */
+  }
+
+  .affiliations, .contact-info {
+    flex-basis: 45%; /* Adjust for side-by-side layout on wider screens */
+  }
+
+  .affiliation-logo img {
+    max-width: 25vw; /* Adjust based on available space */
+  }
+
+  .contact-info .contact-details {
+    padding: 5px; /* Adjust internal padding for better spacing */
+    margin-bottom: 15px; /* Increase space between contact details */
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  /* Adjustments might not be necessary if default styles cater well to large screens.
+     However, consider slight tweaks to padding or margins for aesthetic improvements. */
+}
+
+@media only screen and (min-width: 2000px) {
+  footer,
+  .details-footer {
+    width: 95vw; /* Maintain a consistent width */
+    padding: 4vh; /* Slightly more padding to use the extra space */
+    margin-top: 1vh; /* Adjust top margin for visual spacing */
+  }
+
+  .affiliations, .contact-info {
+    flex-basis: 30%; /* Increase basis for wider alignment */
+  }
+
+  .affiliation-logo img {
+    max-width: 300px; /* Increase logo size for visibility */
+  }
+
+  .contact-info .contact-details {
+    padding: 10px; /* More padding for a luxurious feel */
+    margin-bottom: 20px; /* More spacing for readability */
+  }
+}
+
