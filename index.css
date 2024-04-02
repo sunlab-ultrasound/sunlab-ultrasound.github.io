@@ -494,7 +494,7 @@ canvas#wavyBackground {
   }
 
   .research-topics, .research-item {
-    width: 35vw; /* Adjust width to fit small screens */
+    width: 33vw; /* Adjust width to fit small screens */
     height: auto; /* Make height auto to accommodate content */
     margin: 0 auto; /* Increase margin top for spacing */
   }
@@ -513,7 +513,7 @@ canvas#wavyBackground {
 
   .research-topics {
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /* Two items per row */
+    grid-template-columns: repeat(1, 1fr); /* Two items per row */s
     gap: 20px; /* Maintain gap */
   }
 
@@ -542,7 +542,7 @@ canvas#wavyBackground {
   }
 
   .research-topics, .research-item {
-    width: 25vw; /* Adjust width to fit small screens */
+    width: 20vw; /* Adjust width to fit small screens */
     height: auto; /* Make height auto to accommodate content */
     margin: 0 auto; /* Increase margin top for spacing */
   }
