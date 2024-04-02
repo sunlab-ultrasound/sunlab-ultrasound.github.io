@@ -867,7 +867,7 @@ footer {
   .details-footer {
     width: 98vw; /* Slightly less than full width for visual padding */
     padding: 3vh; /* Adjust padding */
-    margin-top: 1vh; /* Adjust top margin */
+    margin-top: 0.5vh; /* Adjust top margin */
   }
 
   .affiliations, .contact-info {
