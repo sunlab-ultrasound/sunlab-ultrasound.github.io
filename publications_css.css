@@ -406,13 +406,17 @@ button:hover {
 /* Mobile Devices */
 @media screen and (max-width: 480px) {
   .glass-container {
+	width: 90%;
     padding: 20px; /* Reduce padding */
     border-radius: 10px; /* Adjust for smaller screens */
   }
 
-  .glass-container h2, .glass-container p, .glass-container a {
-    font-size: larger; /* Increase text size for better readability */
+  .glass-container p, .glass-container a {
+    font-size: 3vw; /* Adjust font size for landscape tablets */
   }
+	.glass-container h2{
+		font-size: 4.5vw;
+	}
 
   .glass-container a.btn {
     padding: 12px 24px; /* Increase button size for easier interaction */
@@ -450,6 +454,16 @@ button:hover {
 @media screen and (min-width: 1025px) {
   .glass-container {
     max-width: 90%; /* Ideal max width for larger screens */
+  }
+  /* Adjusting font sizes for larger displays */
+  .glass-container h2 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .glass-container {
+    max-width: 95%; /* Ideal max width for larger screens */
   }
   /* Adjusting font sizes for larger displays */
   .glass-container h2 {
