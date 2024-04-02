@@ -97,20 +97,30 @@ nav ul li a:hover {
 
   nav ul li {
     padding: 0 12px; /* Adjust padding */
-    font-size: 3.5vw; /* Adjust font size */
+    font-size: 3vw; /* Adjust font size */
   }
 }
 
 /* Tablets in Landscape */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+	
+	header {
+    flex-direction: column;
+  }
+
   .logo img {
-    height: 4.5vw; /* Adjust logo size for more space */
+    height: 8vh; /* Smaller logo for smaller screens */
+    padding: 0; /* Adjust padding as needed */
+	  margin: auto auto;
+  }
+
+  nav ul {
+    justify-content: center;
   }
 
   nav ul li {
-    padding: 0 10px; /* Fine-tune padding */
-    font-size: 2vw; /* Increase font size */
-	margin-right: 5px;
+    padding: 10px; /* More vertical padding, no horizontal */
+	font-size: 2.5vw;
   }
 }
 
@@ -134,7 +144,7 @@ nav ul li a:hover {
 
   nav ul li {
     padding: 0 20px; /* Adjust padding for desktop */
-    font-size: 2vw; /* Adjust font size for desktop readability */
+    font-size: 1.5vw; /* Adjust font size for desktop readability */
     margin-right: 0; /* Reset margin-right */
   }
 }

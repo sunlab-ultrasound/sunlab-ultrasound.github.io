@@ -59,8 +59,6 @@ nav ul li a:hover {
   color: #EAEDEE;
 }
 
-/* Responsive adjustments */
-
 @media screen and (max-width : 480px ) {
   header {
     flex-direction: column;
@@ -99,20 +97,30 @@ nav ul li a:hover {
 
   nav ul li {
     padding: 0 12px; /* Adjust padding */
-    font-size: 3.5vw; /* Adjust font size */
+    font-size: 3vw; /* Adjust font size */
   }
 }
 
 /* Tablets in Landscape */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+	
+	header {
+    flex-direction: column;
+  }
+
   .logo img {
-    height: 4.5vw; /* Adjust logo size for more space */
+    height: 8vh; /* Smaller logo for smaller screens */
+    padding: 0; /* Adjust padding as needed */
+	  margin: auto auto;
+  }
+
+  nav ul {
+    justify-content: center;
   }
 
   nav ul li {
-    padding: 0 10px; /* Fine-tune padding */
-    font-size: 2vw; /* Increase font size */
-	margin-right: 5px;
+    padding: 10px; /* More vertical padding, no horizontal */
+	font-size: 2.5vw;
   }
 }
 
@@ -136,7 +144,7 @@ nav ul li a:hover {
 
   nav ul li {
     padding: 0 20px; /* Adjust padding for desktop */
-    font-size: 2vw; /* Adjust font size for desktop readability */
+    font-size: 1.5vw; /* Adjust font size for desktop readability */
     margin-right: 0; /* Reset margin-right */
   }
 }
@@ -272,6 +280,71 @@ nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
   z-index: 5;
 }
+
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+  #research {
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 15px; /* Smaller gap for mobile */
+    padding: 20px; /* Reduced padding */
+  }
+
+  .card-container, .card {
+    width: 60vw; /* Adjust card width to fit mobile screens */
+  }
+}
+
+/* Tablets in Portrait */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #research {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for portrait tablets */
+    gap: 20px; /* Adjust gap for tablet screens */
+    padding: 30px; /* Adjust padding for tablet screens */
+  }
+
+  .card-container, .card {
+    width: 37vw; /* Adjust card width for tablets */
+  }
+}
+
+/* Tablets in Landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #research {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for landscape tablets */
+    gap: 25px; /* Slightly larger gap */
+  }
+
+  .card-container, .card {
+    width: 27vw; /* Adjust width for landscape orientation */
+  }
+}
+
+/* Laptops and Desktops */
+@media screen and (min-width: 1025px) and (max-width: 1999px) {
+  #research {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit content with minimum width */
+    gap: 30px; /* Increase gap for larger screens */
+    max-width: 80%; /* Adjust max width for aesthetics */
+  }
+
+  .card-container, .card {
+    width: auto; /* Allow cards to adjust based on the grid */
+  }
+}
+
+/* Very Large Screens */
+@media screen and (min-width: 2000px) {
+  #research {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increase column width for very large screens */
+    gap: 40px; /* Larger gap for larger screens */
+    max-width: 85%; /* Max width can be increased for very large screens */
+  }
+
+  .card-container, .card {
+    width: auto; /* Adjust auto width for large screen cards */
+  }
+}
+
 
 canvas#wavyBackground {
   position: fixed;
