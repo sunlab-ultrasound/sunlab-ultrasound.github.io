@@ -291,11 +291,10 @@ nav ul li a:hover {
     grid-template-columns: 1fr; /* Single column layout */
     gap: 5vh; /* Increase gap for vertical spacing */
     padding: 5vh 5vw; /* Adjust padding for smaller screens */
-	width: 80vw;
   }
 
   .card-container {
-    width: 60vw; /* Adjust width to fit small screens */
+    width: auto; /* Adjust width to fit small screens */
     height: auto; /* Make height auto to accommodate content */
     margin: 0 auto; /* Increase margin top for spacing */
   }
