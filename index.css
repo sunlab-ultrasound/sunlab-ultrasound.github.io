@@ -833,7 +833,7 @@ footer {
   .details-footer {
     width: 95vw; /* Use the full viewport width */
     padding: 4vh; /* Increase padding for better touch targets */
-    margin-top: 2vh; /* Adjust margin-top for spacing */
+    margin-top: 0.5vh; /* Adjust margin-top for spacing */
     border-radius: 10px; /* Optional: remove border radius for full-width fit */
   }
 
