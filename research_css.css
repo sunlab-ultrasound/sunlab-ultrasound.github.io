@@ -205,6 +205,7 @@ nav ul li a:hover {
 }
 
 .card {
+  position: relative;
   width: 300px;
   height: 350px;
   background-color: #FFF;
@@ -465,6 +466,60 @@ canvas#wavyBackground {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+  .modal-content {
+    width: 90%; /* More suitable for mobile screens */
+    margin: 15% auto; /* Adjust margin to ensure visibility at the top */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .modal-extra-content, .left-content, .right-content {
+    flex-direction: column; /* Stack content vertically on small screens */
+  }
+}
+
+/* Tablets in Portrait */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .modal-content {
+    width: 90%; /* Adjust width for tablet screens */
+    padding: 20px; /* Slightly larger padding */
+  }
+
+  .left-content, .right-content {
+    padding: 5px; /* Adjust padding for better spacing */
+  }
+}
+
+/* Tablets in Landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .modal-content {
+    width: 70%; /* Utilize more screen space */
+  }
+
+  .modal-extra-content {
+    justify-content: space-evenly; /* Distribute content evenly */
+  }
+}
+
+/* Laptops and Desktops */
+@media screen and (min-width: 1025px) {
+  .modal-content {
+    width: 60%; /* Ideal width for larger screens */
+    margin: 5% auto; /* Adjust top margin */
+    padding: 30px; /* Increase padding */
+  }
+}
+
+/* Very Large Screens */
+@media screen and (min-width: 2000px) {
+  .modal-content {
+    width: 50%; /* Slightly larger width for very large screens */
+    padding: 40px; /* Increase padding for added comfort */
+  }
+}
+
 
 footer {
   background-color: transparent;
