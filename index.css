@@ -480,7 +480,7 @@ canvas#wavyBackground {
 	}
 }
 
-@media screen and (min-width: 769px) and (max-width: 1023px) and (orientation: landscape) {
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
   .research-topics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
