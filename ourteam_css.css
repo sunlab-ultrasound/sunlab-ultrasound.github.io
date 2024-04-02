@@ -275,4 +275,91 @@ canvas#wavyBackground {
   justify-content: center;
 }
 
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+  .student-cards-container {
+    flex-direction: column;
+  }
+  .student-card, .image-container, .glass-text-student {
+    width: 95%; /* Adjust width to fit mobile screens better */
+	flex-direction: column;
+	align-content: center;
+  }
+  .professor-card img, .student-card img {
+    max-height: 200px; /* Adjust image size for mobile screens */
+  }
+
+	.glass-text-student h3, h4 {
+		text-align: center;
+	}
+	
+	.glass-text-student h4, p {
+		margin-bottom: 10px;
+	} 
+}
+
+/* Tablets in Portrait */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .student-cards-container {
+    flex-wrap: wrap;
+  }
+  .student-card, .image-container, .glass-text-student {
+    width: 95%; /* Adjust width to fit mobile screens better */
+	flex-direction: column;
+	align-content: center;
+	grid-template-columns: repeat(1, 1fr);
+  }
+	.glass-text-student h3, h4 {
+		text-align: center;
+	}
+	
+	.glass-text-student h4, p {
+		margin-bottom: 10px;
+	} 
+}
+
+/* Tablets in Landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .student-cards-container {
+    justify-content: space-around;
+  }
+  .student-card {
+    width: 95%; /* Adapt to show three cards per row */
+  }
+	
+  .glass-text-student h4, p {
+	margin-bottom: 10px;
+	} 
+}
+
+/* Laptops */
+@media screen and (min-width: 1025px) {
+  .student-cards-container {
+    justify-content: space-between;
+  }
+  .student-card {
+    width: 100%; /* Adapt to show three cards per row */
+	margin: auto 20px;
+  }
+	
+  .glass-text-student h4, p {
+	margin-bottom: 10px;
+	} 
+}
+
+/* Very Large Screens */
+@media screen and (min-width: 2000px) {
+  .student-cards-container {
+    justify-content: space-between;
+  }
+  .student-card {
+    width: 90%; /* Adapt to show three cards per row */
+	margin: auto;
+  }
+	
+  .glass-text-student h4, p {
+	margin-bottom: 10px;
+	} 
+}
+
 
