@@ -176,6 +176,7 @@ nav ul li a:hover {
     font-size: 1.2vw; /* Enhance font size for optimal readability */
   }
 }
+
 /* Wavy Background Canvas */
 canvas#wavyBackground {
   position: fixed;
