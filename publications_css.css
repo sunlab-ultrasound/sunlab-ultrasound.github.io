@@ -102,7 +102,7 @@ nav ul li a:hover {
 }
 
 /* Tablets in Landscape */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and ( min-width : 769px ) and (max-width : 1025px ){
 	
 	header {
     flex-direction: column;
@@ -260,11 +260,12 @@ nav ul li a:hover {
 
   #publications .card-container {
     width: 90%; /* Adjust width to suit tablet screens */
+	  
   }
 }
 
 /* Tablets in Landscape */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and ( min-width : 769px ) and (max-width : 1025px ){
   #publications .cards-wrapper {
     grid-template-columns: repeat(3, 1fr); /* Three columns for landscape tablets */
   }
@@ -275,7 +276,7 @@ nav ul li a:hover {
 }
 
 /* Laptops and Desktops */
-@media screen and (min-width: 1025px) and (max-width: 1999px) {
+@media screen and (min-width : 1026px ) and ( max-width : 1999px ){
   #publications .cards-wrapper {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit with a min width of 250px */
   }
@@ -438,7 +439,7 @@ button:hover {
 }
 
 /* Tablets in Landscape */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and ( min-width : 769px ) and (max-width : 1025px ){
   .glass-container {
     max-width: 90%; /* Utilize more width for landscape orientation */
   }
@@ -484,5 +485,3 @@ button:hover {
     padding: 14px 28px; /* Larger buttons for easier interaction */
   }
 }
-
-
