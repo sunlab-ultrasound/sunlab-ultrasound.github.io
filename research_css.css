@@ -310,7 +310,7 @@ nav ul li a:hover {
   .card-content {
     background: rgba(0, 0, 0, 1.0); /* Slightly darken the background for text contrast */
     padding: 15px; /* Provide enough padding for readability */
-    position: absolute; /* Reset any absolute positioning */
+    position: static; /* Reset any absolute positioning */
     object-fit: fill; /* Ensure content fits without distortion */
   }
 
