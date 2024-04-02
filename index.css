@@ -335,7 +335,7 @@ canvas#wavyBackground {
   }
 
   .current-research-font, .welcome-font {
-    font-size: calc(1rem + 0.5vw); /* Consistency in font scaling */
+    font-size: calc(1rem + 1vw); /* Consistency in font scaling */
   }
 }
 
@@ -456,18 +456,16 @@ canvas#wavyBackground {
 	}
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   #research {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible grid with minimum item width */
-    padding: 5vh; /* Maintain padding */
-    gap: 4vw; /* Adjust gap */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for portrait tablets */
+	padding: 15px;
   }
 
-  .research-topics {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two items per row */
-    gap: 20px; /* Maintain gap */
+  .research-item {
+    width: 95%; /* Adjust width to fit two items per row */
   }
+}
 
   .research-topics, .research-item {
     width: 40vw; /* Adjust width to fit small screens */
@@ -480,11 +478,9 @@ canvas#wavyBackground {
 	}
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-  .research-topics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #research {
+    grid-template-columns: repeat(2, 1fr); /* Three columns for landscape tablets */
   }
 
   .research-topics {
@@ -497,7 +493,6 @@ canvas#wavyBackground {
     width: 27vw; /* Adjust width to fit small screens */
     height: 50vh; /* Make height auto to accommodate content */
     margin: 0 auto; /* Increase margin top for spacing */
-	gap: 20px;
   }
   
   .research-item button {
@@ -507,7 +502,7 @@ canvas#wavyBackground {
 
 @media screen and (min-width: 1025px) {
   #research {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapt columns to screen width */
+    grid-template-columns: repeat(auto-fit, minmax(3, 1fr)); /* Adapt columns to screen width */
     max-width: 95vw; /* Adjust max width for centering */
     padding: 2vh 2vw; /* Adjust padding */
     gap: 2vw; /* Adjust gap */
