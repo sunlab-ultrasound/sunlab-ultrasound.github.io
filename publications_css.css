@@ -240,6 +240,62 @@ nav ul li a:hover {
   background-color: #555; /* Darken button on hover */
 }
 
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+  #publications .cards-wrapper {
+    grid-template-columns: 1fr; /* Single column for mobile */
+    padding: 20px; /* Adjust padding */
+  }
+
+  #publications .card-container {
+    width: 90%; /* Full width for mobile */
+  }
+}
+
+/* Tablets in Portrait */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #publications .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for portrait tablets */
+  }
+
+  #publications .card-container {
+    width: 90%; /* Adjust width to suit tablet screens */
+  }
+}
+
+/* Tablets in Landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #publications .cards-wrapper {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for landscape tablets */
+  }
+
+  #publications .card-container {
+    width: 90%; /* Adjust width for landscape */
+  }
+}
+
+/* Laptops and Desktops */
+@media screen and (min-width: 1025px) and (max-width: 1999px) {
+  #publications .cards-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit with a min width of 250px */
+  }
+
+  #publications .card-container {
+    width: 95%; /* Adjust width for larger screens */
+  }
+}
+
+/* Very Large Screens */
+@media screen and (min-width: 2000px) {
+  #publications .cards-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust for very large screens */
+  }
+
+  #publications .card-container {
+    width: 90%; /* Adjust width as necessary */
+  }
+}
+
 /* Wavy Background Canvas */
 canvas#wavyBackground {
   position: fixed;
@@ -272,30 +328,6 @@ canvas#wavyBackground {
   z-index: 2; /* Ensures that publication cards are above the backdrop */
 }
 
-.glass-text {
-  display: inline-block; /* or 'block' depending on your layout */
-  background: rgba(255, 255, 255, 0.25); /* Semi-transparent white */
-  border-radius: 10px; /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.18); /* Light border for glass effect */
-  padding: 10px 20px; /* Adjust padding as needed */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  backdrop-filter: blur(10px); /* Blur effect for the frosted glass look */
-  -webkit-backdrop-filter: blur(5px); /* For Safari */
-  font-weight: bold; /* Optional: makes the text bold */
-  color: rgba(255,255,255,0.78); /* Text color */
-  text-align: center;/* Center align text */
-  z-index: 3;
-}
-
-
-.card-row {
-  display: grid;
-  grid-template-columns: auto; /* Creates three columns */
-  gap: 20px; /* Space between cards */
-  margin: 80px auto; /* Vertical margin */
-  width: 90%; /* Adjust based on your preference */
-  max-width: 1200px; /* Maximum width of the container */
-}
 
 .glass-container {
   background: rgba(0, 0, 0, 0.888); /* White background with opacity */
@@ -305,7 +337,7 @@ canvas#wavyBackground {
   margin: 20px auto; /* Center the container with automatic horizontal margins */
   max-width: 95%; /* Maximum width of the container */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  z-index: 3;
+  z-index: 99;
 }
 
 .glass-container h2 {
@@ -371,15 +403,72 @@ button:hover {
   background-color: #777; /* Darker shade for hover effect */
 }
 
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+  .glass-container {
+    padding: 20px; /* Reduce padding */
+    border-radius: 10px; /* Adjust for smaller screens */
+  }
 
-footer {
-  background-color: transparent;
-  color: black;
-  text-align: center;
-  padding: 20px;
-  position: relative; /* or 'absolute' if you want it to be at the bottom of the content */
-  width: 100%; /* Ensure it spans the full width of the screen */
-  clear: both; /* Clear floats if any */
-  z-index: 99; /* Ensure it is above other content, but the value doesn't need to be high if no other content has z-index set */
+  .glass-container h2, .glass-container p, .glass-container a {
+    font-size: larger; /* Increase text size for better readability */
+  }
+
+  .glass-container a.btn {
+    padding: 12px 24px; /* Increase button size for easier interaction */
+  }
 }
+
+/* Tablets in Portrait */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .glass-container {
+    max-width: 90%; /* Adjust width for tablet screens */
+  }
+  /* Increase text sizes slightly for better readability on tablets */
+  .glass-container h2 {
+    font-size: 26px;
+  }
+  .glass-container a.btn {
+    padding: 10px 22px;
+  }
+}
+
+/* Tablets in Landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .glass-container {
+    max-width: 90%; /* Utilize more width for landscape orientation */
+  }
+  .glass-container p, .glass-container a {
+    font-size: 1.7vw; /* Adjust font size for landscape tablets */
+  }
+	.glass-container h2{
+		font-size: 2.5vw;
+	}
+}
+
+/* Laptops */
+@media screen and (min-width: 1025px) {
+  .glass-container {
+    max-width: 90%; /* Ideal max width for larger screens */
+  }
+  /* Adjusting font sizes for larger displays */
+  .glass-container h2 {
+    font-size: 30px;
+  }
+}
+
+/* Very Large Screens */
+@media screen and (min-width: 2000px) {
+  .glass-container {
+    max-width: 90%; /* Slightly increase width for very large screens */
+  }
+  /* Increase text and button sizes for very large screens */
+  .glass-container h2 {
+    font-size: 32px;
+  }
+  .glass-container a.btn {
+    padding: 14px 28px; /* Larger buttons for easier interaction */
+  }
+}
+
 
