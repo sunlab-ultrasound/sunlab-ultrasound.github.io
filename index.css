@@ -335,7 +335,7 @@ canvas#wavyBackground {
   }
 
   .current-research-font, .welcome-font {
-    font-size: calc(1rem + 1vw); /* Consistency in font scaling */
+    font-size: calc(1rem + 0.5vw); /* Consistency in font scaling */
   }
 }
 
@@ -495,7 +495,7 @@ canvas#wavyBackground {
 
   .research-topics, .research-item {
     width: 27vw; /* Adjust width to fit small screens */
-    height: 62vh; /* Make height auto to accommodate content */
+    height: 50vh; /* Make height auto to accommodate content */
     margin: 0 auto; /* Increase margin top for spacing */
 	gap: 20px;
   }
@@ -505,7 +505,7 @@ canvas#wavyBackground {
 	}
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1999px) {
+@media screen and (min-width: 1025px) {
   #research {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adapt columns to screen width */
     max-width: 95vw; /* Adjust max width for centering */
