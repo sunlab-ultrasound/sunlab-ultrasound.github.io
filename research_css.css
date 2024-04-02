@@ -184,7 +184,7 @@ nav ul li a:hover {
   padding: 40px; /* Optional: Space inside the container */
   margin: auto auto; /* Center the grid horizontally */
   max-width: 90%; /* Optional: Max width of the grid */
-  margin-top: 70px;
+  margin-top: 100px;
 }
 
 .card-container {
@@ -205,7 +205,6 @@ nav ul li a:hover {
 }
 
 .card {
-  position: relative;
   width: 300px;
   height: 350px;
   background-color: #FFF;
@@ -223,15 +222,18 @@ nav ul li a:hover {
 }
 
 .card-content {
-  color: #FFF;
-  padding: 20px;
-  background: rgba(0, 0, 0, 1.0);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 300px;
-  backdrop-filter: blur(10px);
-  z-index: 5;
+    color: #FFF;
+    padding: 20px;
+    background: rgba(0, 0, 0, 1.0);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    backdrop-filter: blur(10px);
+    z-index: 5;
+    margin-top: -36px;
+	object-fit: contain;
+	
 }
 
 .card-content h2, .card-content p {
@@ -285,13 +287,47 @@ nav ul li a:hover {
 /* Mobile Devices */
 @media screen and (max-width: 480px) {
   #research {
-    grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 15px; /* Smaller gap for mobile */
-    padding: 20px; /* Reduced padding */
+    grid-template-columns: 1fr; /* Ensure a single column layout */
+    gap: 20px; /* Adjust gap to ensure proper spacing */
+    padding: 5% 5%; /* Provide proportional padding */
+    margin: 0 auto; /* Center the grid */
+    margin-top: 50px; /* Adjust top margin for spacing */
+    max-width: 70%; /* Limit the width to ensure it doesn't touch the screen edges */
   }
 
-  .card-container, .card {
-    width: 60vw; /* Adjust card width to fit mobile screens */
+  .card-container {
+    width: 100%; /* Utilize the full width of the grid column */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align the content for a neat look */
+  }
+
+  .card, .card-content {
+    width: 100%; /* Ensure the card and its content utilize the full width of their container */
+    margin-top: 0; /* Reset any top margin to align the content properly */
+  }
+
+  .card-image img {
+    width: 100%; /* Ensure images stretch to the width of the card */
+    max-height: 200px; /* Limit image height to maintain aspect ratio */
+    object-fit: cover; /* Cover the designated area without stretching */
+    border-radius-top: 10px; /* Maintain consistency with rounded corners */
+  }
+
+  .card-content {
+    background: rgba(0, 0, 0, 0.7); /* Slightly darken the background for text contrast */
+    padding: 15px; /* Provide enough padding for readability */
+    position: absolute; /* Reset any absolute positioning */
+    object-fit: fill; /* Ensure content fits without distortion */
+  }
+
+  .card-content h2, .card-content p {
+    font-size: 20px; /* Adjust font size for mobile readability */
+    margin: 5px 0; /* Minimize margin for compact display */
+  }
+
+  .research-item button {
+    padding: 8px 16px; /* Adjust button padding for easier interaction */
+   /* Ensure button text is legible without taking too much space */
   }
 }
 
