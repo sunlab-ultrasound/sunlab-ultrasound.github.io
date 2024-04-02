@@ -292,7 +292,8 @@ nav ul li a:hover {
     padding: 5% 5%; /* Provide proportional padding */
     margin: 0 auto; /* Center the grid */
     margin-top: 50px; /* Adjust top margin for spacing */
-    max-width: 70%; /* Limit the width to ensure it doesn't touch the screen edges */
+    max-width: 80%; /* Limit the width to ensure it doesn't touch the screen edges */
+	color: hidden;
   }
 
   .card-container {
