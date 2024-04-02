@@ -283,7 +283,7 @@ canvas#wavyBackground {
   .student-card, .image-container, .glass-text-student {
     width: 95%; /* Adjust width to fit mobile screens better */
 	flex-direction: column;
-	align-content: center;
+	margin: auto auto;
   }
   .professor-card img, .student-card img {
     max-height: 200px; /* Adjust image size for mobile screens */
@@ -306,7 +306,7 @@ canvas#wavyBackground {
   .student-card, .image-container, .glass-text-student {
     width: 95%; /* Adjust width to fit mobile screens better */
 	flex-direction: column;
-	align-content: center;
+	margin: auto auto;
 	grid-template-columns: repeat(1, 1fr);
   }
 	.glass-text-student h3, h4 {
@@ -325,6 +325,7 @@ canvas#wavyBackground {
   }
   .student-card {
     width: 95%; /* Adapt to show three cards per row */
+	margin: auto auto;
   }
 	
   .glass-text-student h4, p {
