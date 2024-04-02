@@ -256,7 +256,7 @@ canvas#wavyBackground {
   display: block;
 }
 
-.contact-info .email a, .contact-info .location, .contact-info .mailing {
+.contact-info .location, .contact-info .mailing, .contact-info .email {
   font-size: 18px;
   line-height: 1.5;
   text-decoration: none;
@@ -274,25 +274,6 @@ canvas#wavyBackground {
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
-  header {
-    flex-direction: column;
-  }
-  
-  .logo img {
-    margin: auto auto;
-    height: 50px;
-  }
-  
-  nav ul {
-    padding-top: 10px;
-    justify-content: center;
-	  
-  }
-
-  nav ul li {
-    font-size: 3.5vw;
-	padding: 10px;
-  }
 
   .glass-container {
     flex-direction: column;
