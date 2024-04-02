@@ -468,7 +468,7 @@ canvas#wavyBackground {
 }
 
   .research-topics, .research-item {
-    width: 40vw; /* Adjust width to fit small screens */
+    width: 30vw; /* Adjust width to fit small screens */
     height: auto; /* Make height auto to accommodate content */
     margin: 0 auto; /* Increase margin top for spacing */
   }
@@ -480,7 +480,7 @@ canvas#wavyBackground {
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   #research {
-    grid-template-columns: repeat(2, 1fr); /* Three columns for landscape tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .research-topics {
