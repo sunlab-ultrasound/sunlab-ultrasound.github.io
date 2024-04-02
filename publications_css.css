@@ -184,6 +184,7 @@ nav ul li a:hover {
   padding: 20px; /* Padding around the entire grid */
   justify-content: center; /* This centers the grid horizontally */
   align-items: start; /* Align grid items to the start of the container */
+  margin-top: 20vh;
 }
 
 #publications .card-container { 
@@ -256,6 +257,8 @@ nav ul li a:hover {
 @media screen and (min-width: 481px) and (max-width: 768px) {
   #publications .cards-wrapper {
     grid-template-columns: repeat(2, 1fr); /* Two columns for portrait tablets */
+	
+	
   }
 
   #publications .card-container {
