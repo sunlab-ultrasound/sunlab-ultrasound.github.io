@@ -97,7 +97,7 @@ nav ul li a:hover {
 
   nav ul li {
     padding: 0 12px; /* Adjust padding */
-    font-size: 3.5vw; /* Adjust font size */
+    font-size: 3vw; /* Adjust font size */
   }
 }
 
@@ -109,7 +109,7 @@ nav ul li a:hover {
 
   nav ul li {
     padding: 0 10px; /* Fine-tune padding */
-    font-size: 2vw; /* Increase font size */
+    font-size: 1.5vw; /* Increase font size */
 	margin-right: 5px;
   }
 }
@@ -460,7 +460,7 @@ canvas#wavyBackground {
   }
 
   .research-topics, .research-item {
-    width: 35vw; /* Adjust width to fit small screens */
+    width: 40vw; /* Adjust width to fit small screens */
     height: auto; /* Make height auto to accommodate content */
     margin: 0 auto; /* Increase margin top for spacing */
   }
