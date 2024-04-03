@@ -184,7 +184,6 @@ nav ul li a:hover {
   padding: 20px; /* Padding around the entire grid */
   justify-content: center; /* This centers the grid horizontally */
   align-items: start; /* Align grid items to the start of the container */
-  margin-top: 20vh;
 }
 
 #publications .card-container { 
@@ -271,10 +270,12 @@ nav ul li a:hover {
 @media screen and ( min-width : 769px ) and (max-width : 1025px ){
   #publications .cards-wrapper {
     grid-template-columns: repeat(3, 1fr); /* Three columns for landscape tablets */
+	 
   }
 
   #publications .card-container {
     width: 90%; /* Adjust width for landscape */
+	
   }
 }
 
@@ -296,7 +297,7 @@ nav ul li a:hover {
   }
 
   #publications .card-container {
-    width: 90%; /* Adjust width as necessary */
+    width: 90%;
   }
 }
 
@@ -444,7 +445,7 @@ button:hover {
 /* Tablets in Landscape */
 @media screen and ( min-width : 769px ) and (max-width : 1025px ){
   .glass-container {
-    max-width: 90%; /* Utilize more width for landscape orientation */
+    max-width: 90%;/* Utilize more width for landscape orientation */
   }
   .glass-container p, .glass-container a {
     font-size: 1.7vw; /* Adjust font size for landscape tablets */
@@ -452,6 +453,8 @@ button:hover {
 	.glass-container h2{
 		font-size: 2.5vw;
 	}
+	
+	
 }
 
 /* Laptops */
