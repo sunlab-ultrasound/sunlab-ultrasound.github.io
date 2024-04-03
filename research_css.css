@@ -177,213 +177,19 @@ nav ul li a:hover {
   }
 }
 
-#research {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts to fit content */
-  gap: 20px; /* Space between grid items */
-  padding: 40px; /* Optional: Space inside the container */
-  margin: auto auto; /* Center the grid horizontally */
-  max-width: 90%; /* Optional: Max width of the grid */
-  margin-top: 100px;
-}
-
-.card-container {
-  display: flex; /* Ensures a flexible layout */
-  flex-direction: column; /* Stacks children vertically */
-  justify-content: space-between; /* Distributes space between items */
-  width: 300px; /* Width of the card */
-  height: 350px; /* Height of the card */
-  margin: 20px auto; /* Centers card in the available space with 50px margin */
-  background: transparent; /* Transparent background */
-  backdrop-filter: blur(10px); /* Blurred effect for content beneath the container */
-  border-radius: 25px; /* Rounded corners */
-  overflow: hidden; /* Hides parts of the content that overflows container's box */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow effect for depth */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
-  z-index: 3; /* Ensures the card is above the blurry backdrop but under the modal/dialogs if any */
-  gap: 20px; /* Space between the cards if wrapped */
-}
-
-.card {
-  width: 300px;
-  height: 350px;
-  background-color: #000000;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-  z-index: 5;
-}
-
-#research .card:hover {
-  transform: translateY(-5px); /* Raise the card slightly on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 5;
-}
-
-.card-content {
-    color: #FFF;
-    padding: 20px;
-    background: rgba(0, 0, 0, 1.0);
-    position: relative;
-    bottom: 0;
-    left: 0;
-    width: 300px;
-    backdrop-filter: blur(10px);
-    z-index: 5;
-    margin-top: -36px;
-	object-fit: contain;
-	
-}
-
-.card-content h2, .card-content p {
-  margin: 0;
-  font-size: 20px;
-  z-index: 5;
-}
-
-.card-content button {
-  margin-top: 10px;
-  background-color: #FFF;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  z-index: 2;
-  
-}
-
-.try-now-btn {
-  background-color: #000000;
-  color: #000000;
-  z-index: 5;
-}
-
-.card-image img {
-    width: 300px; /* Adjust size as needed */
-    height: 210px; /* Adjust size as needed */
-    object-fit: cover;
-    margin-top: auto;
-    margin-bottom: 20px; /* Space between image and text */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-	z-index: 5;
-  
-}
-
-.card-content button:hover {
-  background-color: #000000;
-  color: #FFF;
-  z-index: 5;
-}
-
-.card:hover {
-  transform: translateY(-5px); /* Raise the card slightly on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth effect */
-  z-index: 5;
-}
-
-/* Mobile Devices */
-@media screen and (max-width: 480px) {
-  #research {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 5vh; /* Increase gap for vertical spacing */
-    padding: 5vh 5vw; /* Adjust padding for smaller screens */
-  }
-
-  .card-container {
-    width: auto; /* Adjust width to fit small screens */
-    height: auto; /* Make height auto to accommodate content */
-    margin: 0 auto; /* Increase margin top for spacing */
-  }
-
-  .card-image img, .card-content {
-    width: 100%; /* Ensure content fits within the card */
-  }
-
-  .card-content {
-    margin-top: -25pX; /* Align the top of the content with the card's edge */
-    padding: 15px; /* Sufficient padding for readability */
-    object-fit: fill; /* Cover the content area fully without distortion */
-  }
-
-  .card-content h2, .card-content p {
-    font-size: 18px; /* Adjust font size for mobile readability */
-  }
-
-  .card-content button {
-    margin-top: 10px; /* Space above the button */
-  }
-}
-
-
-/* Tablets in Portrait */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  #research {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for portrait tablets */
-    gap: 20px; /* Adjust gap for tablet screens */
-    padding: 30px; /* Adjust padding for tablet screens */
-  }
-
-  .card-container, .card {
-    width: 37vw; /* Adjust card width for tablets */
-  }
-}
-
-/* Tablets in Landscape */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  #research {
-    grid-template-columns: repeat(3, 1fr); /* Three columns for landscape tablets */
-    gap: 25px; /* Slightly larger gap */
-  }
-
-  .card-container, .card {
-    width: 27vw; /* Adjust width for landscape orientation */
-  }
-}
-
-/* Laptops and Desktops */
-@media screen and (min-width: 1025px) and (max-width: 1999px) {
-  #research {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit content with minimum width */
-    gap: 30px; /* Increase gap for larger screens */
-    max-width: 80%; /* Adjust max width for aesthetics */
-  }
-
-  .card-container, .card {
-    width: auto; /* Allow cards to adjust based on the grid */
-  }
-}
-
-/* Very Large Screens */
-@media screen and (min-width: 2000px) {
-  #research {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increase column width for very large screens */
-    gap: 40px; /* Larger gap for larger screens */
-    max-width: 85%; /* Max width can be increased for very large screens */
-  }
-
-  .card-container, .card {
-    width: auto; /* Adjust auto width for large screen cards */
-  }
-}
-
-
 canvas#wavyBackground {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -3; /* Ensure it's behind all content but above the page background */
+  z-index: -3; /* Behind all content */
 }
 
+
+/* Blurry Backdrop */
 .blurry-backdrop {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   -webkit-backdrop-filter: blur(40px); /* Prefix for iOS/Safari */
@@ -391,167 +197,140 @@ canvas#wavyBackground {
   z-index: -2; /* Above the wavy background, below everything else */
 }
 
-#modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
-  z-index: 100; /* Ensure it is above other content but below modal */
-  transition: opacity 0.3s ease;
-  opacity: 0;
-}
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1000; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.9); /* Black with opacity */
-  transition: opacity 0.3s ease ;
-  opacity: 100;
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative; /* For absolute positioning of the close button */
-  background-color: #fefefe;
-  margin: 10% auto; /* 10% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 60%; /* Could be more or less, depending on screen size */
-  box-shadow: 0 4px 8px 2px rgba(0,0,0,0.2);
-  border-radius: 10px; /* Optional: if you want rounded corners */
-}
-
-.modal-content {
-  transform: translateY(-50px); /* Start slightly above the final position */
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for smooth movement and fade */
-}
-
-.modal-content img {
-  display: flex;
-  justify-content: center;
-  max-width: 100%; /* Make image responsive */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 20px; /* Space between image and text */
-  transition: transform 0.3s ease; /* Smooth transition for image */
-}
-
-.model-open { 
+.glass-container {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 2vh;
+  margin-top: 100px;
+  width: 95vw; /* Adjusted to provide some margin on smaller screens */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   overflow: hidden;
+  position: relative;
+  z-index: 3;
 }
 
-.modal-extra-content {
-  display: flex;
-  flex-wrap: wrap; /* Allow the contents to wrap on smaller screens */
-  justify-content: space-between;
-  margin-top: 10px;
+.research-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    left: 0vmax;
+    text-align: center;
+    border-radius: 10px;
 }
 
-.left-content, .right-content {
-  text-align: justify;
-  flex: 1 1 45%; /* Adjust the flex-basis to control when wrapping occurs */
-  padding: 0px;
-  margin: 10px 0; /* Ensure spacing between when wrapped */
+.content {
+    display: flex;
+    align-items: center; /* This will vertically center the items in the container */
+    justify-content: start; /* This will align the items to the start of the container */
 }
 
-.right-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.image-container {
+    flex-basis: 50%; /* This assigns a base width for the image container */
+    max-width: 50%; /* This ensures the image container doesn't exceed half the parent container's width */
 }
 
-.right-content img, .right-content video {
-  max-width: 90%; /* Ensure media is fully responsive within its container */
-  height: auto;
-  max-height: 250px; /* Limit the height of the image/video */
+.text-container {
+    flex-basis: 50%; /* This assigns a base width for the text container */
+    max-width: 50%; /* This ensures the text container doesn't exceed half the parent container's width */
+    padding-left: 20px; /* This adds some space between the image and the text */
 }
 
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  color: #aaa;
-  font-size: 28px;
-  font-weight: bold;
+/* You might want to add this to ensure the image is responsive and doesn't overflow its container */
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+
+video {
+    width: 50%;
+    border-radius: 5px;
+	margin-top: 10px;
 }
 
 /* Mobile Devices */
 @media screen and (max-width: 480px) {
-  .modal-content {
-    width: 90%; /* More suitable for mobile screens */
-    margin: 15% auto; /* Adjust margin to ensure visibility at the top */
-    padding: 10px; /* Adjust padding for smaller screens */
-  }
+    .glass-container {
+        padding: 5vw; /* Slightly reduce padding */
+        margin-top: 110px; /* Adjust top margin */
+        width: 90vw; /* Adjust width for smaller screens */
+    }
 
-  .modal-extra-content, .left-content, .right-content {
-    flex-direction: column; /* Stack content vertically on small screens */
-  }
+    .content {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .image-container, .text-container {
+        flex-basis: 100%; /* Use full width */
+        max-width: 100%; /* Ensure they do not exceed the container's width */
+        padding: 0; /* Reset padding for a snug fit */
+    }
+
+    .image-container img, video {
+        width: 100%; /* Ensure media scales down */
+    }
+
+    .text-container {
+        padding: 10px 0; /* Add some padding above and below the text */
+    }
+
+    .research-title {
+        font-size: 20px; /* Adjust title size for smaller screens */
+        margin-bottom: 10px; /* Reduce margin */
+    }
 }
 
 /* Tablets in Portrait */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  .modal-content {
-    width: 90%; /* Adjust width for tablet screens */
-    padding: 20px; /* Slightly larger padding */
-  }
+    .glass-container {
+        width: 85vw; /* Adjust for slightly more margin */
+    }
 
-  .left-content, .right-content {
-    padding: 5px; /* Adjust padding for better spacing */
-  }
+    .content {
+        flex-direction: row; /* Return to side-by-side layout if possible */
+    }
+
+    .image-container, .text-container {
+        flex-basis: 50%; /* Return to split layout */
+    }
 }
 
-/* Tablets in Landscape */
+/* Tablets in Landscape and Small Laptops */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .modal-content {
-    width: 70%; /* Utilize more screen space */
-  }
+    .glass-container {
+        width: 90vw; /* Provide more margin */
+    }
 
-  .modal-extra-content {
-    justify-content: space-evenly; /* Distribute content evenly */
-  }
+    .image-container, .text-container {
+        /* These remain unchanged as they adapt well from portrait tablet settings */
+    }
 }
 
 /* Laptops and Desktops */
 @media screen and (min-width: 1025px) {
-  .modal-content {
-    width: 60%; /* Ideal width for larger screens */
-    margin: 5% auto; /* Adjust top margin */
-    padding: 30px; /* Increase padding */
-  }
+    .glass-container {
+        width: 90vw; /* Further adjust for larger screens */
+        max-width: 1200px; /* Cap the maximum width to maintain design integrity */
+    }
+
+    .content {
+        /* No changes needed here as the flex layout adapts well */
+    }
 }
 
 /* Very Large Screens */
 @media screen and (min-width: 2000px) {
-  .modal-content {
-    width: 50%; /* Slightly larger width for very large screens */
-    padding: 40px; /* Increase padding for added comfort */
-  }
-}
+    .glass-container {
+        width: 80vw; /* Adjust for significant margins */
+        max-width: 1600px; /* Ensure content is not overly stretched */
+    }
 
-
-footer {
-  background-color: transparent;
-  color: black;
-  text-align: center;
-  padding: 20px;
-  position: relative; /* or 'absolute' if you want it to be at the bottom of the content */
-  width: 100%; /* Ensure it spans the full width of the screen */
-  clear: both; /* Clear floats if any */
-  z-index: 99; /* Ensure it is above other content, but the value doesn't need to be high if no other content has z-index set */
+    .research-title {
+        font-size: 28px; /* Slightly increase for better readability */
+    }
 }
