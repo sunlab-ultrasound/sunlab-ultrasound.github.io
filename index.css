@@ -718,6 +718,7 @@ canvas#wavyBackground {
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
   .modal-content {
+	
     width: 80%; /* Wider screens can accommodate wider content */
     margin: 10% auto; /* Adjust margin top due to increased width */
     padding: 20px; /* More padding for aesthetic spacing */
@@ -732,6 +733,13 @@ canvas#wavyBackground {
     margin: 5% auto; /* Reduced top margin as screen height increases */
     padding: 20px; /* Consistent padding with landscape tablets */
   }
+	
+  .modal-content img {
+    max-width: 50%; /* Ensure media is fully responsive within its container */
+    height: auto;
+    margin-bottom: 10px; /* Adjust spacing */
+    padding: 10px; /* Adjust padding for small screens */
+  }
   /* Keeping configurations for .modal-content img, .modal-content video consistent, assuming adjustments fit for desktop usage */
 }
 
@@ -740,6 +748,20 @@ canvas#wavyBackground {
     width: 80%; /* Further limit width to maintain a cohesive layout */
     margin: 5% auto; /* Maintain top margin for vertical centering */
     padding: 30px; /* Increased padding for a luxurious feel */
+  }
+	
+	.modal-content img {
+    max-width: 50%; /* Ensure media is fully responsive within its container */
+    height: auto;
+    margin-bottom: 10px; /* Adjust spacing */
+    padding: 10px; /* Adjust padding for small screens */
+  }
+	
+    .modal-content video {
+    max-width: 100%; /* Ensure media is fully responsive within its container */
+    height: auto;
+    margin-bottom: 10px; /* Adjust spacing */
+    padding: 10px; /* Adjust padding for small screens */
   }
 }
 
@@ -935,4 +957,3 @@ footer {
     margin-bottom: 20px; /* More spacing for readability */
   }
 }
-

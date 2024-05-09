@@ -288,7 +288,8 @@ video {
 /* Tablets in Portrait */
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .glass-container {
-        width: 85vw; /* Adjust for slightly more margin */
+        width: 85vw;/* Adjust for slightly more margin */
+		margin-top: 110px;
     }
 
     .content {

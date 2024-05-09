@@ -321,16 +321,27 @@ canvas#wavyBackground {
 /* Tablets in Landscape */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .student-cards-container {
-    justify-content: space-around;
+    flex-direction: column;
+	  grid-template-columns: repeat(1, 1fr);
   }
-  .student-card {
-    width: 95%; /* Adapt to show three cards per row */
+  .student-card, .image-container, .glass-text-student {
+    width: 95%; /* Adjust width to fit mobile screens better */
+	flex-direction: column;
 	margin: auto auto;
-  }
 	
-  .glass-text-student h4, p {
-	margin-bottom: 10px;
+  }
+  .professor-card img, .student-card img {
+    max-height: 200px; /* Adjust image size for mobile screens */
+  }
+
+	.glass-text-student h3, h4 {
+		text-align: center;
+	}
+	
+	.glass-text-student h4, p {
+		margin-bottom: 10px;
 	} 
+
 }
 
 /* Laptops */
