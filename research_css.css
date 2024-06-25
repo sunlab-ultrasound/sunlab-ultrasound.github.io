@@ -280,11 +280,11 @@ video {
 
   .text-container {
     padding: 10px 0; /* Add some padding above and below the text */
-    font-size: 1.4rem; /* Adjust font size for better readability */
+    font-size: 1.2rem; /* Adjust font size for better readability */
   }
 
   .research-title {
-    font-size: 1.6rem; /* Adjust title size for smaller screens */
+    font-size: 2rem; /* Adjust title size for smaller screens */
     margin-bottom: 10px; /* Reduce margin */
   }
 }
@@ -303,17 +303,21 @@ video {
   .image-container {
     flex-direction: column;
     flex-basis: 80%; /* Use full width */
-    max-width: 100%; /* Ensure they do not exceed the container's width */
+    max-width: 70%; /* Ensure they do not exceed the container's width */
     padding: 0; /* Reset padding for a snug fit */
   }
 
   .image-container img, video {
-    width: 100%; /* Ensure media scales down */
+    width: 70%; /* Ensure media scales down */
   }
 
   .text-container {
     padding: 10px 0; /* Add some padding above and below the text */
-    font-size: 1.3rem; /* Adjust font size for better readability */
+    font-size: 1.2rem; /* Adjust font size for better readability */
+  }
+	.research-title {
+    font-size: 2rem; /* Adjust title size for smaller screens */
+    margin-bottom: 10px; /* Reduce margin */
   }
 }
 
@@ -334,7 +338,7 @@ video {
     flex-basis: 100%; /* Use full width */
     max-width: 100%; /* Ensure they do not exceed the container's width */
     padding: 0; /* Reset padding for a snug fit */
-    font-size: 1.4rem; /* Adjust font size for better readability */
+    font-size: 1.2rem; /* Adjust font size for better readability */
   }
 
   .image-container img, video {
@@ -343,6 +347,11 @@ video {
 
   .text-container {
     padding: 10px 0; /* Add some padding above and below the text */
+  }
+	
+	.research-title {
+    font-size: 2rem; /* Adjust title size for smaller screens */
+    margin-bottom: 10px; /* Reduce margin */
   }
 }
 
@@ -364,7 +373,7 @@ video {
     flex-basis: 100%; /* Use full width */
     max-width: 100%; /* Ensure they do not exceed the container's width */
     padding: 0; /* Reset padding for a snug fit */
-    font-size: 1.6rem; /* Adjust font size for better readability */
+    font-size: 1.2rem; /* Adjust font size for better readability */
   }
 
   .image-container img, video {
@@ -373,6 +382,11 @@ video {
 
   .text-container {
     padding: 10px 0; /* Add some padding above and below the text */
+  }
+	
+	.research-title {
+    font-size: 2rem; /* Adjust title size for smaller screens */
+    margin-bottom: 10px; /* Reduce margin */
   }
 }
 
@@ -388,6 +402,6 @@ video {
   }
 
   .text-container {
-    font-size: 1.8rem; /* Increase font size for better readability */
+    font-size: 1.2rem; /* Increase font size for better readability */
   }
 }
