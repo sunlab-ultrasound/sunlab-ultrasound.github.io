@@ -217,7 +217,7 @@ canvas#wavyBackground {
 }
 
 .welcome-font {
-  max-width: 1400px;
+  max-width: auto;
   margin: 0 auto;
   text-align: center;
   padding: 10px;
