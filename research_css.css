@@ -68,6 +68,11 @@ nav ul li a:hover {
     padding: 0; /* Adjust padding as needed */
 	  margin: auto auto;
   }
+.content .image-container img {
+
+
+}
+
 
   nav ul {
     justify-content: center;
@@ -98,6 +103,10 @@ nav ul li a:hover {
     padding: 0 12px; /* Adjust padding */
     font-size: 3vw; /* Adjust font size */
   }
+.content .image-container img {
+
+}
+
 }
 
 /* Tablets in Landscape */
@@ -308,7 +317,7 @@ video {
   }
 
   .image-container img, video {
-    width: 70%; /* Ensure media scales down */
+    width: 100%; /* Ensure media scales down */
   }
 
   .text-container {
@@ -338,7 +347,7 @@ video {
     flex-basis: 100%; /* Use full width */
     max-width: 100%; /* Ensure they do not exceed the container's width */
     padding: 0; /* Reset padding for a snug fit */
-    font-size: 1.2rem; /* Adjust font size for better readability */
+    font-size: 1rem; /* Adjust font size for better readability */
   }
 
   .image-container img, video {
@@ -385,7 +394,7 @@ video {
   }
 	
 	.research-title {
-    font-size: 2rem; /* Adjust title size for smaller screens */
+    font-size: 3rem; /* Adjust title size for smaller screens */
     margin-bottom: 10px; /* Reduce margin */
   }
 }
