@@ -230,12 +230,15 @@ canvas#wavyBackground {
   justify-content: center;
   gap: 20px;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Allows images to wrap on smaller screens */
 }
 
 .image-container img {
   max-width: 100%;
   height: auto;
   border-radius: 5px;
+  flex: 1 1 45%; /* Ensures images take up no more than 45% of the container width */
+  object-fit: cover; /* Ensures images cover their container without stretching */
 }
 
 .text-container {
