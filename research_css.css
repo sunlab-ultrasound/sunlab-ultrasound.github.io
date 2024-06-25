@@ -214,15 +214,14 @@ canvas#wavyBackground {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-  left: 0vmax;
   text-align: center;
   border-radius: 10px;
 }
 
 .content {
   display: flex;
-  flex-direction: column; /* This ensures the images and text are separate blocks */
-  align-items: center;
+  flex-wrap: wrap; /* Ensures elements wrap on smaller screens */
+  justify-content: center; /* Center the content */
 }
 
 .image-container {
@@ -230,7 +229,7 @@ canvas#wavyBackground {
   justify-content: center;
   gap: 20px;
   margin-bottom: 20px;
-  flex-wrap: wrap; /* Allows images to wrap on smaller screens */
+  flex-wrap: nowrap; /* Prevents images from wrapping on smaller screens */
 }
 
 .image-container img {
@@ -243,6 +242,8 @@ canvas#wavyBackground {
 
 .text-container {
   text-align: center;
+  width: 100%; /* Ensure text takes full width */
+  padding: 0 2vw; /* Add some horizontal padding */
 }
 
 video {
@@ -263,7 +264,8 @@ video {
     flex-direction: column; /* Stack image and text vertically */
   }
 
-  .image-container, .text-container {
+  .image-container {
+    flex-direction: column; /* Align images side by side */
     flex-basis: 100%; /* Use full width */
     max-width: 100%; /* Ensure they do not exceed the container's width */
     padding: 0; /* Reset padding for a snug fit */
@@ -286,22 +288,24 @@ video {
 /* Tablets in Portrait */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .glass-container {
-    width: 85vw; /* Adjust for slightly more margin */
-    margin-top: 110px;
+    width: 90vw; /* Provide more margin */
   }
 
-  .content {
-    flex-direction: column; /* Stack image and text vertically */
+  .image-container {
+    flex-direction: row; /* Align images side by side */
+    flex-basis: 100%; /* Use full width */
+    max-width: 100%; /* Ensure they do not exceed the container's width */
+    padding: 0; /* Reset padding for a snug fit */
   }
-
-  .image-container, .text-container {
+  
+  .text-container {
     flex-basis: 100%; /* Use full width */
     max-width: 100%; /* Ensure they do not exceed the container's width */
     padding: 0; /* Reset padding for a snug fit */
   }
 
   .image-container img, video {
-    width: 100%; /* Ensure media scales down */
+    width: 48%; /* Ensure media scales down */
   }
 
   .text-container {
@@ -315,18 +319,22 @@ video {
     width: 90vw; /* Provide more margin */
   }
 
-  .content {
-    flex-direction: column; /* Stack image and text vertically */
+  .image-container {
+    flex-direction: row; /* Align images side by side */
+    flex-basis: 100%; /* Use full width */
+    max-width: 100%; /* Ensure they do not exceed the container's width */
+    padding: 0; /* Reset padding for a snug fit */
+	background-size: contain;
   }
-
-  .image-container, .text-container {
+  
+  .text-container {
     flex-basis: 100%; /* Use full width */
     max-width: 100%; /* Ensure they do not exceed the container's width */
     padding: 0; /* Reset padding for a snug fit */
   }
 
   .image-container img, video {
-    width: 100%; /* Ensure media scales down */
+    width: 48%; /* Ensure media scales down */
   }
 
   .text-container {
@@ -341,18 +349,21 @@ video {
     max-width: 1200px; /* Cap the maximum width to maintain design integrity */
   }
 
-  .content {
-    flex-direction: column; /* Stack image and text vertically */
+   .image-container {
+    flex-direction: row; /* Align images side by side */
+    flex-basis: 100%; /* Use full width */
+    max-width: 100%; /* Ensure they do not exceed the container's width */
+    padding: 0; /* Reset padding for a snug fit */
   }
 
-  .image-container, .text-container {
+  .text-container {
     flex-basis: 100%; /* Use full width */
     max-width: 100%; /* Ensure they do not exceed the container's width */
     padding: 0; /* Reset padding for a snug fit */
   }
 
   .image-container img, video {
-    width: 100%; /* Ensure media scales down */
+    width: 48%; /* Ensure media scales down */
   }
 
   .text-container {
