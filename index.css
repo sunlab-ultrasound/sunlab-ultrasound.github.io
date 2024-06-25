@@ -33,7 +33,6 @@ header {
   align-items: center;
 }
 
-
 nav ul {
     list-style: none;
     display: flex;
@@ -176,7 +175,6 @@ nav ul li a:hover {
     font-size: 1.2vw; /* Enhance font size for optimal readability */
   }
 }
-
   
 /* Wavy Background Canvas */
 canvas#wavyBackground {
@@ -187,7 +185,6 @@ canvas#wavyBackground {
   height: 100%;
   z-index: -3; /* Behind all content */
 }
-
 
 /* Blurry Backdrop */
 .blurry-backdrop {
@@ -207,7 +204,6 @@ canvas#wavyBackground {
   text-align: center;
   z-index: 5;
 }
-
 
 .current-research-font {
   display: flex;
@@ -339,7 +335,6 @@ canvas#wavyBackground {
   }
 }
 
-
 #research {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
@@ -364,7 +359,6 @@ canvas#wavyBackground {
   z-index: 3; /* Ensures the card is above the blurry backdrop but under the modal/dialogs if any */
   gap: 20px; /* Space between the cards if wrapped */
 }
-
 
 .research-item {
   width: 300px;
@@ -400,7 +394,6 @@ canvas#wavyBackground {
     left: 0vmax;
 }
 
-
 .research-item .card-content h2,
 .research-item .card-content p {
     color: #ffffff;
@@ -408,7 +401,6 @@ canvas#wavyBackground {
     margin: 0%;
   
 }
- 
 
 .research-item button {
   margin-top: 0px;
@@ -588,7 +580,7 @@ canvas#wavyBackground {
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgba(0,0,0,0.9); /* Black with opacity */
-  transition: opacity 0.3s ease ;
+  transition: opacity 0.3s ease;
   opacity: 100;
 }
 
@@ -602,54 +594,53 @@ canvas#wavyBackground {
   width: 70%; /* Could be more or less, depending on screen size */
   box-shadow: 0 4px 8px 2px rgba(0,0,0,0.2);
   border-radius: 10px; /* Optional: if you want rounded corners */
-}
-
-.modal-content {
   transform: translateY(-50px); /* Start slightly above the final position */
   transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for smooth movement and fade */
 }
 
+/* Modal Content for Images */
 .modal-content img {
-  display: flex;
-  justify-content: center;
-  max-width: 100%; /* Make image responsive */
+  display: inline-block; /* Make image inline-block */
+  max-width: 48%; /* Make image responsive */
   height: auto; /* Maintain aspect ratio */
-  margin-bottom: 20px; /* Space between image and text */
-  transition: transform 0.3s ease; /* Smooth transition for image */
-  padding: 20px;
+  margin: 1%; /* Space between images */
+  padding: 10px;
   background-color: #ffffff;
 }
 
-.model-open { 
-  overflow: hidden;
+.modal-content h2 {
+  margin-bottom: 10px;
 }
 
-.modal-extra-content {
+.modal-content p {
+  text-align: justify;
+}
+
+.modal-content .modal-extra-content {
   display: flex;
   flex-wrap: wrap; /* Allow the contents to wrap on smaller screens */
   justify-content: space-between;
   margin-top: 10px;
 }
 
-.left-content, .right-content {
+.modal-content .left-content, .modal-content .right-content {
   text-align: justify;
   flex: 1 1 45%; /* Adjust the flex-basis to control when wrapping occurs */
   padding: 0px;
   margin: 10px 0; /* Ensure spacing between when wrapped */
 }
 
-.right-content {
+.modal-content .right-content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.right-content img, .right-content video {
+.modal-content .right-content img, .modal-content .right-content video {
   max-width: 90%; /* Ensure media is fully responsive within its container */
   height: auto;
   max-height: 250px; /* Limit the height of the image/video */
 }
-
 
 /* The Close Button */
 .close {
@@ -668,6 +659,7 @@ canvas#wavyBackground {
   cursor: pointer;
 }
 
+/* Responsive Styles */
 @media only screen and (max-width: 480px) {
   .modal-content {
     width: 90%; /* Adjust width to fit small screens */
@@ -682,15 +674,15 @@ canvas#wavyBackground {
     padding: 10px; /* Adjust padding for small screens */
   }
 
-  .modal-extra-content {
+  .modal-content .modal-extra-content {
     flex-direction: column; /* Stack content vertically on small screens */
   }
 
-  .left-content, .right-content {
+  .modal-content .left-content, .modal-content .right-content {
     flex: 1 1 100%; /* Allow each content block to take full width */
   }
 
-  .right-content img, .right-content video {
+  .modal-content .right-content img, .modal-content .right-content video {
     max-height: 200px; /* Adjust max height for small screens */
   }
 }
@@ -707,14 +699,351 @@ canvas#wavyBackground {
     margin-bottom: 15px; /* Adjust spacing */
   }
 
-  .modal-extra-content {
+  .modal-content .modal-extra-content {
     justify-content: space-around; /* Space out content for better layout */
   }
 
-  .left-content, .right-content {
+  .modal-content .left-content, .modal-content .right-content {
     flex-basis: 48%; /* Adjust basis for side-by-side layout with some gap */
   }
 }
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .modal-content {
+    width: 80%; /* Wider screens can accommodate wider content */
+    margin: 10% auto; /* Adjust margin top due to increased width */
+    padding: 20px; /* More padding for aesthetic spacing */
+  }
+
+  .modal-content img, .modal-content video {
+    max-width: 48%; /* Ensure media is fully responsive within its container */
+    height: auto;
+    margin-bottom: 15px; /* Adjust spacing */
+  }
+
+  .modal-content .modal-extra-content {
+    justify-content: space-around; /* Space out content for better layout */
+  }
+
+  .modal-content .left-content, .modal-content .right-content {
+    flex-basis: 48%; /* Adjust basis for side-by-side layout with some gap */
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .modal-content {
+    width: 70%; /* Narrower width for desktops to maintain content focus */
+    margin: 5% auto; /* Reduced top margin as screen height increases */
+    padding: 20px; /* Consistent padding with landscape tablets */
+  }
+
+  .modal-content img {
+    max-width: 48%; /* Ensure media is fully responsive within its container */
+    height: auto;
+    margin-bottom: 10px; /* Adjust spacing */
+    padding: 10px; /* Adjust padding for small screens */
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .modal-content {
+    width: 80%; /* Further limit width to maintain a cohesive layout */
+    margin: 5% auto; /* Maintain top margin for vertical centering */
+    padding: 30px; /* Increased padding for a luxurious feel */
+  }
+
+  .modal-content img, .modal-content video {
+    max-width: 48%; /* Ensure media is fully responsive within its container */
+    height: auto;
+    margin-bottom: 10px; /* Adjust spacing */
+    padding: 10px; /* Adjust padding for small screens */
+  }
+}
+
+/* Footer Styles */
+footer {
+  background: #000000;
+  text-align: center;
+  border-radius: 10px;
+  padding: 2vh;
+  margin-top: 0.2vh;
+  width: 95vw; /* Adjusted to provide some margin on smaller screens */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.details-footer {
+  border-radius: 10px;
+  padding: 2vh;
+  margin-top: 0.2vh;
+  width: 95vw; /* Adjusted to provide some margin on smaller screens */
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.details-footer {
+  display: flex;
+  justify-content: space-around; /* This will put equal space around each item */
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap as needed */
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+/* For the .affiliations and .contact-info sections, you want them to take up equal space */
+.affiliations, .contact-info {
+  flex-basis: calc(20% - 10px); /* 50% for each, minus 40px for padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Adjust the margin around each logo and contact details to ensure proper centering */
+.affiliation-logo, .contact-info .contact-details {
+  margin: 0 0; /* 20px margin on the left and right */
+}
+
+.affiliations {
+  display: flex;
+  flex-direction: column; /* Stack logos on top of each other */
+  align-items: center; /* Center logos */
+}
+
+.affiliation-logo img {
+  max-width: 250px; /* Adjust the width as needed */
+  max-height: auto; /* Adjust the height as needed */
+  width: auto; /* Ensure the width is auto to maintain aspect ratio */
+  height: auto; /* Ensure the height is auto to maintain aspect ratio */
+  background-color: #ffffff; /* Maintain the background color */
+  padding: 5px; /* Optionally add padding around the logos */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.contact-info {
+  text-align: left; /* Align text to the left */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the start of the flex container */
+  max-width: 50%; /* Max width of the contact info box */
+  margin-top: 20px; /* Space above the contact info */
+}
+
+.contact-footer {
+  width: 100%; /* Use full width of the footer */
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center;
+  flex-wrap: wrap; /* Wrap items to next line if space runs out */
+  gap: 20px; /* Space between logos and contact information */
+}
+
+.contact-info .contact-details {
+  padding: 10px; /* This adds padding inside each contact-details div */
+  margin-bottom: 10px; /* This adds space below each contact-details div */
+}
+
+/* To target individual classes for specific padding, you can do this: */
+.contact-info .contact-details.email {
+  padding-bottom: 10px; /* Adjusts padding at the bottom of the email details */
+}
+
+.contact-info .contact-details.location {
+  padding-bottom: 10px; /* Adjusts padding at the bottom of the location details */
+}
+
+.contact-info .contact-details.mailing {
+  padding-bottom: 10px; /* Adjusts padding at the bottom of the mailing address details */
+}
+	
+@media only screen and (max-width: 480px) {
+  footer,
+  .details-footer {
+    width: 95vw; /* Use the full viewport width */
+    padding: 4vh; /* Increase padding for better touch targets */
+    margin-top: 0.5vh; /* Adjust margin-top for spacing */
+    border-radius: 10px; /* Optional: remove border radius for full-width fit */
+  }
+
+  .details-footer,
+  .contact-footer {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align the content */
+  }
+
+  .affiliations, .contact-info {
+    flex-basis: 90%; /* Allow each section to take up more space */
+  }
+
+  .affiliation-logo img {
+    max-width: 200px; /* Adjust logo sizes for smaller screens */
+  }
+
+  .contact-info {
+    text-align: center; /* Center-align contact information */
+    align-items: center; /* Adjust alignment */
+    max-width: 100%; /* Use full available width */
+  }
+
+  .contact-info .contact-details {
+    margin-bottom: 20px; /* Increase spacing for touch accessibility */
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  footer,
+  .details-footer {
+    width: 98vw; /* Slightly less than full width for visual padding */
+    padding: 3vh; /* Adjust padding */
+    margin-top: 0.5vh; /* Adjust top margin */
+  }
+
+  .affiliations, .contact-info {
+    flex-basis: 45%; /* Adjust for side-by-side layout on wider screens */
+  }
+
+  .affiliation-logo img {
+    max-width: 25vw; /* Adjust based on available space */
+  }
+
+  .contact-info .contact-details {
+    padding: 5px; /* Adjust internal padding for better spacing */
+    margin-bottom: 15px; /* Increase space between contact details */
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  /* Adjustments might not be necessary if default styles cater well to large screens.
+     However, consider slight tweaks to padding or margins for aesthetic improvements. */
+}
+
+@media only screen and (min-width: 2000px) {
+  footer,
+  .details-footer {
+    width: 95vw; /* Maintain a consistent width */
+    padding: 4vh; /* Slightly more padding to use the extra space */
+    margin-top: 1vh; /* Adjust top margin for visual spacing */
+  }
+
+  .affiliations, .contact-info {
+    flex-basis: 30%; /* Increase basis for wider alignment */
+  }
+
+  .affiliation-logo img {
+    max-width: 300px; /* Increase logo size for visibility */
+  }
+
+  .contact-info .contact-details {
+    padding: 10px; /* More padding for a luxurious feel */
+    margin-bottom: 20px; /* More spacing for readability */
+  }
+}
+Updated HTML:
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUN LAB</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <header>
+        <div class="logo">
+            <img src="assets/sunlab_name_logo.png" alt="SUN Lab Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <canvas id="wavyBackground"></canvas>
+    <div class="blurry-backdrop"></div>
+    
+    
+    <div class="content">
+        <h1 class="glass-text">Welcome to SUN LAB</h1>
+        <div class="glass-container">
+            <div class="welcome-message">
+                <p class="welcome-font"><a>At the SUN Lab (<strong>S</strong>un <strong>U</strong>ltrasound & <strong>N</strong>euroengineering Laboratory), we harness the power of focused ultrasound (FUS), neuroimaging, and immunoengineering to seek new solutions to the treatment & diagnosis of neurological disorders. Our mission is to unveil how FUS modulates the mechanobiology at the neuro-immune interface and developing ultrasound devices, imaging methods, and engineered cell systems for immunomodulation and cell-based theranostics. We perform multidisciplinary and multiscale research via mechanistic and translational approaches to advance immunotherapy, drug/gene/cell delivery, ultrasound-responsive cell therapy and neurostimulation for treating brain disorders, such as glioblastoma and Alzheimer's disease.</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="glass-container-research">
+        <div class="current_research-font">
+            <p class="current_research-font" style="font-size: 45px; text-align: center; font-weight: bold; margin-top: 30px; margin-bottom: 50px">Research Directions&nbsp;</p>
+        </div>  
+       
+        <section id="research">
+                
+            <div class="research-topics">
+                <div class="research-item">
+                    <img src="assets/Fig 1 cropped .jpg" alt="Focused Ultrasound and Neuroimaging">
+                    <h3 style="color: white; margin-left: 20px; margin-bottom: 20px; margin-right: 20px;">Focused Ultrasound mediated Drug Delivery</h3>
+                    <!-- <p>Description of Research Topic 1</p> -->
+                  <button class="try-now-btn" data-modal-id="modalId1">Read more →</button>
+                  </div>
+                       
+            </div>
+    
+            <div class="research-topics">
+                <div class="research-item">
+                    <img src="assets/FUS Brain.png" alt="Research Topic 2">
+                    <h3 style="color: white; margin-left: 20px; margin-bottom: 20px; margin-right: 20px;">Ultrasound Immunoengineering and Immonomodulation</h3>
+                    <!-- <p>Description of Research Topic 2</p> -->
+                  <button class="try-now-btn" data-modal-id="modalId2">Read more →</button>
+                </div>
+                
+            </div>
+    
+            <div class="research-topics">
+                <div class="research-item">
+                    <img src="assets/The controller system modified.jpg" alt="Research Topic 3">
+                    <h3
+
+2/2
+
+
+
+
+
+
+Was this response better or worse?
+
+Better
+
+Worse
+
+Same
+
+
+
+
+
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
   .modal-content {
