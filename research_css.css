@@ -237,7 +237,7 @@ canvas#wavyBackground {
   height: auto;
   border-radius: 5px;
   flex: 1 1 45%; /* Ensures images take up no more than 45% of the container width */
-  object-fit: cover; /* Ensures images cover their container without stretching */
+  object-fit: contain; /* Ensures images cover their container without stretching or cropping */
 }
 
 .text-container {
@@ -250,6 +250,7 @@ video {
   width: 50%;
   border-radius: 5px;
   margin-top: 10px;
+  object-fit: contain; /* Ensures video fits within its container without cropping */
 }
 
 /* Mobile Devices */
@@ -288,24 +289,23 @@ video {
 /* Tablets in Portrait */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .glass-container {
-    width: 90vw; /* Provide more margin */
+    width: 85vw; /* Adjust for slightly more margin */
+    margin-top: 110px;
   }
 
-  .image-container {
-    flex-direction: row; /* Align images side by side */
-    flex-basis: 100%; /* Use full width */
-    max-width: 100%; /* Ensure they do not exceed the container's width */
-    padding: 0; /* Reset padding for a snug fit */
+  .content {
+    flex-direction: column; /* Stack image and text vertically */
   }
   
-  .text-container {
-    flex-basis: 100%; /* Use full width */
+  .image-container {
+    flex-direction: column;
+    flex-basis: 80%; /* Use full width */
     max-width: 100%; /* Ensure they do not exceed the container's width */
     padding: 0; /* Reset padding for a snug fit */
   }
 
   .image-container img, video {
-    width: 48%; /* Ensure media scales down */
+    width: 100%; /* Ensure media scales down */
   }
 
   .text-container {
@@ -324,7 +324,6 @@ video {
     flex-basis: 100%; /* Use full width */
     max-width: 100%; /* Ensure they do not exceed the container's width */
     padding: 0; /* Reset padding for a snug fit */
-	background-size: contain;
   }
   
   .text-container {
@@ -349,7 +348,7 @@ video {
     max-width: 1200px; /* Cap the maximum width to maintain design integrity */
   }
 
-   .image-container {
+  .image-container {
     flex-direction: row; /* Align images side by side */
     flex-basis: 100%; /* Use full width */
     max-width: 100%; /* Ensure they do not exceed the container's width */
