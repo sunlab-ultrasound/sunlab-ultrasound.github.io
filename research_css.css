@@ -68,10 +68,6 @@ nav ul li a:hover {
     padding: 0; /* Adjust padding as needed */
 	  margin: auto auto;
   }
-.content .image-container img {
-
-
-}
 
 
   nav ul {
@@ -103,9 +99,7 @@ nav ul li a:hover {
     padding: 0 12px; /* Adjust padding */
     font-size: 3vw; /* Adjust font size */
   }
-.content .image-container img {
 
-}
 
 }
 
@@ -221,7 +215,7 @@ canvas#wavyBackground {
 }
 
 .research-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
@@ -251,7 +245,7 @@ canvas#wavyBackground {
 }
 
 .text-container {
-  text-align: center;
+  text-align: justify;
   width: 100%; /* Ensure text takes full width */
   padding: 0 2vw; /* Add some horizontal padding */
   font-size: 1.2rem; /* Adjusted font size for better readability */
@@ -293,7 +287,7 @@ video {
   }
 
   .research-title {
-    font-size: 2rem; /* Adjust title size for smaller screens */
+    font-size: 1.5rem; /* Adjust title size for smaller screens */
     margin-bottom: 10px; /* Reduce margin */
   }
 }
@@ -325,7 +319,7 @@ video {
     font-size: 1.2rem; /* Adjust font size for better readability */
   }
 	.research-title {
-    font-size: 2rem; /* Adjust title size for smaller screens */
+    font-size: 1.5rem; /* Adjust title size for smaller screens */
     margin-bottom: 10px; /* Reduce margin */
   }
 }
@@ -359,7 +353,7 @@ video {
   }
 	
 	.research-title {
-    font-size: 2rem; /* Adjust title size for smaller screens */
+    font-size: 1.5rem; /* Adjust title size for smaller screens */
     margin-bottom: 10px; /* Reduce margin */
   }
 }
@@ -394,7 +388,7 @@ video {
   }
 	
 	.research-title {
-    font-size: 3rem; /* Adjust title size for smaller screens */
+    font-size: 2rem; /* Adjust title size for smaller screens */
     margin-bottom: 10px; /* Reduce margin */
   }
 }
