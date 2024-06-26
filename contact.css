@@ -27,26 +27,25 @@ header {
 }
 
 .logo img {
-  height: 7vh; /* Adjust this value as necessary */
+  height: 7vh;
   display: flex;
-  padding-right: 0.2vw; ;
+  padding-right: 0.2vw;
   align-items: center;
 }
 
-
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    width: auto;
-    height: auto;
-    font-size: large;
-    max-width: 100vw;
-    font-weight: bold;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  height: auto;
+  font-size: large;
+  max-width: 100vw;
+  font-weight: bold;
 }
 
 nav ul li {
-  padding: 0 20px; /* Use fixed padding for consistent spacing */
+  padding: 0 20px;
   display: inline;
 }
 
@@ -59,123 +58,78 @@ nav ul li a:hover {
   color: #EAEDEE;
 }
 
-@media screen and (max-width : 480px ) {
-  header {
-    flex-direction: column;
-  }
+/* Carousel specific styles */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
 
-  .logo img {
-    height: 7vh; /* Smaller logo for smaller screens */
-    padding: 0; /* Adjust padding as needed */
-	  margin: auto auto;
-  }
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
 
-  nav ul {
-    justify-content: center;
-  }
+.carousel-item {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+  display: none; /* Hide all items by default */
+}
 
-  nav ul li {
-    padding: 10px; /* More vertical padding, no horizontal */
-	font-size: 3.5vw;
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.carousel-item.active {
+  display: block; /* Show the active item */
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .carousel-control {
+    padding: 5px;
   }
 }
 
-/* Tablets in Portrait */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  header {
-    flex-direction: column;
-  }
-
-  .logo img {
-    height: 8vh; /* Slightly larger logo */
-    padding-right: 0.5vw; /* Adjust padding */
-  }
-
-  nav ul {
-    justify-content: flex-end;
-  }
-
-  nav ul li {
-    padding: 0 12px; /* Adjust padding */
-    font-size: 3vw; /* Adjust font size */
+  .carousel-control {
+    padding: 8px;
   }
 }
 
-/* Tablets in Landscape */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-	
-	header {
-    flex-direction: column;
-  }
-
-  .logo img {
-    height: 8vh; /* Smaller logo for smaller screens */
-    padding: 0; /* Adjust padding as needed */
-	  margin: auto auto;
-  }
-
-  nav ul {
-    justify-content: center;
-  }
-
-  nav ul li {
-    padding: 10px; /* More vertical padding, no horizontal */
-	font-size: 2.5vw;
+  .carousel-control {
+    padding: 10px;
   }
 }
 
-/* Desktops and screens larger than 1024px */
-@media screen and (min-width: 1025px) {
-  header {
-    flex-direction: row; /* Return to a horizontal layout for more space */
-    justify-content: space-between; /* Space out the logo and navigation */
-    padding: 1vh 2vw; /* Adjust padding for a balanced appearance */
-  }
-
-  .logo img {
-    height: 6vh; /* Adjust logo size for desktop */
-    padding: 0; /* Reset padding */
-    margin: 0; /* Reset margin */
-  }
-
-  nav ul {
-    justify-content: flex-end; /* Align navigation to the end */
-  }
-
-  nav ul li {
-    padding: 0 20px; /* Adjust padding for desktop */
-    font-size: 1.5vw; /* Adjust font size for desktop readability */
-    margin-right: 0; /* Reset margin-right */
-  }
-}
-
-/* Very large screens, wider than 1440px */
-@media screen and (min-width: 1440px) {
-  header {
-    padding: 1.5vh 3vw; /* More spacious padding for large screens */
-  }
-
-  .logo img {
-    height: 7vh; /* Larger logo size for better visibility */
-  }
-
-  nav ul li {
-    padding: 0 25px; /* Increase padding for a wider layout */
-    font-size: 1.1vw; /* Slightly larger font size for readability */
-  }
-}
-
-/* Sumo-sized screens, wider than 2000px */
-@media screen and (min-width: 2000px) {
-  .logo img {
-    height: 8vh; /* Maximize logo size for sumo-sized screens */
-  }
-
-  nav ul li {
-    padding: 0 30px; /* Maximize padding for large layouts */
-    font-size: 1.2vw; /* Enhance font size for optimal readability */
-  }
-}
+/* Other styles (existing ones) */
 
 /* Wavy Background Canvas */
 canvas#wavyBackground {
@@ -184,7 +138,7 @@ canvas#wavyBackground {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -2; /* Ensures it's the bottom-most layer */
+  z-index: -2;
 }
 
 /* Blurry Backdrop */
@@ -194,9 +148,9 @@ canvas#wavyBackground {
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-backdrop-filter: blur(40px); /* Prefix for iOS/Safari */
-  backdrop-filter: blur(40px); /* Prefix for iOS/Safari */
-  z-index: -1; /* Positioned above the wavy background but below other content */
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  z-index: -1;
 }
 
 .glass-container {
@@ -219,14 +173,6 @@ canvas#wavyBackground {
 
 .left-section, .right-section {
   flex: 1;
-}
-
-.left-section img, .right-section img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  margin: auto;
-  border-radius: 10px;
 }
 
 .right-section {
@@ -274,12 +220,10 @@ canvas#wavyBackground {
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
-
   .glass-container {
     flex-direction: column;
     padding: 20px;
   }
-	
 
   .left-section, .right-section {
     width: 100%;
@@ -294,7 +238,6 @@ canvas#wavyBackground {
     padding-top: 10px;
   }
 }
-
 
 /* Media query for iPad in portrait orientation */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
@@ -317,7 +260,7 @@ canvas#wavyBackground {
   }
   
   .left-section img, .right-section img {
-    max-width: 100% ;
+    max-width: 100%;
   }
 
   .contact-info {
@@ -325,8 +268,7 @@ canvas#wavyBackground {
   }
 }
 
-
- 
+/* Media query for iPad in landscape orientation */
 @media only screen and (min-device-width: 1024px) and (max-device-height: 768px) and (orientation: landscape) {
   header {
     padding: 0.5vh 2vw;
@@ -355,9 +297,6 @@ canvas#wavyBackground {
   }
 }
 
-  
-
-
 @media (min-width: 1920px) {
   header {
     justify-content: space-between;
@@ -366,7 +305,7 @@ canvas#wavyBackground {
 
   .logo img {
     height: 60px;
-	margin: auto;
+    margin: auto;
   }
 
   nav ul li {
@@ -382,8 +321,8 @@ canvas#wavyBackground {
 
   .left-section img, .right-section img {
     max-width: 100%;
-	max-height: 100%;
-	padding: 15px;
+    max-height: 100%;
+    padding: 15px;
   }
 
   .contact-info {

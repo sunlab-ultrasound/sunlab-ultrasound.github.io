@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUN LAB</title>
     <link href="contact.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-    </style>
 </head>
-	
-
 <body>
     <div class="modal-overlay"></div>
     <header>
@@ -27,35 +23,46 @@
         </nav>
     </header>
     
-
     <canvas id="wavyBackground"></canvas>
     <div class="blurry-backdrop"></div>
 
-    <div class="glass-container" style="margin-top: 200px ;">
-        <div class="left-section">
-            <img src="assets/Group photo.jpeg" alt="Group-image">
+    <div class="glass-container" style="margin-top: 200px;">
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/Group photo.jpeg" alt="Group-image-1">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/Tao Birthday 2024.jpg" alt="Group-image-2">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/puzzel solving.jpg" alt="Group-image-3">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/BIOe Symposium.jpg" alt="Group-image-4">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/max.jpg" alt="Group-image-5">
+                </div>
+                <!-- <div class="carousel-item">
+                    <img src="assets/image6.jpg" alt="Group-image-6">
+                </div> -->
+            </div>
+            <a class="carousel-control prev" href="#">&#10094;</a>
+            <a class="carousel-control next" href="#">&#10095;</a>
         </div>
         <section class="right-section">
             <div class="contact-footer">
-                <div class="affliations">
-                </div>
-        
+                <div class="affliations"></div>
                 <div class="contact-info">
                     <div class="contact-details email">
                         <strong>Email:</strong>
-                        <a href="mailto:t.sun@northeastern.edu" class="mailtoui">
-                            t.sun@northeastern.edu
-                        </a>
+                        <a href="mailto:t.sun@northeastern.edu" class="mailtoui">t.sun@northeastern.edu</a>
                     </div>
                     <div class="contact-details location">
-                        <strong>Office:</strong>
-                        366C, Interdisciplinary Science and Engineering Complex <br>
-                        805 Columbus Ave, Boston, MA 02120
-                  </div>
-                    <div class="contact-details mailing">
-                        <strong>Mailing Address:</strong>
-                        366C, Interdisciplinary Science and Engineering Complex <br>
-                        360 Huntington Ave, Boston, MA 02115
+                        <strong>Address:</strong>
+                        206, Interdisciplinary Science and Engineering Complex,<br>
+                        360 Huntington Ave, Boston, MA 02115.
                     </div>
                 </div>
             </div>
@@ -66,6 +73,42 @@
         document.addEventListener('DOMContentLoaded', () => {
             initCanvas();
             animate();
+
+            // Carousel functionality
+            const carousel = document.querySelector('.carousel');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const next = carousel.querySelector('.next');
+            const prev = carousel.querySelector('.prev');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                items.forEach((item, i) => {
+                    item.style.display = (i === index) ? 'block' : 'none';
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % items.length;
+                showSlide(currentIndex);
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                showSlide(currentIndex);
+            }
+
+            next.addEventListener('click', (e) => {
+                e.preventDefault();
+                nextSlide();
+            });
+
+            prev.addEventListener('click', (e) => {
+                e.preventDefault();
+                prevSlide();
+            });
+
+            showSlide(currentIndex);
+            setInterval(nextSlide, 5000); // Change image every 5 seconds
         });
 
         const canvas = document.getElementById('wavyBackground');
@@ -128,7 +171,6 @@
                 ctx.stroke();
             });
         }
-        </script>
-        
-        </body>
-        </html>
+    </script>
+</body>
+</html>
