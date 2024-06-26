@@ -62,7 +62,7 @@ nav ul li a:hover {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 1000px;
+  max-width: 600px; /* Adjusted for better responsiveness */
   margin: auto;
   overflow: hidden;
   border-radius: 10px;
@@ -81,7 +81,8 @@ nav ul li a:hover {
 
 .carousel-item img {
   width: 100%;
-  height: auto;
+  height: 400px; /* Fixed height for consistent aspect ratio */
+  object-fit: cover;
   border-radius: 10px;
 }
 
@@ -112,6 +113,14 @@ nav ul li a:hover {
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
+  .carousel {
+    max-width: 100%;
+  }
+
+  .carousel-item img {
+    height: 300px; /* Adjust height for smaller screens */
+  }
+
   .carousel-control {
     padding: 5px;
   }
@@ -121,11 +130,19 @@ nav ul li a:hover {
   .carousel-control {
     padding: 8px;
   }
+
+  .carousel-item img {
+    height: 350px; /* Adjust height for medium screens */
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .carousel-control {
     padding: 10px;
+  }
+
+  .carousel-item img {
+    height: 400px; /* Adjust height for larger screens */
   }
 }
 
@@ -167,7 +184,7 @@ canvas#wavyBackground {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px; /* Adjusted for better responsiveness */
   z-index: 3;
 }
 
