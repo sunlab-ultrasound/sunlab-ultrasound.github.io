@@ -790,7 +790,7 @@ footer {
   }
 
   .affiliation-logo img {
-    max-width: auto;
+    max-width: 90vw;
   }
 
   .contact-info {
