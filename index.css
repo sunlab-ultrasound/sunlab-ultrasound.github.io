@@ -612,10 +612,12 @@ canvas#wavyBackground {
 
 .modal-content h2 {
   margin-bottom: 10px;
+  font-size: 1.5rem; /* Larger font size */
 }
 
 .modal-content p {
   text-align: justify;
+  font-size: 1.2rem; /* Larger font size */
 }
 
 .close {
@@ -623,7 +625,7 @@ canvas#wavyBackground {
   top: 10px;
   right: 25px;
   color: #aaa;
-  font-size: 28px;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -679,9 +681,10 @@ canvas#wavyBackground {
 
 @media only screen and (min-width: 1025px) {
   .modal-content {
-    width: 80%;
+    width: 70%;
     margin: 5% auto;
     padding: 20px;
+    font-size: 1.2rem; /* Larger font size */
   }
 
   .modal-images img, .modal-images video {
@@ -694,9 +697,10 @@ canvas#wavyBackground {
 
 @media only screen and (min-width: 2000px) {
   .modal-content {
-    width: 80%;
+    width: 70%;
     margin: 5% auto;
     padding: 30px;
+    font-size: 1.3rem; /* Larger font size */
   }
 
   .modal-images img, .modal-images video {
@@ -790,7 +794,7 @@ footer {
   }
 
   .affiliation-logo img {
-    width: 80vw;
+    width: 90vw;
   }
 
   .contact-info {
