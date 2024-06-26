@@ -204,7 +204,7 @@ canvas#wavyBackground {
   position: relative;
   margin-top: 45vh;
   color: rgb(0, 0, 0);
-  font-size: calc(1rem + 1vw);
+  font-size: 1rem;
   text-align: center;
   z-index: 5;
 }
@@ -214,7 +214,7 @@ canvas#wavyBackground {
   justify-content: center;
   align-items: center;
   z-index: 5;
-  font-size: 45px;
+  font-size: 2.8125rem; /* 45px */
   text-align: center;
   font-weight: bold;
   margin-top: 30px;
@@ -278,7 +278,7 @@ canvas#wavyBackground {
 @media screen and (max-width: 480px) {
   .content {
     margin-top: 50vh;
-    font-size: calc(1rem + 2vw);
+    font-size: 1.2rem;
   }
 
   .glass-container {
@@ -294,7 +294,7 @@ canvas#wavyBackground {
   }
 
   .current-research-font, .welcome-font {
-    font-size: calc(1rem + 1vw);
+    font-size: 1.2rem;
     text-align: center;
   }
 }
@@ -317,14 +317,14 @@ canvas#wavyBackground {
   }
 
   .current-research-font, .welcome-font {
-    font-size: calc(1rem + 1.1vw);
+    font-size: 1.4rem;
   }
 }
 
 @media screen and (min-width: 1025px) {
   .content {
     margin-top: 45vh;
-    font-size: calc(1rem + 1vw);
+    font-size: 1rem;
   }
 
   .glass-container {
@@ -340,7 +340,7 @@ canvas#wavyBackground {
   }
 
   .current-research-font, .welcome-font {
-    font-size: calc(1rem + 1vw);
+    font-size: 1.6rem;
   }
 }
 
@@ -623,7 +623,7 @@ canvas#wavyBackground {
   top: 10px;
   right: 25px;
   color: #aaa;
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: bold;
 }
 
@@ -852,4 +852,3 @@ footer {
     margin-bottom: 20px;
   }
 }
-
