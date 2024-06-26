@@ -278,7 +278,7 @@ canvas#wavyBackground {
 @media screen and (max-width: 480px) {
   .content {
     margin-top: 50vh;
-    font-size: calc(1rem + 2vw);
+    font-size: calc(1rem + 1vw);
   }
 
   .glass-container {
@@ -340,7 +340,7 @@ canvas#wavyBackground {
   }
 
   .current-research-font, .welcome-font {
-    font-size: calc(1rem + 1vw);
+    font-size: calc(0.6rem + 1vw);
   }
 }
 
@@ -665,7 +665,7 @@ canvas#wavyBackground {
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) {
   .modal-content {
-    width: 80%;
+    width: 90%;
     margin: 10% auto;
     padding: 20px;
   }
@@ -679,7 +679,7 @@ canvas#wavyBackground {
 
 @media only screen and (min-width: 1025px) {
   .modal-content {
-    width: 70%;
+    width: 80%;
     margin: 5% auto;
     padding: 20px;
   }
@@ -790,7 +790,7 @@ footer {
   }
 
   .affiliation-logo img {
-    max-width: 200px;
+    max-width: 20vw;
   }
 
   .contact-info {
@@ -844,7 +844,7 @@ footer {
   }
 
   .affiliation-logo img {
-    max-width: 300px;
+    max-width: 20vw;
   }
 
   .contact-details {
