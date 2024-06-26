@@ -68,10 +68,7 @@ nav ul li a:hover {
     padding: 0; /* Adjust padding as needed */
 	  margin: auto auto;
   }
-.content .image-container img {
 
-
-}
 
 
   nav ul {
@@ -103,9 +100,7 @@ nav ul li a:hover {
     padding: 0 12px; /* Adjust padding */
     font-size: 3vw; /* Adjust font size */
   }
-.content .image-container img {
 
-}
 
 }
 
@@ -416,6 +411,7 @@ canvas#wavyBackground {
   font-weight: bold;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   z-index: 7;
+  font-size: 0.8rem;
 }
 
 .research-item:hover {
@@ -513,7 +509,7 @@ canvas#wavyBackground {
   }
 
   .research-topics, .research-item {
-    width: 18vw;
+    width: 20vw;
     height: auto;
     margin: auto auto;
   }
@@ -712,7 +708,7 @@ canvas#wavyBackground {
 }
 
 footer {
-  background: #000000;
+  background: #000000; /* Solid black background */
   text-align: center;
   border-radius: 10px;
   padding: 2vh;
@@ -721,7 +717,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  /* Removed backdrop-filter */
   border: 1px solid rgba(0, 0, 0, 0.25);
   overflow: hidden;
   position: relative;
@@ -731,48 +727,31 @@ footer {
 .details-footer {
   border-radius: 10px;
   padding: 2vh;
-  margin-top: 0.2vh;
   width: 95vw;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  background-color: #000000; /* Solid black background */
   border: 1px solid rgba(255, 255, 255, 0.25);
   overflow: hidden;
   position: relative;
   z-index: 3;
-}
-
-.details-footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
-  background-color: #000;
-  color: #fff;
-}
-
-.affiliations, .contact-info {
-  flex-basis: calc(20% - 10px);
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.affiliation-logo, .contact-info .contact-details {
-  margin: 0 0;
 }
 
 .affiliations {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .affiliation-logo img {
   max-width: 250px;
-  width: auto;
+  width: 20vw;
   height: auto;
   background-color: #ffffff;
   padding: 5px;
@@ -782,38 +761,17 @@ footer {
 }
 
 .contact-info {
-  text-align: left;
+  text-align: center;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  max-width: 50%;
-  margin-top: 20px;
-}
-
-.contact-footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  color: #ffffff;
 }
 
-.contact-info .contact-details {
+.contact-details {
   padding: 10px;
   margin-bottom: 10px;
-}
-
-.contact-info .contact-details.email {
-  padding-bottom: 10px;
-}
-
-.contact-info .contact-details.location {
-  padding-bottom: 10px;
-}
-
-.contact-info .contact-details.mailing {
-  padding-bottom: 10px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -825,14 +783,10 @@ footer {
     border-radius: 10px;
   }
 
-  .details-footer,
-  .contact-footer {
+  .affiliations,
+  .contact-info {
     flex-direction: column;
     align-items: center;
-  }
-
-  .affiliations, .contact-info {
-    flex-basis: 90%;
   }
 
   .affiliation-logo img {
@@ -845,7 +799,7 @@ footer {
     max-width: 100%;
   }
 
-  .contact-info .contact-details {
+  .contact-details {
     margin-bottom: 20px;
   }
 }
@@ -858,7 +812,8 @@ footer {
     margin-top: 0.5vh;
   }
 
-  .affiliations, .contact-info {
+  .affiliations,
+  .contact-info {
     flex-basis: 45%;
   }
 
@@ -866,7 +821,7 @@ footer {
     max-width: 25vw;
   }
 
-  .contact-info .contact-details {
+  .contact-details {
     padding: 5px;
     margin-bottom: 15px;
   }
@@ -883,7 +838,8 @@ footer {
     margin-top: 1vh;
   }
 
-  .affiliations, .contact-info {
+  .affiliations,
+  .contact-info {
     flex-basis: 30%;
   }
 
@@ -891,8 +847,9 @@ footer {
     max-width: 300px;
   }
 
-  .contact-info .contact-details {
+  .contact-details {
     padding: 10px;
     margin-bottom: 20px;
   }
 }
+
