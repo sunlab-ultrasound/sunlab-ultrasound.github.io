@@ -789,10 +789,9 @@ footer {
     align-items: center;
   }
 
-	.affiliation-logo { 
-	max-width: 10rem;	
-	
-	}
+  .affiliation-logo img {
+    width: 90vw;
+  }
 
   .contact-info {
     text-align: center;
@@ -819,7 +818,7 @@ footer {
   }
 
   .affiliation-logo img {
-
+    max-width: 18rem;
   }
 
   .contact-details {
