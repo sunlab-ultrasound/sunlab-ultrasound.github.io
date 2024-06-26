@@ -317,7 +317,7 @@ canvas#wavyBackground {
   }
 
   .current-research-font, .welcome-font {
-    font-size: calc(1rem + 1.1vw);
+    font-size: calc(1rem + 1vw);
   }
 }
 
@@ -465,7 +465,7 @@ canvas#wavyBackground {
   }
 
   .research-item h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .research-item button {
@@ -492,7 +492,7 @@ canvas#wavyBackground {
   }
 
   .research-item h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .research-item button {
@@ -519,7 +519,7 @@ canvas#wavyBackground {
   }
 
   .research-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .research-item button {
@@ -546,7 +546,7 @@ canvas#wavyBackground {
   }
 
   .research-item h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .research-item button {
