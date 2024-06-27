@@ -69,108 +69,151 @@
         </section>
     </div>
 
+    <!-- Add the animated cat div -->
+    <div id="animated-cat"></div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            initCanvas();
-            animate();
+       document.addEventListener('DOMContentLoaded', () => {
+    initCanvas();
+    animate();
 
-            // Carousel functionality
-            const carousel = document.querySelector('.carousel');
-            const items = carousel.querySelectorAll('.carousel-item');
-            const next = carousel.querySelector('.next');
-            const prev = carousel.querySelector('.prev');
-            let currentIndex = 0;
+    // Carousel functionality
+    const carousel = document.querySelector('.carousel');
+    const items = carousel.querySelectorAll('.carousel-item');
+    const next = carousel.querySelector('.next');
+    const prev = carousel.querySelector('.prev');
+    let currentIndex = 0;
 
-            function showSlide(index) {
-                items.forEach((item, i) => {
-                    item.style.display = (i === index) ? 'block' : 'none';
-                });
-            }
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % items.length;
-                showSlide(currentIndex);
-            }
-
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + items.length) % items.length;
-                showSlide(currentIndex);
-            }
-
-            next.addEventListener('click', (e) => {
-                e.preventDefault();
-                nextSlide();
-            });
-
-            prev.addEventListener('click', (e) => {
-                e.preventDefault();
-                prevSlide();
-            });
-
-            showSlide(currentIndex);
-            setInterval(nextSlide, 5000); // Change image every 5 seconds
+    function showSlide(index) {
+        items.forEach((item, i) => {
+            item.style.display = (i === index) ? 'block' : 'none';
         });
+    }
 
-        const canvas = document.getElementById('wavyBackground');
-        const ctx = canvas.getContext('2d');
-        const waves = [];
-        const waveCount = 5;
-        const waveColors = [
-            "rgba(142, 68, 173, 0.7)",
-            "rgba(41, 128, 185, 0.7)",
-            "rgba(26, 188, 156, 0.7)",
-            "rgba(241, 196, 15, 0.7)",
-            "rgba(231, 76, 60, 0.7)"
-        ];
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % items.length;
+        showSlide(currentIndex);
+    }
 
-        function initCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = document.body.scrollHeight;
-            for (let i = 0; i < waveCount; i++) {
-                waves.push({
-                    y: canvas.height / 2,
-                    length: Math.random() * 500 + 500,
-                    amplitude: Math.random() * 100 + 150,
-                    phase: Math.random() * Math.PI * 2,
-                    speed: Math.random() * 0.02,
-                    color: waveColors[i % waveColors.length]
-                });
-            }
-        }
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showSlide(currentIndex);
+    }
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = document.body.scrollHeight;
-            drawWaves();
-        }
-        window.addEventListener('resize', resizeCanvas);
+    next.addEventListener('click', (e) => {
+        e.preventDefault();
+        nextSlide();
+    });
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            drawWaves();
-            requestAnimationFrame(animate);
-        }
+    prev.addEventListener('click', (e) => {
+        e.preventDefault();
+        prevSlide();
+    });
 
-        function drawWaves() {
-            const time = Date.now() * 0.0001;
-            waves.forEach(wave => {
-                wave.phase += wave.speed;
-                ctx.beginPath();
-                ctx.lineWidth = 40;
-                ctx.shadowBlur = 60;
-                ctx.shadowColor = wave.color;
-                for (let x = 0; x < canvas.width; x += 10) {
-                    const y = wave.y + Math.sin((x / wave.length) + wave.phase + time) * wave.amplitude;
-                    ctx.lineTo(x, y);
+    showSlide(currentIndex);
+    setInterval(nextSlide, 5000); // Change image every 5 seconds
+
+    // Easter egg functionality
+    const logo = document.querySelector('.logo img');
+    const cat = document.getElementById('animated-cat');
+    let lastX = 0;
+    let lastY = 0;
+
+    logo.addEventListener('click', () => {
+        cat.style.display = 'block'; // Show the cat when logo is clicked
+
+        document.addEventListener('mousemove', (e) => {
+            const deltaX = e.pageX - lastX;
+            const deltaY = e.pageY - lastY;
+
+            cat.style.left = e.pageX + 'px';
+            cat.style.top = e.pageY + 'px';
+
+            if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                // Horizontal movement
+                if (deltaX > 0) {
+                    cat.className = 'walk-right';
+                } else {
+                    cat.className = 'walk-left';
                 }
-                const gradient = ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
-                gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
-                gradient.addColorStop(0.5, wave.color);
-                gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
-                ctx.strokeStyle = gradient;
-                ctx.stroke();
-            });
+            } else {
+                // Vertical movement
+                if (deltaY > 0) {
+                    cat.className = 'walk-down';
+                } else {
+                    cat.className = 'walk-up';
+                }
+            }
+
+            lastX = e.pageX;
+            lastY = e.pageY;
+        });
+    });
+});
+
+const canvas = document.getElementById('wavyBackground');
+const ctx = canvas.getContext('2d');
+const waves = [];
+const waveCount = 5;
+const waveColors = [
+    "rgba(142, 68, 173, 0.7)",
+    "rgba(41, 128, 185, 0.7)",
+    "rgba(26, 188, 156, 0.7)",
+    "rgba(241, 196, 15, 0.7)",
+    "rgba(231, 76, 60, 0.7)"
+];
+
+function initCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.body.scrollHeight;
+    for (let i = 0; i < waveCount; i++) {
+        waves.push({
+            y: canvas.height / 2,
+            length: Math.random() * 500 + 500,
+            amplitude: Math.random() * 100 + 150,
+            phase: Math.random() * Math.PI * 2,
+            speed: Math.random() * 0.02,
+            color: waveColors[i % waveColors.length]
+        });
+    }
+}
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.body.scrollHeight;
+    drawWaves();
+}
+window.addEventListener('resize', resizeCanvas);
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawWaves();
+    requestAnimationFrame(animate);
+}
+
+function drawWaves() {
+    const time = Date.now() * 0.0001;
+    waves.forEach(wave => {
+        wave.phase += wave.speed;
+        ctx.beginPath();
+        ctx.lineWidth = 40;
+        ctx.shadowBlur = 60;
+        ctx.shadowColor = wave.color;
+        for (let x = 0; x < canvas.width; x += 10) {
+            const y = wave.y + Math.sin((x / wave.length) + wave.phase + time) * wave.amplitude;
+            ctx.lineTo(x, y);
         }
+        const gradient = ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+        gradient.addColorStop(0.5, wave.color);
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
+        ctx.strokeStyle = gradient;
+        ctx.stroke();
+    });
+}
+
+
+
     </script>
 </body>
 </html>

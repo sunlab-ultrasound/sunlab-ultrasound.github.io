@@ -467,3 +467,54 @@ canvas#wavyBackground {
     font-size: 20px;
   }
 }
+
+/* Cat sprite animation */
+/* Cat sprite animations for different directions */
+#animated-cat {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px; /* Width of one frame of the sprite */
+  height: 32px; /* Height of one frame of the sprite */
+  background-image: url('assets/cat_sprites_by_biofunk95_d8y869y\ 2\ 2024-06-27\ 15_41_18.png');
+  background-repeat: no-repeat;
+  pointer-events: none; /* Prevent the cat from interfering with other elements */
+  display: none; /* Initially hidden */
+}
+
+@keyframes walk-down {
+  0% { background-position: 0 0; }
+  100% { background-position: -128px 0; } /* -128px = 4 frames * 32px/frame */
+}
+
+@keyframes walk-up {
+  0% { background-position: 0 -32px; }
+  100% { background-position: -128px -32px; } /* -128px = 4 frames * 32px/frame */
+}
+
+@keyframes walk-left {
+  0% { background-position: 0 -64px; }
+  100% { background-position: -128px -64px; } /* -128px = 4 frames * 32px/frame */
+}
+
+@keyframes walk-right {
+  0% { background-position: 0 -96px; }
+  100% { background-position: -128px -96px; } /* -128px = 4 frames * 32px/frame */
+}
+
+.walk-down {
+  animation: walk-down 0.4s steps(4) infinite;
+}
+
+.walk-up {
+  animation: walk-up 0.4s steps(4) infinite;
+}
+
+.walk-left {
+  animation: walk-left 0.4s steps(4) infinite;
+}
+
+.walk-right {
+  animation: walk-right 0.4s steps(4) infinite;
+}
+
