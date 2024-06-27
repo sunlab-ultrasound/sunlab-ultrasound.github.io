@@ -210,7 +210,7 @@ canvas#wavyBackground {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  text-align: justify;
   margin-bottom: 30px;
 }
 

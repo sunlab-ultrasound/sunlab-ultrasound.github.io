@@ -372,7 +372,7 @@ canvas#wavyBackground {
 .research-item {
   width: 300px;
   height: 350px;
-  background-color: #000000;
+  background-color: #e4e9e5;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   overflow: hidden;
@@ -392,7 +392,7 @@ canvas#wavyBackground {
 }
 
 .research-item h3 {
-  color: white;
+  color: rgb(0, 0, 0);
   margin-left: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
@@ -735,7 +735,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #000000; /* Solid black background */
+  background-color: #e5e9e4; /* Solid black background */
   border: 1px solid rgba(255, 255, 255, 0.25);
   overflow: hidden;
   position: relative;
@@ -757,8 +757,8 @@ footer {
   max-width: 250px;
   width: 20vw;
   height: auto;
-  background-color: #ffffff;
-  padding: 5px;
+  background-color: #e5e9e4;
+  padding: 15px;
   box-sizing: border-box;
   border-radius: 20px;
   margin: 10px;
