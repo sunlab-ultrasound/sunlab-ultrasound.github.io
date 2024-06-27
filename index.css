@@ -15,8 +15,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 1.0);
-  color: #222839;
+  background: rgba(255, 255, 255, 1.0); /* White background */
+  color: #0E162F; /* Dark navy text */
   position: fixed;
   top: 0;
   left: 0;
@@ -29,19 +29,19 @@ header {
 .logo img {
   height: 7vh; /* Adjust this value as necessary */
   display: flex;
-  padding-right: 0.2vw; ;
+  padding-right: 0.2vw;
   align-items: center;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    width: auto;
-    height: auto;
-    font-size: large;
-    max-width: 100vw;
-    font-weight: bold;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  height: auto;
+  font-size: large;
+  max-width: 100vw;
+  font-weight: bold;
 }
 
 nav ul li {
@@ -51,14 +51,14 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: #222839;
+  color: #0E162F; /* Dark navy for links */
 }
 
 nav ul li a:hover {
-  color: #EAEDEE;
+  color: #AFCBE5; /* Light blue for hover effects */
 }
 
-@media screen and (max-width : 480px ) {
+@media screen and (max-width: 480px) {
   header {
     flex-direction: column;
   }
@@ -66,10 +66,8 @@ nav ul li a:hover {
   .logo img {
     height: 7vh; /* Smaller logo for smaller screens */
     padding: 0; /* Adjust padding as needed */
-	  margin: auto auto;
+    margin: auto auto;
   }
-
-
 
   nav ul {
     justify-content: center;
@@ -77,7 +75,7 @@ nav ul li a:hover {
 
   nav ul li {
     padding: 10px; /* More vertical padding, no horizontal */
-	font-size: 3.5vw;
+    font-size: 3.5vw;
   }
 }
 
@@ -100,12 +98,10 @@ nav ul li a:hover {
     padding: 0 12px; /* Adjust padding */
     font-size: 3vw; /* Adjust font size */
   }
-
-
 }
 
 /* Tablets in Landscape */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and ( min-width : 769px ) and (max-width : 1025px ){
 	
 	header {
     flex-direction: column;
@@ -114,7 +110,7 @@ nav ul li a:hover {
   .logo img {
     height: 8vh; /* Smaller logo for smaller screens */
     padding: 0; /* Adjust padding as needed */
-	  margin: auto auto;
+    margin: auto auto;
   }
 
   nav ul {
@@ -123,7 +119,7 @@ nav ul li a:hover {
 
   nav ul li {
     padding: 10px; /* More vertical padding, no horizontal */
-	font-size: 2.5vw;
+    font-size: 2.5vw;
   }
 }
 
@@ -203,7 +199,7 @@ canvas#wavyBackground {
 .content {
   position: relative;
   margin-top: 45vh;
-  color: rgb(0, 0, 0);
+  color: #0E162F; /* Dark navy text */
   font-size: calc(1rem + 1vw);
   text-align: center;
   z-index: 5;
@@ -241,6 +237,7 @@ canvas#wavyBackground {
   backdrop-filter: blur(10px);
   font-weight: bold;
   z-index: 3;
+  color: #0E162F; /* Dark navy text */
 }
 
 .glass-container {
@@ -257,6 +254,7 @@ canvas#wavyBackground {
   overflow: hidden;
   position: relative;
   z-index: 3;
+  color: #0E162F; /* Dark navy text */
 }
 
 .glass-container-research {
@@ -273,6 +271,7 @@ canvas#wavyBackground {
   overflow: hidden;
   position: relative;
   z-index: 3;
+  color: #0E162F; /* Dark navy text */
 }
 
 @media screen and (max-width: 480px) {
@@ -372,7 +371,7 @@ canvas#wavyBackground {
 .research-item {
   width: 300px;
   height: 350px;
-  background-color: #e4e9e5;
+  background-color: #AFCBE5; /* Light blue background */
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   overflow: hidden;
@@ -392,7 +391,7 @@ canvas#wavyBackground {
 }
 
 .research-item h3 {
-  color: rgb(0, 0, 0);
+  color: #0E162F; /* Dark navy text */
   margin-left: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
@@ -402,8 +401,8 @@ canvas#wavyBackground {
 .research-item button {
   margin-top: 0px;
   margin-left: 20px;
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #222839; /* Dark gray button */
+  color: #FEFEFE; /* White text */
   border: none;
   border-radius: 20px;
   padding: 10px 20px;
@@ -583,7 +582,7 @@ canvas#wavyBackground {
 
 .modal-content {
   position: relative;
-  background-color: #fefefe;
+  background-color: #FEFEFE; /* White background */
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -613,11 +612,13 @@ canvas#wavyBackground {
 .modal-content h2 {
   margin-bottom: 10px;
   font-size: 1.5rem; /* Larger font size */
+  color: #0E162F; /* Dark navy text */
 }
 
 .modal-content p {
   text-align: justify;
   font-size: 1.2rem; /* Larger font size */
+  color: #222839; /* Dark gray text */
 }
 
 .close {
@@ -712,7 +713,7 @@ canvas#wavyBackground {
 }
 
 footer {
-  background: #000000; /* Solid black background */
+  background: #0E162F; /* Dark navy background */
   text-align: center;
   border-radius: 10px;
   padding: 2vh;
@@ -721,11 +722,11 @@ footer {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Removed backdrop-filter */
   border: 1px solid rgba(0, 0, 0, 0.25);
   overflow: hidden;
   position: relative;
   z-index: 3;
+  color: #FEFEFE; /* White text */
 }
 
 .details-footer {
@@ -735,7 +736,7 @@ footer {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #e5e9e4; /* Solid black background */
+  background-color: #E5E9E4; /* Light gray background */
   border: 1px solid rgba(255, 255, 255, 0.25);
   overflow: hidden;
   position: relative;
@@ -743,6 +744,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #222839; /* Dark gray text */
 }
 
 .affiliations {
@@ -757,7 +759,7 @@ footer {
   max-width: 250px;
   width: 20vw;
   height: auto;
-  background-color: #e5e9e4;
+  background-color: #E5E9E4;
   padding: 15px;
   box-sizing: border-box;
   border-radius: 20px;
@@ -770,7 +772,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #ffffff;
+  color: #222839; /* Dark gray text */
 }
 
 .contact-details {
