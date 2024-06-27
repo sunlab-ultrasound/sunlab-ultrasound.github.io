@@ -476,7 +476,7 @@ canvas#wavyBackground {
   left: 0;
   width: 32px; /* Width of one frame of the sprite */
   height: 32px; /* Height of one frame of the sprite */
-  background-image: url('assets/cat_sprites_by_biofunk95_d8y869y\ 2\ 2024-06-27\ 15_41_18.png');
+  background-image: url('assets/77888.png');
   background-repeat: no-repeat;
   pointer-events: none; /* Prevent the cat from interfering with other elements */
   display: none; /* Initially hidden */
@@ -484,22 +484,22 @@ canvas#wavyBackground {
 
 @keyframes walk-down {
   0% { background-position: 0 0; }
-  100% { background-position: -128px 0; } /* -128px = 4 frames * 32px/frame */
-}
-
-@keyframes walk-up {
-  0% { background-position: 0 -32px; }
-  100% { background-position: -128px -32px; } /* -128px = 4 frames * 32px/frame */
-}
-
-@keyframes walk-left {
-  0% { background-position: 0 -64px; }
-  100% { background-position: -128px -64px; } /* -128px = 4 frames * 32px/frame */
+  100% { background-position: -128px 0; } /* Adjusted to match 32px/frame */
 }
 
 @keyframes walk-right {
+  0% { background-position: 0 -32px; }
+  100% { background-position: -128px -32px; } /* Adjusted to match 32px/frame */
+}
+
+@keyframes walk-up {
+  0% { background-position: 0 -64px; }
+  100% { background-position: -128px -64px; } /* Adjusted to match 32px/frame */
+}
+
+@keyframes walk-left {
   0% { background-position: 0 -96px; }
-  100% { background-position: -128px -96px; } /* -128px = 4 frames * 32px/frame */
+  100% { background-position: -128px -96px; } /* Adjusted to match 32px/frame */
 }
 
 .walk-down {

@@ -126,25 +126,22 @@
             const deltaX = e.pageX - lastX;
             const deltaY = e.pageY - lastY;
 
-            cat.style.left = e.pageX + 'px';
-            cat.style.top = e.pageY + 'px';
-
             if (Math.abs(deltaX) > Math.abs(deltaY)) {
-                // Horizontal movement
                 if (deltaX > 0) {
-                    cat.className = 'walk-right';
+                    cat.style.animation = 'walk-right 0.4s steps(4) infinite';
                 } else {
-                    cat.className = 'walk-left';
+                    cat.style.animation = 'walk-left 0.4s steps(4) infinite';
                 }
             } else {
-                // Vertical movement
                 if (deltaY > 0) {
-                    cat.className = 'walk-down';
+                    cat.style.animation = 'walk-down 0.4s steps(4) infinite';
                 } else {
-                    cat.className = 'walk-up';
+                    cat.style.animation = 'walk-up 0.4s steps(4) infinite';
                 }
             }
 
+            cat.style.left = e.pageX + 'px';
+            cat.style.top = e.pageY + 'px';
             lastX = e.pageX;
             lastY = e.pageY;
         });
@@ -211,8 +208,6 @@ function drawWaves() {
         ctx.stroke();
     });
 }
-
-
 
     </script>
 </body>
