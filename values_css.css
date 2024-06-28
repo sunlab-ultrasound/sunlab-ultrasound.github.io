@@ -175,14 +175,15 @@
       font-size: 1.2vw; /* Enhance font size for optimal readability */
     }
   }
-  
-  canvas#wavyBackground {
+
+  /* Wavy Background Canvas */
+canvas#wavyBackground {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -3; /* Behind all content */
+    z-index: -3;
   }
   
   /* Blurry Backdrop */
@@ -190,17 +191,17 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    -webkit-backdrop-filter: blur(40px); /* Prefix for iOS/Safari */
-    backdrop-filter: blur(40px);
-    z-index: -2; /* Above the wavy background, below everything else */
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    z-index: -2;
   }
-  
+
   .glass-container {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     padding: 2vh;
-    margin-top: 100px;
-    width: 95vw; /* Adjusted to provide some margin on smaller screens */
+    margin-top: 20vh;
+    width: 95vw;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -211,37 +212,44 @@
     z-index: 3;
     color: #0E162F; /* Dark navy text */
   }
-  
+
   .values-title {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
-    color: #0E162F; /* Dark navy for the title */
+    border-radius: 10px;
   }
   
   .content {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
   }
   
   .text-container {
     text-align: justify;
-    width: 90%; /* Ensure text takes full width */
-    padding: 0 2vw; /* Add some horizontal padding */
-    font-size: 1.2rem; /* Adjusted font size for better readability */
-    color: #222839; /* Dark grey for text */
+    width: 100%;
+    padding: 0 2vw;
+    font-size: 1.2rem;
   }
   
   .text-container h2 {
-    color: #0E162F; /* Dark navy for subheadings */
+    font-size: 1.5rem;
     margin-top: 20px;
+  }
+
+  .text-container ul {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+  
+  .text-container ul li {
+    margin-bottom: 10px;
   }
   
   .text-container a {
-    color: #AFCBE5; /* Light blue for links */
+    color: #2e4fb3; /* Dark navy text */
     text-decoration: none;
   }
   
@@ -249,97 +257,87 @@
     text-decoration: underline;
   }
   
-  ul {
-    list-style-type: disc;
-    margin-left: 20px;
+  /* Mobile devices */
+@media screen and (max-width: 480px) {
+  .glass-container {
+    padding: 5vw;
+    margin-top: 30vh;
+    width: 90vw;
   }
-  
-  li {
-    margin-bottom: 10px;
+
+  .text-container {
+    padding: 10px 0;
+    font-size: 1rem;
   }
-  
-  /* Mobile Devices */
-  @media screen and (max-width: 480px) {
-    .glass-container {
-      padding: 5vw; /* Slightly reduce padding */
-      margin-top: 110px; /* Adjust top margin */
-      width: 90vw; /* Adjust width for smaller screens */
-    }
-  
-    .text-container {
-      padding: 10px 0; /* Add some padding above and below the text */
-      font-size: 1rem; /* Adjust font size for better readability */
-    }
-  
-    .values-title {
-      font-size: 1.5rem; /* Adjust title size for smaller screens */
-      margin-bottom: 10px; /* Reduce margin */
-    }
+
+  .values-title {
+    font-size: 1.5rem;
   }
-  
-  /* Tablets in Portrait */
-  @media screen and (min-width: 481px) and (max-width: 768px) {
-    .glass-container {
-      width: 85vw; /* Adjust for slightly more margin */
-      margin-top: 110px;
-    }
-  
-    .text-container {
-      padding: 10px 0; /* Add some padding above and below the text */
-      font-size: 1.2rem; /* Adjust font size for better readability */
-    }
-  
-    .values-title {
-      font-size: 1.8rem; /* Adjust title size for medium screens */
-    }
+}
+
+/* Tablets in Portrait */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .glass-container {
+    width: 85vw;
+    margin-top: 25vh;
   }
-  
-  /* Tablets in Landscape and Small Laptops */
-  @media screen and (min-width: 769px) and (max-width: 1024px) {
-    .glass-container {
-      width: 90vw; /* Provide more margin */
-    }
-  
-    .text-container {
-      padding: 10px 0; /* Add some padding above and below the text */
-      font-size: 1.2rem; /* Adjust font size for better readability */
-    }
-  
-    .values-title {
-      font-size: 2rem; /* Adjust title size for larger screens */
-    }
+
+  .text-container {
+    padding: 10px 0;
+    font-size: 1.1rem;
   }
-  
-  /* Laptops and Desktops */
-  @media screen and (min-width: 1025px) {
-    .glass-container {
-      width: 90vw; /* Further adjust for larger screens */
-      max-width: 1200px; /* Cap the maximum width to maintain design integrity */
-    }
-  
-    .text-container {
-      padding: 10px 0; /* Add some padding above and below the text */
-      font-size: 1.2rem; /* Adjust font size for better readability */
-    }
-  
-    .values-title {
-      font-size: 2rem; /* Adjust title size for larger screens */
-    }
+
+  .values-title {
+    font-size: 1.8rem;
   }
-  
-  /* Very Large Screens */
-  @media screen and (min-width: 2000px) {
-    .glass-container {
-      width: 80vw; /* Adjust for significant margins */
-      max-width: 1600px; /* Ensure content is not overly stretched */
-    }
-  
-    .text-container {
-      font-size: 1.2rem; /* Increase font size for better readability */
-    }
-  
-    .values-title {
-      font-size: 2.5rem; /* Slightly increase for better readability */
-    }
+}
+
+/* Tablets in Landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .glass-container {
+    width: 90vw;
+    margin-top: 20vh;
   }
-  
+
+  .text-container {
+    padding: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  .values-title {
+    font-size: 2rem;
+  }
+}
+
+/* Laptops and Desktops */
+@media screen and (min-width: 1025px) {
+  .glass-container {
+    width: 90vw;
+    max-width: 1200px;
+  }
+
+  .text-container {
+    padding: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  .values-title {
+    font-size: 2rem;
+  }
+}
+
+/* Very large screens */
+@media screen and (min-width: 2000px) {
+  .glass-container {
+    width: 80vw;
+    max-width: 1600px;
+  }
+
+  .text-container {
+    font-size: 1.2rem;
+  }
+
+  .values-title {
+    font-size: 2.2rem;
+  }
+}

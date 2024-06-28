@@ -24,7 +24,7 @@
             </ul>
         </nav>
     </header>
-    <!-- Wavy Background Canvas -->
+    
     <canvas id="wavyBackground"></canvas>
     <div class="blurry-backdrop"></div>
 
@@ -49,91 +49,91 @@
     </div>
 
     <script>
-        const canvas = document.getElementById('wavyBackground');
-        const ctx = canvas.getContext('2d');
+        // Define canvas and context at the top to ensure availability
+       const canvas = document.getElementById('wavyBackground');
+       const ctx = canvas.getContext('2d');
+       
+       // Adjust initial canvas size
+       canvas.width = window.innerWidth;
+       canvas.height = document.body.scrollHeight;
+       
+       const waves = [];
+       const waveCount = 5;
+       const waveColors = ["rgba(142, 68, 173, 0.7)", "rgba(41, 128, 185, 0.7)", "rgba(26, 188, 156, 0.7)", "rgba(241, 196, 15, 0.7)", "rgba(231, 76, 60, 0.7)"];
+       
+       for (let i = 0; i < waveCount; i++) {
+           waves.push({
+               y: canvas.height / 2,
+               length: Math.random() * 500 + 500,
+               amplitude: Math.random() * 150 + 200,
+               phase: Math.random() * Math.PI * 2,
+               speed: Math.random() * 0.02,
+               color: waveColors[i % waveColors.length]
+           });
+       }
+       
+       function resizeCanvas() {
+           canvas.width = window.innerWidth;
+           canvas.height = document.body.scrollHeight; // Adjusted to use scrollHeight for consistency
+           drawWaves();
+       }
+       
+       window.addEventListener('resize', resizeCanvas);
+       
+       function drawWaves() {
+           const time = Date.now() * 0.0001;
+           ctx.clearRect(0, 0, canvas.width, canvas.height);
+           waves.forEach(wave => {
+               wave.phase += wave.speed;
+               ctx.beginPath();
+               ctx.lineWidth = 50;
+               ctx.shadowBlur = 60;
+               ctx.shadowColor = wave.color;
+               for (let x = 0; x < canvas.width; x += 10) {
+                   const y = wave.y + Math.sin((x / wave.length) + wave.phase + time) * wave.amplitude;
+                   ctx.lineTo(x, y);
+               }
+               const gradient = ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
+               gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+               gradient.addColorStop(0.5, wave.color);
+               gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
+               ctx.strokeStyle = gradient;
+               ctx.stroke();
+           });
+       }
+       
+       // Initial wave drawing
+       animate();
+       
+       function animate() {
+           requestAnimationFrame(animate);
+           drawWaves();
+       }
+       
+       document.querySelectorAll('.try-now-btn').forEach(button => {
+ button.addEventListener('click', function() {
+   const modalId = this.getAttribute('data-modal-id');
+   document.getElementById(modalId).style.display = 'block';
+   document.getElementById('modal-overlay').style.display = 'block';
+ });
+});
 
-        canvas.width = window.innerWidth;
-        canvas.height = document.body.scrollHeight;
+document.querySelectorAll('.modal .close').forEach(button => {
+ button.addEventListener('click', function() {
+   this.closest('.modal').style.display = 'none';
+   document.getElementById('modal-overlay').style.display = 'none';
+ });
+});
 
-        const waves = [];
-        const waveCount = 5;
-        const waveColors = ["rgba(142, 68, 173, 0.7)", "rgba(41, 128, 185, 0.7)", "rgba(26, 188, 156, 0.7)", "rgba(241, 196, 15, 0.7)", "rgba(231, 76, 60, 0.7)"];
+document.getElementById('modal-overlay').addEventListener('click', function() {
+ document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+ this.style.display = 'none';
+});
 
-        for (let i = 0; i < waveCount; i++) {
-            waves.push({
-                y: canvas.height / 2,
-                length: Math.random() * 500 + 500,
-                amplitude: Math.random() * 150 + 200,
-                phase: Math.random() * Math.PI * 2,
-                speed: Math.random() * 0.02,
-                color: waveColors[i % waveColors.length]
-            });
-        }
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = document.body.scrollHeight;
-            drawWaves();
-        }
-
-        window.addEventListener('resize', resizeCanvas);
-
-        function drawWaves() {
-            const time = Date.now() * 0.0001;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            waves.forEach(wave => {
-                wave.phase += wave.speed;
-                ctx.beginPath();
-                ctx.lineWidth = 50;
-                ctx.shadowBlur = 60;
-                ctx.shadowColor = wave.color;
-                for (let x = 0; x < canvas.width; x += 10) {
-                    const y = wave.y + Math.sin((x / wave.length) + wave.phase + time) * wave.amplitude;
-                    ctx.lineTo(x, y);
-                }
-                const gradient = ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
-                gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
-                gradient.addColorStop(0.5, wave.color);
-                gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
-                ctx.strokeStyle = gradient;
-                ctx.stroke();
-            });
-        }
-
-        animate();
-
-        function animate() {
-            requestAnimationFrame(animate);
-            drawWaves();
-        }
-
-        document.querySelectorAll('.try-now-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const modalId = this.getAttribute('data-modal-id');
-                document.getElementById(modalId).style.display = 'block';
-                document.getElementById('modal-overlay').style.display = 'block';
-            });
-        });
-
-        document.querySelectorAll('.modal .close').forEach(button => {
-            button.addEventListener('click', function() {
-                this.closest('.modal').style.display = 'none';
-                document.getElementById('modal-overlay').style.display = 'none';
-            });
-        });
-
-        document.getElementById('modal-overlay').addEventListener('click', function() {
-            document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
-            this.style.display = 'none';
-        });
-
-        function toggleMenu() {
-            var nav = document.querySelector('nav');
-            nav.classList.toggle('active');
-        }
-
-        initCanvas();
-        animate();
-    </script>
+function toggleMenu() {
+ var nav = document.querySelector('nav');
+ nav.classList.toggle('active');
+}
+   </script>
 </body>
 </html>
