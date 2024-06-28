@@ -27,7 +27,7 @@ header {
 }
 
 .logo img {
-  height: 7vh;
+  height: 6vh; /* Slightly smaller for consistency */
   display: flex;
   padding-right: 0.2vw;
   align-items: center;
@@ -99,6 +99,10 @@ nav ul li a:hover {
 
   nav ul.active {
     left: 0;
+  }
+
+  .logo img {
+    height: 5vh; /* Adjust logo size for mobile */
   }
 }
 
