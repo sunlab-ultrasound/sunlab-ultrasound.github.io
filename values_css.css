@@ -237,6 +237,7 @@ canvas#wavyBackground {
   .text-container h2 {
     font-size: 1.5rem;
     margin-top: 20px;
+    text-align: left;
   }
 
   .text-container ul {
