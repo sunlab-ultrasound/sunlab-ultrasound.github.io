@@ -37,14 +37,14 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  width: auto;
-  height: auto;
+  flex-wrap: wrap; /* Allow wrapping to prevent cropping */
+  width: 100%; /* Full width to accommodate all items */
   font-size: large;
   font-weight: bold;
 }
 
 nav ul li {
-  padding: 0 20px; /* Use fixed padding for consistent spacing */
+  padding: 0 10px; /* Use fixed padding for consistent spacing */
   display: inline;
 }
 
@@ -60,16 +60,19 @@ nav ul li a:hover {
 @media screen and (max-width: 480px) {
   header {
     flex-direction: column;
+    align-items: center;
+    padding: 2vh 2vw; /* Increased padding for better spacing */
   }
 
   .logo img {
-    height: 7vh; /* Smaller logo for smaller screens */
+    height: 7vh; /* Adjusted for better visibility on smaller screens */
     padding: 0; /* Adjust padding as needed */
     margin: auto;
   }
 
   nav ul {
     justify-content: center;
+    padding-top: 1vh; /* Added padding to separate logo and nav */
   }
 
   nav ul li {
@@ -82,20 +85,24 @@ nav ul li a:hover {
 @media screen and (min-width: 481px) and (max-width: 768px) {
   header {
     flex-direction: column;
+    align-items: center;
+    padding: 2vh 2vw; /* Increased padding for better spacing */
   }
 
   .logo img {
-    height: 8vh; /* Slightly larger logo */
-    padding-right: 0.5vw; /* Adjust padding */
+    height: 7vh; /* Adjusted for better visibility on smaller screens */
+    padding: 0; /* Adjust padding as needed */
+    margin: auto;
   }
 
   nav ul {
-    justify-content: flex-end;
+    justify-content: center;
+    padding-top: 1vh; /* Added padding to separate logo and nav */
   }
 
   nav ul li {
-    padding: 0 12px; /* Adjust padding */
-    font-size: 3vw; /* Adjust font size */
+    padding: 10px; /* More vertical padding, no horizontal */
+    font-size: 3.5vw;
   }
 }
 
@@ -103,16 +110,19 @@ nav ul li a:hover {
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   header {
     flex-direction: column;
+    align-items: center;
+    padding: 2vh 2vw; /* Increased padding for better spacing */
   }
 
   .logo img {
-    height: 8vh; /* Smaller logo for smaller screens */
+    height: 7vh; /* Adjusted for better visibility on smaller screens */
     padding: 0; /* Adjust padding as needed */
     margin: auto;
   }
 
   nav ul {
     justify-content: center;
+    padding-top: 1vh; /* Added padding to separate logo and nav */
   }
 
   nav ul li {
@@ -173,6 +183,7 @@ nav ul li a:hover {
     font-size: 1.2vw; /* Enhance font size for optimal readability */
   }
 }
+
 
 
 /* Wavy Background Canvas */
