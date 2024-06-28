@@ -27,10 +27,19 @@ header {
 }
 
 .logo img {
-  height: 6vh; /* Slightly smaller for consistency */
+  display: none; /* Hide both logos by default */
+  height: 6vh; /* Default height for logos */
   display: flex;
   padding-right: 0.2vw;
   align-items: center;
+}
+
+.desktop-logo {
+  display: block; /* Show desktop logo by default */
+}
+
+.mobile-logo {
+  display: none; /* Hide mobile logo by default */
 }
 
 nav {
@@ -101,10 +110,16 @@ nav ul li a:hover {
     left: 0;
   }
 
-  .logo img {
-    height: 5vh; /* Adjust logo size for mobile */
+  .desktop-logo {
+    display: none; /* Hide desktop logo on mobile */
+  }
+
+  .mobile-logo {
+    display: block; /* Show mobile logo on mobile */
+    height: 5vh; /* Adjust height for mobile logo */
   }
 }
+
 
 /* Wavy Background Canvas */
 canvas#wavyBackground {
