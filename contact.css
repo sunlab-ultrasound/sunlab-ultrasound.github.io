@@ -102,8 +102,8 @@ nav ul li a:hover {
 
 /* Tablets in Landscape */
 @media screen and ( min-width : 769px ) and (max-width : 1025px ){
-	
-	header {
+    
+    header {
     flex-direction: column;
   }
 
