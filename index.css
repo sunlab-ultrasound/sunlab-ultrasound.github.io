@@ -27,11 +27,7 @@ header {
 }
 
 .logo img {
-  display: none; /* Hide both logos by default */
   height: 6vh; /* Default height for logos */
-  display: flex;
-  padding-right: 0.2vw;
-  align-items: center;
 }
 
 .desktop-logo {
@@ -54,6 +50,7 @@ nav ul {
   width: auto;
   font-size: large;
   font-weight: bold;
+  padding-top: 1vh;
 }
 
 nav ul li {
@@ -98,6 +95,7 @@ nav ul li a:hover {
     background-color: rgba(255, 255, 255, 1.0);
     transition: left 0.3s ease;
     z-index: 999;
+    padding-top: 0;
   }
 
   nav ul li {
@@ -116,7 +114,7 @@ nav ul li a:hover {
 
   .mobile-logo {
     display: block; /* Show mobile logo on mobile */
-    height: 5vh; /* Adjust height for mobile logo */
+    height: 7vh; /* Adjust height for mobile logo */
   }
 }
 

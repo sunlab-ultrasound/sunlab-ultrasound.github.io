@@ -21,15 +21,25 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1vh 1vw;
+  padding: 1vh 2vw;
   z-index: 1000;
   border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
 }
 
 .logo img {
-  height: 7vh; /* Adjust this value as necessary */
+  height: 6vh; /* Default height for logos */
+}
+
+.desktop-logo {
+  display: block; /* Show desktop logo by default */
+}
+
+.mobile-logo {
+  display: none; /* Hide mobile logo by default */
+}
+
+nav {
   display: flex;
-  padding-right: 0.2vw;
   align-items: center;
 }
 
@@ -38,139 +48,73 @@ nav ul {
   display: flex;
   justify-content: flex-end;
   width: auto;
-  height: auto;
   font-size: large;
   font-weight: bold;
+  padding-top: 1vh;
 }
 
 nav ul li {
-  padding: 0 20px; /* Use fixed padding for consistent spacing */
+  padding: 0 20px;
   display: inline;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #0E162F; /* Dark navy for links */
+  color: #0E162F;
 }
 
 nav ul li a:hover {
-  color: #AFCBE5; /* Light blue for hover effects */
+  color: #AFCBE5;
 }
 
-@media screen and (max-width: 480px) {
-  header {
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #0E162F;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 60px;
+    left: -100%;
     flex-direction: column;
-  }
-
-  .logo img {
-    height: 7vh; /* Smaller logo for smaller screens */
-    padding: 0; /* Adjust padding as needed */
-    margin: auto;
-  }
-
-  nav ul {
-    justify-content: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1.0);
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding-top: 0;
   }
 
   nav ul li {
-    padding: 10px; /* More vertical padding, no horizontal */
-    font-size: 3.5vw;
-  }
-}
-
-/* Tablets in Portrait */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  header {
-    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
   }
 
-  .logo img {
-    height: 8vh; /* Slightly larger logo */
-    padding-right: 0.5vw; /* Adjust padding */
+  nav ul.active {
+    left: 0;
   }
 
-  nav ul {
-    justify-content: flex-end;
+  .desktop-logo {
+    display: none; /* Hide desktop logo on mobile */
   }
 
-  nav ul li {
-    padding: 0 12px; /* Adjust padding */
-    font-size: 3vw; /* Adjust font size */
-  }
-}
-
-/* Tablets in Landscape */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  header {
-    flex-direction: column;
-  }
-
-  .logo img {
-    height: 8vh; /* Smaller logo for smaller screens */
-    padding: 0; /* Adjust padding as needed */
-    margin: auto;
-  }
-
-  nav ul {
-    justify-content: center;
-  }
-
-  nav ul li {
-    padding: 10px; /* More vertical padding, no horizontal */
-    font-size: 2.5vw;
-  }
-}
-
-/* Desktops and screens larger than 1024px */
-@media screen and (min-width: 1025px) {
-  header {
-    flex-direction: row; /* Return to a horizontal layout for more space */
-    justify-content: space-between; /* Space out the logo and navigation */
-    padding: 1vh 2vw; /* Adjust padding for a balanced appearance */
-  }
-
-  .logo img {
-    height: 6vh; /* Adjust logo size for desktop */
-    padding: 0; /* Reset padding */
-    margin: 0; /* Reset margin */
-  }
-
-  nav ul {
-    justify-content: flex-end; /* Align navigation to the end */
-  }
-
-  nav ul li {
-    padding: 0 20px; /* Adjust padding for desktop */
-    font-size: 1.5vw; /* Adjust font size for desktop readability */
-    margin-right: 0; /* Reset margin-right */
-  }
-}
-
-/* Very large screens, wider than 1440px */
-@media screen and (min-width: 1440px) {
-  header {
-    padding: 1.5vh 3vw; /* More spacious padding for large screens */
-  }
-
-  .logo img {
-    height: 7vh; /* Larger logo size for better visibility */
-  }
-
-  nav ul li {
-    padding: 0 25px; /* Increase padding for a wider layout */
-    font-size: 1.1vw; /* Slightly larger font size for readability */
-  }
-}
-
-/* Sumo-sized screens, wider than 2000px */
-@media screen and (min-width: 2000px) {
-  .logo img {
-    height: 8vh; /* Maximize logo size for sumo-sized screens */
-  }
-
-  nav ul li {
-    padding: 0 30px; /* Maximize padding for large layouts */
-    font-size: 1.2vw; /* Enhance font size for optimal readability */
+  .mobile-logo {
+    display: block; /* Show mobile logo on mobile */
+    height: 7vh; /* Adjust height for mobile logo */
   }
 }
 
