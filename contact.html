@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUN LAB</title>
-    <link href="index.css" rel="stylesheet" type="text/css">
+    <link href="contact.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="modal-overlay" id="modal-overlay"></div>
@@ -216,6 +216,10 @@ function drawWaves() {
     });
 }
 
-    </script>
+document.getElementById('menu-icon').addEventListener('click', function() {
+  document.getElementById('nav-list').classList.toggle('active');
+});
+
+</script>
 </body>
 </html>
