@@ -78,7 +78,11 @@
         </div>
     </div>
 
-    <script>
+<script>
+
+document.getElementById('menu-icon').addEventListener('click', function() {
+  document.getElementById('nav-list').classList.toggle('active');
+});
         const canvas = document.getElementById('wavyBackground');
         const ctx = canvas.getContext('2d');
 
@@ -165,10 +169,6 @@
         initCanvas();
         animate();
 
-
-document.getElementById('menu-icon').addEventListener('click', function() {
-document.getElementById('nav-list').classList.toggle('active');
-});
 </script>
 </body>
 </html>
