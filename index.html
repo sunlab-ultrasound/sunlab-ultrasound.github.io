@@ -13,7 +13,12 @@
             <img src="assets/sunlab_name_logo.png" alt="SUN Lab Logo">
         </div>
         <nav>
-            <ul>
+            <div class="menu-icon" id="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="research.html">Research</a></li>
                 <li><a href="publications.html">Publications</a></li>
@@ -214,6 +219,10 @@ function toggleMenu() {
   var nav = document.querySelector('nav');
   nav.classList.toggle('active');
 }
-	</script>
+
+document.getElementById('menu-icon').addEventListener('click', function() {
+  document.getElementById('nav-list').classList.toggle('active');
+});
+</script>
 </body>
 </html>

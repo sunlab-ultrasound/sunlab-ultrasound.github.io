@@ -21,15 +21,20 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1vh 1vw;
+  padding: 1vh 2vw;
   z-index: 1000;
   border-bottom: 0.1vw solid rgba(255, 255, 255, 0.18);
 }
 
 .logo img {
-  height: 7vh; /* Adjust this value as necessary */
+  height: 7vh;
   display: flex;
   padding-right: 0.2vw;
+  align-items: center;
+}
+
+nav {
+  display: flex;
   align-items: center;
 }
 
@@ -37,154 +42,65 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: flex-end;
-  flex-wrap: wrap; /* Allow wrapping to prevent cropping */
-  width: 100%; /* Full width to accommodate all items */
+  width: auto;
   font-size: large;
   font-weight: bold;
 }
 
 nav ul li {
-  padding: 0 10px; /* Use fixed padding for consistent spacing */
+  padding: 0 20px;
   display: inline;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #0E162F; /* Dark navy for links */
+  color: #0E162F;
 }
 
 nav ul li a:hover {
-  color: #AFCBE5; /* Light blue for hover effects */
+  color: #AFCBE5;
 }
 
-@media screen and (max-width: 480px) {
-  header {
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #0E162F;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  nav ul {
+    position: absolute;
+    top: 60px;
+    left: -100%;
     flex-direction: column;
-    align-items: center;
-    padding: 2vh 2vw; /* Increased padding for better spacing */
-  }
-
-  .logo img {
-    height: 7vh; /* Adjusted for better visibility on smaller screens */
-    padding: 0; /* Adjust padding as needed */
-    margin: auto;
-  }
-
-  nav ul {
-    justify-content: center;
-    padding-top: 1vh; /* Added padding to separate logo and nav */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1.0);
+    transition: left 0.3s ease;
+    z-index: 999;
   }
 
   nav ul li {
-    padding: 10px; /* More vertical padding, no horizontal */
-    font-size: 3.5vw;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  nav ul.active {
+    left: 0;
   }
 }
-
-/* Tablets in Portrait */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 2vh 2vw; /* Increased padding for better spacing */
-  }
-
-  .logo img {
-    height: 7vh; /* Adjusted for better visibility on smaller screens */
-    padding: 0; /* Adjust padding as needed */
-    margin: auto;
-  }
-
-  nav ul {
-    justify-content: center;
-    padding-top: 1vh; /* Added padding to separate logo and nav */
-  }
-
-  nav ul li {
-    padding: 10px; /* More vertical padding, no horizontal */
-    font-size: 3.5vw;
-  }
-}
-
-/* Tablets in Landscape */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 2vh 2vw; /* Increased padding for better spacing */
-  }
-
-  .logo img {
-    height: 7vh; /* Adjusted for better visibility on smaller screens */
-    padding: 0; /* Adjust padding as needed */
-    margin: auto;
-  }
-
-  nav ul {
-    justify-content: center;
-    padding-top: 1vh; /* Added padding to separate logo and nav */
-  }
-
-  nav ul li {
-    padding: 10px; /* More vertical padding, no horizontal */
-    font-size: 2.5vw;
-  }
-}
-
-/* Desktops and screens larger than 1024px */
-@media screen and (min-width: 1025px) {
-  header {
-    flex-direction: row; /* Return to a horizontal layout for more space */
-    justify-content: space-between; /* Space out the logo and navigation */
-    padding: 1vh 2vw; /* Adjust padding for a balanced appearance */
-  }
-
-  .logo img {
-    height: 6vh; /* Adjust logo size for desktop */
-    padding: 0; /* Reset padding */
-    margin: 0; /* Reset margin */
-  }
-
-  nav ul {
-    justify-content: flex-end; /* Align navigation to the end */
-  }
-
-  nav ul li {
-    padding: 0 20px; /* Adjust padding for desktop */
-    font-size: 1.5vw; /* Adjust font size for desktop readability */
-    margin-right: 0; /* Reset margin-right */
-  }
-}
-
-/* Very large screens, wider than 1440px */
-@media screen and (min-width: 1440px) {
-  header {
-    padding: 1.5vh 3vw; /* More spacious padding for large screens */
-  }
-
-  .logo img {
-    height: 7vh; /* Larger logo size for better visibility */
-  }
-
-  nav ul li {
-    padding: 0 25px; /* Increase padding for a wider layout */
-    font-size: 1.1vw; /* Slightly larger font size for readability */
-  }
-}
-
-/* Sumo-sized screens, wider than 2000px */
-@media screen and (min-width: 2000px) {
-  .logo img {
-    height: 8vh; /* Maximize logo size for sumo-sized screens */
-  }
-
-  nav ul li {
-    padding: 0 30px; /* Maximize padding for large layouts */
-    font-size: 1.2vw; /* Enhance font size for optimal readability */
-  }
-}
-
-
 
 /* Wavy Background Canvas */
 canvas#wavyBackground {
