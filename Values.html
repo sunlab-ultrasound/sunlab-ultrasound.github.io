@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUN LAB</title>
+    <link href="values_css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <header>
+        <div class="logo">
+            <img src="assets/sunlab_name_logo.png" alt="SUN Lab Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="values.html">Values</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <!-- Wavy Background Canvas -->
+    <canvas id="wavyBackground"></canvas>
+    <div class="blurry-backdrop"></div>
+
+    <div class="glass-container">
+        <div class="values-title"><strong>Our Values</strong></div>
+        <div class="content">
+            <div class="text-container">
+                <p>We believe scientific education should be open. Every student/trainee has the potential to become a scientist and/or engineer, regardless of race, gender identity, age, religion, sexual orientation, place of origin, or ability status. It is critical to include young generations with diverse backgrounds and experiences, as they bring unique perspectives to STEM fields.</p>
+                <h2>Open Science</h2>
+                <p>We advocate for and practice Open Science by ensuring that our research findings, data, and methodologies are accessible to the broader scientific community. This includes publishing in open-access journals and contributing to public repositories. By sharing our work openly, we enable other researchers to build upon it, fostering a collaborative and innovative scientific environment.</p>
+                <h2>Team Science</h2>
+                <p>Collaborative efforts are fundamental to our research, and we believe teams benefit from the diverse backgrounds. We are building a team that embodies an open, inspiring, and collaborative environment. This approach drives innovation and supports the professional growth of each team member. We strive to create a culture where students and trainees can thrive through interactive, engaging, inclusive, safe, and supportive research environments.</p>
+                <h2>Mental & Physical Wellbeing</h2>
+                <p>Research is a journey and time commitment is a must, however, we should never overlook the importance of your growth and development.</p>
+                <p>We ask the team member to be proactive with help and on the lookout for lab mates’ wellbeing. Additional resources can be found:</p>
+                <ul>
+                    <li><a href="https://uhcs.northeastern.edu/counseling-services/">Counseling Services</a></li>
+                    <li><a href="https://uhcs.northeastern.edu/health-and-wellness/supporting-student-mental-health/">Supporting Student Mental Health</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('wavyBackground');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = document.body.scrollHeight;
+
+        const waves = [];
+        const waveCount = 5;
+        const waveColors = ["rgba(142, 68, 173, 0.7)", "rgba(41, 128, 185, 0.7)", "rgba(26, 188, 156, 0.7)", "rgba(241, 196, 15, 0.7)", "rgba(231, 76, 60, 0.7)"];
+
+        for (let i = 0; i < waveCount; i++) {
+            waves.push({
+                y: canvas.height / 2,
+                length: Math.random() * 500 + 500,
+                amplitude: Math.random() * 150 + 200,
+                phase: Math.random() * Math.PI * 2,
+                speed: Math.random() * 0.02,
+                color: waveColors[i % waveColors.length]
+            });
+        }
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = document.body.scrollHeight;
+            drawWaves();
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+
+        function drawWaves() {
+            const time = Date.now() * 0.0001;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            waves.forEach(wave => {
+                wave.phase += wave.speed;
+                ctx.beginPath();
+                ctx.lineWidth = 50;
+                ctx.shadowBlur = 60;
+                ctx.shadowColor = wave.color;
+                for (let x = 0; x < canvas.width; x += 10) {
+                    const y = wave.y + Math.sin((x / wave.length) + wave.phase + time) * wave.amplitude;
+                    ctx.lineTo(x, y);
+                }
+                const gradient = ctx.createLinearGradient(0, wave.y - wave.amplitude, 0, wave.y + wave.amplitude);
+                gradient.addColorStop(0, 'rgba(255, 255, 255, 0.5)');
+                gradient.addColorStop(0.5, wave.color);
+                gradient.addColorStop(1, 'rgba(255, 255, 255, 0.5)');
+                ctx.strokeStyle = gradient;
+                ctx.stroke();
+            });
+        }
+
+        animate();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            drawWaves();
+        }
+
+        document.querySelectorAll('.try-now-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal-id');
+                document.getElementById(modalId).style.display = 'block';
+                document.getElementById('modal-overlay').style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('.modal .close').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.modal').style.display = 'none';
+                document.getElementById('modal-overlay').style.display = 'none';
+            });
+        });
+
+        document.getElementById('modal-overlay').addEventListener('click', function() {
+            document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+            this.style.display = 'none';
+        });
+
+        function toggleMenu() {
+            var nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+
+        initCanvas();
+        animate();
+    </script>
+</body>
+</html>
