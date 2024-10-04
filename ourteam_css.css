@@ -217,107 +217,6 @@ canvas#wavyBackground {
   justify-content: center;
 }
 
-/* Glass Title for Alumni */
-.glass-title {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-align: center;
-  margin-bottom: 20px;
-  width: fit-content;
-  margin: auto;
-}
-
-.glass-title h2 {
-  font-size: 2rem;
-  padding-bottom: 10px; /* Add padding to the bottom of the title */
-}
-
-/* Alumni Section */
-.alumni-section {
-  padding-top: 50px;
-  text-align: center;
-}
-
-/* Alumni Cards */
-.alumni-cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 20px;
-}
-
-.alumni-card {
-  flex-basis: 22%; /* Default: 22% width per card on larger screens */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.alumni-card .image-container {
-  text-align: center;
-}
-
-.alumni-card img {
-  max-height: 250px; /* Adjust the size of the alumni images */
-  object-fit: contain; /* Ensures the full image is shown */
-  width: 100%; /* Adjust width automatically to fit the container */
-  border-radius: 10px;
-}
-
-.alumni-name {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* Responsive Adjustments */
-
-/* Mobile Devices */
-@media screen and (max-width: 480px) {
-  .alumni-cards-container {
-    flex-direction: column;
-  }
-  .alumni-card {
-    flex-basis: 100%; /* Full width for mobile */
-    margin: auto;
-  }
-}
-
-/* Tablets in Portrait */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .alumni-cards-container {
-    flex-wrap: wrap;
-  }
-  .alumni-card {
-    flex-basis: 45%; /* 2 cards per row on tablets in portrait mode */
-    margin: auto;
-  }
-}
-
-/* Tablets in Landscape */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .alumni-card {
-    flex-basis: 30%; /* 3 cards per row on tablets in landscape mode */
-  }
-}
-
-/* Laptops */
-@media screen and (min-width: 1025px) {
-  .alumni-card {
-    flex-basis: 22%; /* 4 cards per row on larger screens */
-  }
-}
-
-/* Very Large Screens */
-@media screen and (min-width: 2000px) {
-  .alumni-card {
-    flex-basis: 18%; /* Adapt to show more cards per row on very large screens */
-  }
-}
-
 
 /* Mobile Devices */
 @media screen and (max-width: 480px) {
@@ -419,3 +318,143 @@ canvas#wavyBackground {
 }
 
 
+/* Alumni Section */
+.alumni-section {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.glass-title {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 60px; /* Increased margin-bottom for extra space between title and alumni cards */
+  width: fit-content;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.glass-title h2 {
+  font-size: 2.5rem;
+  color: #0E162F;
+  font-weight: bold;
+}
+
+/* Alumni Cards Container */
+.alumni-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  padding: 0 10vw;
+}
+
+/* Alumni Card Styling */
+.alumni-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.alumni-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Image Container and Image Styling */
+.alumni-card-image-container {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.alumni-card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.alumni-card-image:hover {
+  transform: scale(1.05);
+}
+
+/* Text for Alumni Name and Description */
+.glass-text-alumni {
+  text-align: center;
+  padding: 10px;
+  font-size: 1rem;
+  color: #0E162F;
+}
+
+.alumni-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.alumni-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+  .alumni-cards-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .glass-title h2 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .alumni-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .glass-title h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .alumni-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .glass-title h2 {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .alumni-cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .glass-title h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .alumni-cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .glass-title h2 {
+    font-size: 2.5rem;
+  }
+}
