@@ -380,6 +380,7 @@ canvas#wavyBackground {
   width: 100%;
   height: auto;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.3s;
 }
 
@@ -411,7 +412,7 @@ canvas#wavyBackground {
 @media screen and (max-width: 480px) {
   .alumni-cards-container {
     grid-template-columns: 1fr;
-	  padding-top: 5vh;
+	padding-top: 5vh;
   }
   
   .glass-title h2 {
