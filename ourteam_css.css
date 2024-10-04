@@ -326,13 +326,12 @@ canvas#wavyBackground {
 
 .glass-title {
   background: rgba(255, 255, 255, 0.7);
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 10px;
   text-align: center;
-  margin-bottom: 60px; /* Increased margin-bottom for extra space between title and alumni cards */
+  margin-bottom: 20px;
   width: fit-content;
   margin: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .glass-title h2 {
@@ -412,6 +411,7 @@ canvas#wavyBackground {
 @media screen and (max-width: 480px) {
   .alumni-cards-container {
     grid-template-columns: 1fr;
+	  padding-top: 5vh;
   }
   
   .glass-title h2 {
@@ -422,6 +422,7 @@ canvas#wavyBackground {
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .alumni-cards-container {
     grid-template-columns: repeat(2, 1fr);
+	padding-top: 5vh;
   }
 
   .glass-title h2 {
@@ -432,6 +433,7 @@ canvas#wavyBackground {
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .alumni-cards-container {
     grid-template-columns: repeat(3, 1fr);
+	padding-top: 5vh;
   }
 
   .glass-title h2 {
@@ -441,7 +443,8 @@ canvas#wavyBackground {
 
 @media screen and (min-width: 1025px) {
   .alumni-cards-container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+	padding-top: 5vh;
   }
 
   .glass-title h2 {
@@ -452,6 +455,7 @@ canvas#wavyBackground {
 @media screen and (min-width: 2000px) {
   .alumni-cards-container {
     grid-template-columns: repeat(4, 1fr);
+	padding-top: 5vh;
   }
   
   .glass-title h2 {
