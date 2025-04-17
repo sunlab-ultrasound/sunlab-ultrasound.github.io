@@ -343,49 +343,51 @@ canvas#wavyBackground {
 /* Alumni Cards Container */
 .alumni-cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
   justify-items: center;
-  padding: 0 10vw;
+  padding: 0 8vw;
 }
 
-/* Alumni Card Styling */
+/* Individual Card: reduced max-width, padding */
 .alumni-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  padding: 20px;
-  max-width: 300px;
+  padding: 15px;
+  max-width: 200px;
   transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
-
 .alumni-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* Image Container and Image Styling */
+/* Image container and image: smaller bottom margin */
 .alumni-card-image-container {
   width: 100%;
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
-
 .alumni-card-image {
   width: 100%;
   height: auto;
   object-fit: cover;
-  object-position: center;
   transition: transform 0.3s;
 }
-
 .alumni-card-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+/* Name: smaller font size */
+.alumni-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0E162F;
+  margin: 0;
 }
 
 /* Text for Alumni Name and Description */
