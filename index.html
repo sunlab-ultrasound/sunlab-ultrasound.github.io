@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUN LAB</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
     <link href="index.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="modal-overlay" id="modal-overlay"></div>
     <header>
         <div class="logo">
-            <img src="assets/sunlab_name_logo.png" alt="SUN Lab Logo" class="desktop-logo">
-            <img src="assets/sun_lab_logo.png" alt="SUN Lab Mobile Logo" class="mobile-logo">
+            <img loading="lazy" src="assets/sunlab_name_logo.png" alt="SUN Lab Logo" class="desktop-logo">
+            <img loading="lazy" src="assets/sun_lab_logo.png" alt="SUN Lab Mobile Logo" class="mobile-logo">
         </div>
         <nav>
             <div class="menu-icon" id="menu-icon">
@@ -49,21 +50,21 @@
         <section id="research">
             <div class="research-topics">
                 <div class="research-item">
-                    <img src="assets/FUS Brain.png" alt="Research Topic 2">
-                    <h3>Ultrasound Immunoengineering and Immonomodulation</h3>
+                    <img loading="lazy" src="assets/FUS Brain.png" alt="Research Topic 2">
+                    <h3>Ultrasound Immunoengineering and Immunomodulation</h3>
                     <button class="try-now-btn" data-modal-id="modalId2">Read more →</button>
                 </div>
             </div>
             <div class="research-topics">
                 <div class="research-item">
-                    <img src="assets/Fig 1 cropped .jpg" alt="Focused Ultrasound and Neuroimaging">
+                    <img loading="lazy" src="assets/Fig 1 cropped .jpg" alt="Focused Ultrasound and Neuroimaging">
                     <h3>Focused Ultrasound mediated Drug Delivery</h3>
                     <button class="try-now-btn" data-modal-id="modalId1">Read more →</button>
                 </div>
             </div>
             <div class="research-topics">
                 <div class="research-item">
-                    <img src="assets/The controller system modified.jpg" alt="Research Topic 3">
+                    <img loading="lazy" src="assets/The controller system modified.jpg" alt="Research Topic 3">
                     <h3>Cavitation Imaging and Control</h3>
                     <button class="try-now-btn" data-modal-id="modalId3">Read more →</button>
                 </div>
@@ -74,13 +75,13 @@
     <section class="details-footer">
         <div class="affiliations">
             <figure class="affiliation-logo">
-                <img src="assets/neu_bioengg_logo.png" alt="CILS logo" class="sun-logo">
+                <img loading="lazy" src="assets/neu_bioengg_logo.png" alt="CILS logo" class="sun-logo">
             </figure>
             <figure class="affiliation-logo">
-                <img src="assets/New logo transparent background.png" alt="SUN LAB logo" class="cils-logo">
+                <img loading="lazy" src="assets/New logo transparent background.png" alt="SUN LAB logo" class="cils-logo">
             </figure>
             <figure class="affiliation-logo">
-                <img src="assets/cils_logo.png" alt="NEU Bioengineering logo" class="neu-logo">
+                <img loading="lazy" src="assets/cils_logo.png" alt="NEU Bioengineering logo" class="neu-logo">
             </figure>
         </div>
     </section>
@@ -96,10 +97,10 @@
     <!-- Modal for Ultrasound Drug Delivery -->
     <div id="modalId1" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('modalId1')">&times;</span>
+            <span class="close" role="button" aria-label="Close modal" tabindex="0" onclick="closeModal('modalId1')">&times;</span>
             <div class="modal-images">
-                <img src="assets/BBB opening evaluation. Typical 3D reconstructed T1-weighted MR images.jpg" alt="Focused ultrasound mediated drug delivery">
-                <img src="assets/BB opening visualization using MRI contrast agent.png" alt="Focused ultrasound mediated drug delivery">
+                <img loading="lazy" src="assets/BBB opening evaluation. Typical 3D reconstructed T1-weighted MR images.jpg" alt="Focused ultrasound mediated drug delivery">
+                <img loading="lazy" src="assets/BB opening visualization using MRI contrast agent.png" alt="Focused ultrasound mediated drug delivery">
             </div>
             <h2>Focused ultrasound mediated drug delivery</h2>
             <p>Focused ultrasound (FUS) mediated drug delivery is an emerging and unique technique to deliver drugs and/or agents across biological barriers through the mechanical effects from ultrasound. This technique offers several advantages over traditional drug delivery methods, including increased targeting precision, reduced systemic side effects, and improved therapeutic efficacy. At SUN Lab, we aim to combine region-specific FUS with acoustically responsive nanoparticles to achieve both spatial and physiological targeting for drug delivery.</p>
@@ -109,12 +110,12 @@
     <!-- Modal for Ultrasound Immunoengineering -->
     <div id="modalId2" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('modalId2')">&times;</span>
+            <span class="close" role="button" aria-label="Close modal" tabindex="0" onclick="closeModal('modalId2')">&times;</span>
             <div class="modal-images">
-                <img src="assets/FUS brain and Neuron combined.png" alt="Research Image 2">
-                <img src="assets/Cell staining.png" alt="Research Image 2">
+                <img loading="lazy" src="assets/FUS brain and Neuron combined.png" alt="Research Image 2">
+                <img loading="lazy" src="assets/Cell staining.png" alt="Research Image 2">
             </div>
-            <h2>Ultrasound Immunoengineering and Immonomodulation</h2>
+            <h2>Ultrasound Immunoengineering and Immunomodulation</h2>
             <p>The treatment efficacy for brain disorders has been hindered by the presence of blood-brain barrier (BBB) and the immunosuppressive microenvironment. Approaches that can interfere with the microenvironment locally for enhanced immune effector delivery and reprograming are desperately needed. FUS represents a promising physical technique to address these challenges due to its unique spatial targeting, ability of reversible vascular permeation, non-invasiveness, deep penetration and high controllability. SUN Lab uses multi-scale models and tools to unveil how immune cells (both endogenous and engineered cells) respond to ultrasound as mechanical stimuli, particularly in the complex immune microenvironments of brain tumors and aging brains.</p>
         </div>
     </div>
@@ -122,9 +123,9 @@
     <!-- Modal for Cavitation Imaging -->
     <div id="modalId3" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('modalId3')">&times;</span>
+            <span class="close" role="button" aria-label="Close modal" tabindex="0" onclick="closeModal('modalId3')">&times;</span>
             <div class="modal-images">
-                <img src="assets/The controller system.jpeg" alt="Cavitation Imaging and Control System">
+                <img loading="lazy" src="assets/The controller system.jpeg" alt="Cavitation Imaging and Control System">
                 <video controls>
                     <source src="assets/163701_1_supplements/Supplementary-movie-1.mp4" type="video/mp4">
                 </video>
@@ -225,5 +226,6 @@ document.getElementById('menu-icon').addEventListener('click', function() {
   document.getElementById('nav-list').classList.toggle('active');
 });
 </script>
+    <script src="main.js"></script>
 </body>
 </html>

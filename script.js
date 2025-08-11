@@ -13,7 +13,7 @@ canvas.height = document.body.offsetHeight;
 
 function resizeCanvas() {
     canvas.width = window.innerWidth;
-    canvas.Height = document.body.offsetHeight;
+    canvas.height = document.body.offsetHeight;
 }
 const waves = [];
 const waveCount = 5;
