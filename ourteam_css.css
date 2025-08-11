@@ -321,6 +321,7 @@ canvas#wavyBackground {
 /* Alumni Section */
 .alumni-section {
   padding-top: 50px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
@@ -329,9 +330,8 @@ canvas#wavyBackground {
   padding: 10px 20px;
   border-radius: 10px;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0 auto 24px;
   width: fit-content;
-  margin: auto;
 }
 
 .glass-title h2 {
@@ -342,52 +342,52 @@ canvas#wavyBackground {
 
 /* Alumni Cards Container */
 .alumni-cards-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
-  justify-items: center;
-  padding: 0 8vw;
 }
 
 /* Individual Card: reduced max-width, padding */
 .alumni-card {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 15px;
-  max-width: 200px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 .alumni-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
 }
 
 /* Image container and image: smaller bottom margin */
 .alumni-card-image-container {
-  width: 100%;
-  border-radius: 10px;
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin: 6px 0 10px;
 }
 .alumni-card-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  transition: transform 0.3s;
-}
-.alumni-card-image:hover {
-  transform: scale(1.03);
+  display: block;
 }
 
 /* Name: smaller font size */
 .alumni-name {
-  font-size: 1.25rem;
-  font-weight: bold;
+  margin-top: 8px;
+  font-weight: 700;
   color: #0E162F;
-  margin: 0;
+  font-size: 1.25rem;
 }
 
 /* Text for Alumni Name and Description */
@@ -398,12 +398,6 @@ canvas#wavyBackground {
   color: #0E162F;
 }
 
-.alumni-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
 .alumni-description {
   font-size: 1rem;
   color: #555;
@@ -411,10 +405,10 @@ canvas#wavyBackground {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
   .alumni-cards-container {
-    grid-template-columns: 1fr;
-	padding-top: 5vh;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 14px;
   }
   
   .glass-title h2 {
@@ -423,45 +417,38 @@ canvas#wavyBackground {
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  .alumni-cards-container {
-    grid-template-columns: repeat(2, 1fr);
-	padding-top: 5vh;
-  }
-
   .glass-title h2 {
     font-size: 2.2rem;
   }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .alumni-cards-container {
-    grid-template-columns: repeat(3, 1fr);
-	padding-top: 5vh;
-  }
-
   .glass-title h2 {
     font-size: 2.3rem;
   }
 }
 
 @media screen and (min-width: 1025px) {
-  .alumni-cards-container {
-    grid-template-columns: repeat(3, 1fr);
-	padding-top: 5vh;
-  }
-
   .glass-title h2 {
     font-size: 2.5rem;
   }
 }
 
 @media screen and (min-width: 2000px) {
-  .alumni-cards-container {
-    grid-template-columns: repeat(4, 1fr);
-	padding-top: 5vh;
-  }
-  
   .glass-title h2 {
     font-size: 2.5rem;
   }
+}
+
+/* === Disable hover pop effects for student cards === */
+.student-card, .glass-text-student, .student-card .card-image {
+  transition: none !important;
+}
+
+.student-card:hover,
+.student-card .glass-text-student:hover,
+.student-card .card-image:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
 }

@@ -285,3 +285,16 @@ canvas#wavyBackground {
     font-size: 2.2rem;
   }
 }
+
+/* === Disable hover pop effects for student cards === */
+.student-card, .glass-text-student, .student-card .card-image {
+  transition: none !important;
+}
+
+.student-card:hover,
+.student-card .glass-text-student:hover,
+.student-card .card-image:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
