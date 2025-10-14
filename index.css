@@ -801,3 +801,19 @@ footer {
     margin-bottom: 20px;
   }
 }
+
+/* ==== News Section (site-wide) ==== */
+.news-section { width: 95vw; margin: 4vh auto 6vh; }
+.news-header { display:flex; align-items:center; justify-content:center; padding: 1rem 1.25rem; margin-bottom: 1rem; }
+.news-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.news-card { background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.25); border-radius: 12px; padding: 16px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); backdrop-filter: blur(16px); }
+.news-meta { font-size: 0.9rem; color:#222; opacity: 0.8; margin-bottom: 6px; }
+.news-tag { background:#AFCBE5; color:#0E162F; padding: 2px 8px; border-radius: 999px; font-size: 0.8rem; }
+.news-title { font-size: 1.05rem; margin: 6px 0 8px; color:#0E162F; }
+.news-body { font-size: 0.95rem; color:#0E162F; margin-bottom: 10px; }
+.news-link { text-decoration: none; font-weight: 700; color:#222839; }
+.news-link:hover { text-decoration: underline; }
+
+@media (max-width: 480px){
+  .news-section{ width: 90vw; }
+}
