@@ -1,5 +1,49 @@
 
-// === Shared Wave Background + Mobile Nav (main.js) ===
+// === Mobile Nav Toggle (must run on all pages) ===
+(function(){
+  // Wait for DOM to be ready
+  function initMobileMenu() {
+    const menuIcon = document.getElementById('menu-icon');
+    const navList = document.getElementById('nav-list');
+    
+    if(menuIcon && navList && !menuIcon.dataset.bound){
+      menuIcon.dataset.bound = '1';
+      
+      // Handle both click and touch events
+      function toggleMenu(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        navList.classList.toggle('active');
+      }
+      
+      menuIcon.addEventListener('click', toggleMenu);
+      menuIcon.addEventListener('touchend', toggleMenu);
+      
+      // Close menu when clicking on a nav link
+      navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navList.classList.remove('active');
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!menuIcon.contains(e.target) && !navList.contains(e.target)) {
+          navList.classList.remove('active');
+        }
+      });
+    }
+  }
+  
+  // Run immediately if DOM is ready, otherwise wait
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+  } else {
+    initMobileMenu();
+  }
+})();
+
+// === Shared Wave Background ===
 (function(){
   const canvas = document.getElementById('wavyBackground');
   if(!canvas) return;
@@ -64,14 +108,6 @@
 
   initCanvas();
   drawWaves();
-
-  // Mobile menu toggle (idempotent)
-  const menuIcon = document.getElementById('menu-icon');
-  const navList = document.getElementById('nav-list');
-  if(menuIcon && navList && !menuIcon.dataset.bound){
-    menuIcon.dataset.bound = '1';
-    menuIcon.addEventListener('click', () => navList.classList.toggle('active'));
-  }
 })();
 
 // Reduced motion
