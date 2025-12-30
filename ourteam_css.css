@@ -190,14 +190,26 @@ canvas#wavyBackground {
 .image-container {
   flex-basis: 20%;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
-.card-image, .professor-card img {
-  max-height: 250px; /* Fixed height for all images */
-  object-fit: contain; /* Adjust this to 'contain' for no cropping */
-  width: auto; /* Adjust width automatically to maintain aspect ratio */
-  margin: auto; /* Center the image in its container */
+.card-image {
+  width: 180px;
+  height: 220px;
+  object-fit: cover; /* Crop to fill container uniformly */
+  object-position: center top; /* Focus on face/top of image */
+  margin: auto;
+  border-radius: 10px;
+}
+
+.professor-card img {
+  max-height: 250px;
+  object-fit: contain;
+  width: auto;
+  margin: auto;
   border-radius: 10px;
 }
 .card-info {
@@ -228,8 +240,12 @@ canvas#wavyBackground {
 	flex-direction: column;
 	margin: auto auto;
   }
-  .professor-card img, .student-card img {
+  .professor-card img {
     max-height: 200px; /* Adjust image size for mobile screens */
+  }
+  .card-image {
+    width: 150px;
+    height: 180px;
   }
 
 	.glass-text-student h3, h4 {
@@ -273,8 +289,12 @@ canvas#wavyBackground {
 	margin: auto auto;
 	
   }
-  .professor-card img, .student-card img {
+  .professor-card img {
     max-height: 200px; /* Adjust image size for mobile screens */
+  }
+  .card-image {
+    width: 160px;
+    height: 200px;
   }
 
 	.glass-text-student h3, h4 {

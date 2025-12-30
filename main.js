@@ -95,7 +95,7 @@ if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').m
     if(!btn.dataset.bound){
       btn.dataset.bound='1';
       btn.addEventListener('keydown', (e)=>{
-        if(e.key === 'Enter' or e.key === ' '){
+        if(e.key === 'Enter' || e.key === ' '){
           e.preventDefault();
           e.stopPropagation();
           closeAll();

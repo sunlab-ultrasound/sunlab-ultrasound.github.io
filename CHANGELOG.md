@@ -25,3 +25,9 @@ Date: 2025-08-11
 - Added ARIA and keyboard support to modal close buttons; Escape closes modals.
 - Honored `prefers-reduced-motion` (keeps canvas static for users who prefer less motion).
 - Ensured logo background is transparent via CSS.
+
+## v1.2 – Bug Fixes (2025-12-30)
+- **Bug fix:** `main.js` line 95 – Changed `or` to `||` in keyboard event handler (Python syntax → JavaScript).
+- **Bug fix:** `team.html` line 326 – Fixed `canvas.Height` → `canvas.height` (case-sensitive property name).
+- **Bug fix:** `publications.html` – Removed errant "News" link from navigation menu (was only on this page).
+- **Enhancement:** `ourteam_css.css` – Fixed student photo sizing to be uniform (180×220px with `object-fit: cover`). Previously photos like Eli's appeared stretched due to varying aspect ratios.
