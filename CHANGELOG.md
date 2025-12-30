@@ -32,7 +32,9 @@ Date: 2025-08-11
 - **Bug fix:** `publications.html` – Removed errant "News" link from navigation menu (was only on this page).
 - **Enhancement:** `ourteam_css.css` – Fixed student photo sizing to be uniform (180×220px with `object-fit: cover`). Previously photos like Eli's appeared stretched due to varying aspect ratios.
 - **Bug fix:** Mobile hamburger menu not responding to taps:
-  - Restructured `main.js` to initialize mobile menu independently from canvas animation.
-  - Added `touchend` event listener for mobile touch support.
-  - Added `z-index: 1001` and `padding: 10px` to `.menu-icon` for better tap target.
-  - Added `pointer-events: none` to menu icon bars to prevent event capture issues.
+  - **Root cause:** Duplicate event listeners in both inline scripts AND main.js were causing the menu to toggle on then immediately off.
+  - Removed duplicate menu toggle code from all HTML files (index, research, publications, team, Values, contact).
+  - Consolidated all mobile menu logic in `main.js` with proper touch event support.
+  - Added `!important` to critical mobile menu CSS in `main.css` to override page-specific styles.
+  - Added `touchend` event listener for better mobile compatibility.
+  - Added larger touch target with `padding: 10px` on `.menu-icon`.

@@ -16,17 +16,17 @@ nav ul { list-style:none; display:flex; justify-content:flex-end; width:auto; fo
 nav ul li { padding:0 20px; display:inline; }
 nav ul li a { text-decoration:none; color:#0E162F; }
 nav ul li a:hover { color:#AFCBE5; }
-.menu-icon { display:none; flex-direction:column; cursor:pointer; z-index:1001; padding:10px; }
+.menu-icon { display:none; flex-direction:column; cursor:pointer; z-index:1001 !important; padding:10px; position:relative; }
 .menu-icon div { width:25px; height:3px; background:#0E162F; margin:4px; transition:all .3s ease; pointer-events:none; }
 
 /* Mobile Nav */
 @media (max-width:768px){
-  .menu-icon{ display:flex; position:relative; z-index:1001; }
+  .menu-icon{ display:flex !important; position:relative; z-index:1001 !important; }
   nav ul{ position:absolute; top:60px; left:-100%; flex-direction:column; width:100%;
     background:#fff; transition:left .3s ease; z-index:999; padding-top:0;
   }
   nav ul li{ width:100%; text-align:center; padding:15px 0; }
-  nav ul.active{ left:0; }
+  nav ul.active{ left:0 !important; }
   .desktop-logo{ display:none; }
   .mobile-logo{ display:block; height:7vh; }
 }
