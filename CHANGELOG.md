@@ -38,3 +38,8 @@ Date: 2025-08-11
   - Added `!important` to critical mobile menu CSS in `main.css` to override page-specific styles.
   - Added `touchend` event listener for better mobile compatibility.
   - Added larger touch target with `padding: 10px` on `.menu-icon`.
+
+## v1.3 – Team Updates (2025-01-04)
+- **Added:** Johanna Zawada (Undergraduate Student, Chemical Engineering/Biochemistry) to the Team page.
+- **Moved:** Srujana Yellapragada from active team members to Alumni section.
+- **Moved:** Tristan Rans from active team members to Alumni section.
