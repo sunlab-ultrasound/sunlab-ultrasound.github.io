@@ -40,6 +40,7 @@ Date: 2025-08-11
   - Added larger touch target with `padding: 10px` on `.menu-icon`.
 
 ## v1.3 – Team Updates (2025-01-04)
+- **Added:** Power Chanikarn (Lab Manager) to the Team page, positioned after Max and before PhD students.
 - **Added:** Johanna Zawada (Undergraduate Student, Chemical Engineering/Biochemistry) to the Team page.
 - **Moved:** Srujana Yellapragada from active team members to Alumni section.
 - **Moved:** Tristan Rans from active team members to Alumni section.
