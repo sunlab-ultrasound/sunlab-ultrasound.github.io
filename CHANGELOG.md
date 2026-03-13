@@ -1,4 +1,52 @@
 
+## v1.5 – Publications Page Redesign: Galloway-style (2026-03-04)
+- **Complete redesign** of publications page to match Galloway Lab (MIT) layout style
+- Publications now grouped by year (2025 → 2012) with year section headers
+- Each publication is a full-width entry with:
+  - Figure thumbnail on left (placeholder ready for images)
+  - Title as clickable heading
+  - Authors, journal name (bold/italic), year
+  - Full abstract text
+  - "Read Paper →" link
+- Replaced old card grid and glassmorphism publication list with clean academic layout
+- New publications_css.css with responsive design (mobile stacks vertically)
+- Max-width 960px centered layout for readability
+- Kept wavy background and shared header/nav from main.css
+- **PDF Downloads (2026-03-04):** Replaced all 26 external "Read Paper →" links with local "Download PDF ↓" buttons pointing to `assets/publications/` PDFs
+- Clicking title or figure opens the PDF in-browser; the button triggers a file download
+- Styled download button with dark gray (#222839) rounded pill style matching site's "Read more →" buttons
+- **Figure 1 Extraction (2026-03-04):** Extracted Fig 1 from all 26 PDFs using PyMuPDF, saved to `assets/publications/figures/`
+- Replaced all placeholder boxes with actual publication figures (160×160px, object-fit: cover, rounded corners)
+- **Abstract fixes from PDF verification (2026-03-04):**
+  - PUB 3: Added missing final sentence about shape as design parameter + i/ii/iii/iv numbering
+  - PUB 2: Added missing porcine mTBI model results (500-1000-fold lower Gd doses)
+  - PUB 4: Added missing final sentence about evidence for FUS + intranasal gene therapies
+  - PUB 5: Added missing final sentence about potential of antibody-modified nonspherical MB
+  - PUB 12: Added missing sentence about irinotecan not improving outcomes
+
+## v1.4 – Publications Page Redesign (2026-03-03)
+- **Complete redesign** of the publications page with new card-based layout
+- Each publication now features:
+  - Title banner at the top
+  - Figure placeholder on the left (ready for Fig 1 images)
+  - Abstract/significance text on the right
+  - "Read Paper" link button at the bottom
+- Added 26 featured publications with real abstracts
+- **Abstract audit (2026-03-03):** Fixed 4 publications that had placeholder/generic abstracts instead of real ones:
+  - PUB 16: Irinotecan BBB delivery (now includes specific experimental details: 36 targets, 98% success rate, P < 0.01)
+  - PUB 17: HA-DOX colorectal cancer (now reflects actual findings on intestinal accumulation and mucosal preservation)
+  - PUB 22: Caged microbubbles (now describes nanoporous shell design and interfacial nanoprecipitation method)
+  - PUB 25: TfR nonspherical MB (expanded from 362 to 1092 chars with full abstract on rod-shaped MB targeting)
+  - PUB 14: Direct brain infusion (now includes Gd-albumin 74 kDa, AAV ~4 MDa, specific P-values and volumes)
+  - PUB 21: U-Net artifact suppression (now describes MRI-guided FUS, DAS beamforming limitations, space-varying PSF)
+  - PUB 24: hGDNF transgene (now includes 3-fold increase, 80% enhancement, 40% proximity to dopaminergic neurons)
+  - PUB 26: Gadolinium micropatches (now describes GLAMs, choroid plexus role, hydrogel discoidal design, mTBI underdiagnosis)
+- New responsive CSS with glassmorphism design
+- Removed old grid-based card layout
+- Ready for figure images to be added to `assets/publications/` folder
+
+---
+
 # SUN Lab Website – Maintenance Pass (v1)
 Date: 2025-08-11
 
