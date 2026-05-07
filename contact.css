@@ -123,33 +123,78 @@
     text-decoration: underline;
 }
 
-/* --- Prospective students strip --- */
-.join-strip {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px 28px !important;
+/* --- Prospective applicants section --- */
+.join-section {
+    padding: 28px 28px !important;
 }
 
-.join-text { flex: 1; }
+.join-category {
+    margin-bottom: 24px;
+}
 
-.join-title {
+.join-category:last-child {
+    margin-bottom: 0;
+}
+
+.join-category-title {
     font-size: 1rem;
     font-weight: 700;
     color: #0E162F;
-    margin: 0 0 3px;
+    margin: 0 0 8px;
 }
 
-.join-subtitle {
+.join-category-text {
+    font-size: 0.88rem;
+    color: #333;
+    line-height: 1.65;
+    margin: 0 0 10px;
+}
+
+.join-category-text a {
+    color: #1a56db;
+    text-decoration: none;
+}
+
+.join-category-text a:hover {
+    text-decoration: underline;
+}
+
+.join-links {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 12px;
+}
+
+.join-links li {
     font-size: 0.85rem;
-    color: #666;
-    line-height: 1.5;
-    margin: 0;
+    color: #333;
+    line-height: 1.7;
+    padding-left: 14px;
+    position: relative;
+}
+
+.join-links li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #0E162F;
+}
+
+.join-links a {
+    color: #1a56db;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.join-links a:hover {
+    text-decoration: underline;
 }
 
 .join-btn {
-    flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -162,6 +207,7 @@
     border-radius: 8px;
     transition: background 0.2s, transform 0.15s;
     white-space: nowrap;
+    margin-top: 4px;
 }
 
 .join-btn:hover {
@@ -238,11 +284,12 @@ canvas#wavyBackground {
         margin-bottom: 18px;
     }
 
-    .join-strip {
-        flex-direction: column;
-        text-align: center;
-        padding: 18px 20px !important;
-        gap: 14px;
+    .join-section {
+        padding: 22px 18px !important;
+    }
+
+    .join-links a {
+        font-size: 0.78rem;
     }
 }
 
